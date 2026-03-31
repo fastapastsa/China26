@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>China — May 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --red:        #B83232;
+  --red-deep:   #8C1F1F;
+  --red-muted:  #D97B6C;
+  --gold:       #B8882A;
+  --gold-light: #E8C46A;
+  --ink:        #18100A;
+  --muted:      #6B5545;
+  --cream:      #FBF5EC;
+  --paper:      #F6EFE3;
+  --border:     #DDD0BC;
+  --shadow-sm:  0 1px 6px rgba(24,16,10,.07);
+  --shadow-md:  0 3px 16px rgba(24,16,10,.11);
+
+  /* city colours */
+  --cdu:  #C0392B;
+  --djy:  #7B4EA0;
+  --cqg:  #1D7070;
+  --zjj:  #2E7A32;
+  --trv:  #6D4C41;
+
+  /* row tints */
+  --t-bkf: #FFFAEF;
+  --t-mrn: #FFF7F0;
+  --t-lun: #FFF3EE;
+  --t-aft: #FFF7F0;
+  --t-din: #FFEEED;
+  --t-eve: #F5EBF5;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--cream);
+  color:var(--ink);
+  font-size:13px;
+  line-height:1.55;
+}
+
+/* ═══════════ HEADER ═══════════ */
+.hdr{
+  background:var(--red-deep);
+  color:#fff;
+  padding:32px 44px 24px;
+  position:relative;
+  overflow:hidden;
+}
+.hdr::after{
+  content:'';position:absolute;inset:0;
+  background:repeating-linear-gradient(
+    135deg,transparent,transparent 48px,
+    rgba(255,255,255,.03) 48px,rgba(255,255,255,.03) 96px
+  );pointer-events:none;
+}
+.hdr-inner{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:flex-start;gap:24px}
+.hdr-left h1{
+  font-family:'Playfair Display',serif;
+  font-size:40px;font-weight:700;letter-spacing:-.5px;line-height:1.05;
+}
+.hdr-left .subtitle{
+  font-family:'Noto Serif SC',serif;
+  font-size:17px;color:rgba(255,255,255,.55);margin-top:5px;
+}
+.hdr-right{text-align:right;font-size:11.5px;color:rgba(255,255,255,.6);line-height:1.8}
+.hdr-right strong{color:#fff;font-size:13.5px;display:block}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}
+.tag{
+  background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);
+  border-radius:20px;padding:3px 11px;font-size:10.5px;
+  color:rgba(255,255,255,.85);font-weight:500;letter-spacing:.3px;
+}
+
+/* ═══════════ ALERT BANNER ═══════════ */
+.alert{
+  background:#FFFBF0;border-bottom:2px solid var(--gold);
+  padding:11px 44px;
+}
+.alert-title{
+  font-size:10px;text-transform:uppercase;letter-spacing:1.2px;
+  font-weight:700;color:var(--gold);margin-bottom:8px;
+}
+.alert-items{display:flex;flex-wrap:wrap;gap:8px}
+.alert-chip{
+  background:#fff;border:1px solid #E8C46A;border-radius:5px;
+  padding:3px 10px;font-size:11px;color:#5A3D00;
+  display:flex;align-items:center;gap:5px;
+}
+.alert-chip::before{content:'⚡';font-size:9px}
+
+/* ═══════════ LEGEND ═══════════ */
+.legend{
+  background:var(--paper);border-bottom:1px solid var(--border);
+  padding:9px 44px;display:flex;gap:20px;align-items:center;flex-wrap:wrap;
+}
+.leg-label{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;font-weight:600}
+.leg-item{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--muted)}
+.leg-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+
+/* ═══════════ SCROLL WRAPPER ═══════════ */
+.scroll{overflow-x:auto}
+
+/* ═══════════ TABLE ═══════════ */
+table{
+  border-collapse:collapse;
+  min-width:1620px;width:100%;
+}
+td{
+  vertical-align:top;
+  border-right:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+}
+
+/* ── city header ── */
+.city-row td{padding:0;border-right:1px solid rgba(255,255,255,.25)}
+.cpill{
+  padding:9px 14px;font-family:'Playfair Display',serif;
+  font-size:14px;font-weight:600;color:#fff;text-align:center;
+}
+.cpill.cdu{background:var(--cdu)}
+.cpill.djy{background:var(--djy)}
+.cpill.cqg{background:var(--cqg)}
+.cpill.zjj{background:var(--zjj)}
+.cpill.trv{background:var(--trv)}
+.cpill.blk{background:#DDD0BC;color:transparent}
+
+/* ── date row ── */
+.date-row td{
+  padding:7px 13px;
+  background:var(--paper);
+  border-bottom:2px solid var(--border);
+}
+.d-label{font-family:'Playfair Display',serif;font-size:13px;font-weight:600}
+.d-num{font-size:10px;color:var(--muted);margin-top:1px}
+
+/* ── row label ── */
+.rlabel{
+  background:#fff;
+  border-right:2px solid var(--border) !important;
+  padding:10px 11px;
+  font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.9px;color:var(--muted);
+  position:sticky;left:0;z-index:3;
+  min-width:88px!important;max-width:88px!important;width:88px!important;
+  white-space:nowrap;
+}
+.rlabel .ri{font-size:15px;display:block;margin-bottom:3px}
+
+/* ── accom bar ── */
+.accom-row td{padding:0;border-bottom:1px solid var(--border)}
+.abar{padding:7px 13px;font-size:10.5px;color:#fff;font-weight:500}
+.abar.cdu{background:rgba(192,57,43,.82)}
+.abar.cqg{background:rgba(29,112,112,.82)}
+.abar.zjj{background:rgba(46,122,50,.82)}
+.abar.emp{background:transparent;color:transparent}
+
+/* ── cells ── */
+.cell{padding:9px 12px;min-width:165px;max-width:215px}
+.cell.bkf{background:var(--t-bkf)}
+.cell.mrn{background:var(--t-mrn)}
+.cell.lun{background:var(--t-lun)}
+.cell.aft{background:var(--t-aft)}
+.cell.din{background:var(--t-din)}
+.cell.eve{background:var(--t-eve)}
+.cell.emp{background:#F4EEE5}
+.cell.flt{
+  background:linear-gradient(140deg,#18100A,#2D1A0A);
+  color:rgba(255,255,255,.85);
+}
+
+/* cell typography */
+.ct{
+  font-weight:600;font-size:11.5px;color:var(--ink);
+  display:flex;align-items:flex-start;gap:5px;margin-bottom:3px;
+}
+.ct .dot{width:5px;height:5px;border-radius:50%;background:var(--red);flex-shrink:0;margin-top:3.5px}
+.flt .ct{color:#fff}
+.cb{font-size:11px;color:#352010;line-height:1.5}
+.flt .cb{color:rgba(255,255,255,.78)}
+.cb .time{font-weight:700;color:var(--red-deep)}
+.flt .cb .time{color:var(--gold-light);font-weight:700}
+.cb .zh{font-family:'Noto Serif SC',serif;font-size:10.5px;color:var(--muted);display:block}
+.flt .cb .zh{color:rgba(255,255,255,.4)}
+.cb .order{font-style:italic;font-size:11px;color:#5A3200}
+.cb ul{list-style:none;padding:0}
+.cb ul li{padding:1.5px 0}
+.cb ul li::before{content:'· ';color:var(--red);font-weight:800}
+
+/* tip + warn callouts */
+.tip{
+  background:rgba(184,136,42,.1);border-left:2px solid var(--gold);
+  padding:3px 7px;margin-top:5px;font-size:10.5px;color:#5A3D00;
+  border-radius:0 3px 3px 0;line-height:1.45;
+}
+.warn{
+  background:rgba(176,34,34,.07);border-left:2px solid var(--red);
+  padding:3px 7px;margin-top:5px;font-size:10.5px;color:#8C1F1F;
+  border-radius:0 3px 3px 0;line-height:1.45;
+}
+.cost{
+  background:rgba(46,125,50,.08);border-left:2px solid #43A047;
+  padding:3px 7px;margin-top:5px;font-size:10.5px;color:#1B5E20;
+  border-radius:0 3px 3px 0;line-height:1.45;
+}
+.nav{
+  background:rgba(29,112,112,.08);border-left:2px solid var(--cqg);
+  padding:3px 7px;margin-top:5px;font-size:10.5px;color:#0D4545;
+  border-radius:0 3px 3px 0;line-height:1.45;
+}
+
+/* ═══════════ FOOTER ═══════════ */
+.ftr{
+  background:var(--ink);color:rgba(255,255,255,.45);
+  padding:18px 44px;display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:8px;font-size:11px;
+}
+.ftr strong{color:#fff;font-family:'Playfair Display',serif;font-size:14px}
+
+@media print{
+  .scroll{overflow:visible}
+  table{min-width:auto}
+  .rlabel{position:static}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="hdr">
+  <div class="hdr-inner">
+    <div class="hdr-left">
+      <h1>China — May 2026</h1>
+      <div class="subtitle">成都 · 都江堰 · 重庆 · 张家界</div>
+      <div class="tags">
+        <span class="tag">🐼 Chengdu 4 nights</span>
+        <span class="tag">🌊 Dujiangyan day trip</span>
+        <span class="tag">🌆 Chongqing 3 nights</span>
+        <span class="tag">🏔 Zhangjiajie 2 nights</span>
+        <span class="tag">🍜 Food-first</span>
+        <span class="tag">⚖️ Optimised pace</span>
+        <span class="tag">🌶 Medium spice</span>
+        <span class="tag">👥 2 travellers</span>
+      </div>
+    </div>
+    <div class="hdr-right">
+      <strong>11 – 25 May 2026</strong>
+      14 nights<br>
+      3U3886 MEL→CTU (departs 8:20PM Mon)<br>
+      3U3885 CTU→MEL (departs 1:40AM Mon)<br>
+      Sichuan Airlines · Economy · A330-200
+    </div>
+  </div>
+</div>
+
+<!-- BOOK AHEAD BANNER -->
+<div class="alert">
+  <div class="alert-title">🔖 Book these in advance — they sell out</div>
+  <div class="alert-items">
+    <div class="alert-chip">Shufeng Yayun Opera (Tue 12)</div>
+    <div class="alert-chip">Shuyanfu Banquet Chengdu — WeChat only, 7 days out (Fri 15)</div>
+    <div class="alert-chip">Dujiangyan high-speed rail (Xipu→Lidui Park)</div>
+    <div class="alert-chip">ZJJ Forest Park 4-day pass + timed entry — passport required</div>
+    <div class="alert-chip">Bailong Elevator combo (book date-specific)</div>
+    <div class="alert-chip">Chongqing→Zhangjiajie train (popular route)</div>
+    <div class="alert-chip">Zhangjiajie→Chengdu return train</div>
+  </div>
+</div>
+
+<!-- LEGEND -->
+<div class="legend">
+  <span class="leg-label">City</span>
+  <span class="leg-item"><span class="leg-dot" style="background:var(--cdu)"></span>Chengdu</span>
+  <span class="leg-item"><span class="leg-dot" style="background:var(--djy)"></span>Dujiangyan</span>
+  <span class="leg-item"><span class="leg-dot" style="background:var(--cqg)"></span>Chongqing</span>
+  <span class="leg-item"><span class="leg-dot" style="background:var(--zjj)"></span>Zhangjiajie</span>
+  <span class="leg-item"><span class="leg-dot" style="background:var(--trv)"></span>Travel day</span>
+</div>
+
+<!-- TABLE -->
+<div class="scroll">
+<table>
+
+<!-- CITY HEADER -->
+<tr class="city-row">
+  <td><div class="cpill blk">—</div></td>
+  <td><div class="cpill trv">Melbourne</div></td>
+  <td colspan="3"><div class="cpill cdu">Chengdu 成都</div></td>
+  <td><div class="cpill djy">Dujiangyan 都江堰</div></td>
+  <td colspan="2"><div class="cpill cdu">Chengdu 成都</div></td>
+  <td><div class="cpill trv">Travel Day</div></td>
+  <td colspan="3"><div class="cpill cqg">Chongqing 重庆</div></td>
+  <td><div class="cpill trv">Travel Day</div></td>
+  <td colspan="2"><div class="cpill zjj">Zhangjiajie 张家界</div></td>
+</tr>
+
+<!-- DATES -->
+<tr class="date-row">
+  <td class="rlabel" style="background:var(--paper)"><span style="font-size:10px">DATE</span></td>
+  <td><div class="d-label">Mon 11 May</div><div class="d-num">Day 1</div></td>
+  <td><div class="d-label">Tue 12 May</div><div class="d-num">Day 2</div></td>
+  <td><div class="d-label">Wed 13 May</div><div class="d-num">Day 3</div></td>
+  <td><div class="d-label">Thu 14 May</div><div class="d-num">Day 4</div></td>
+  <td><div class="d-label">Fri 15 May</div><div class="d-num">Day 5</div></td>
+  <td><div class="d-label">Sat 16 May</div><div class="d-num">Day 6</div></td>
+  <td><div class="d-label">Sun 17 May</div><div class="d-num">Day 7</div></td>
+  <td><div class="d-label">Mon 18 May</div><div class="d-num">Day 8</div></td>
+  <td><div class="d-label">Tue 19 May</div><div class="d-num">Day 9</div></td>
+  <td><div class="d-label">Wed 20 May</div><div class="d-num">Day 10</div></td>
+  <td><div class="d-label">Thu 21 May</div><div class="d-num">Day 11</div></td>
+  <td><div class="d-label">Fri 22 May</div><div class="d-num">Day 12</div></td>
+  <td><div class="d-label">Sat 23 May</div><div class="d-num">Day 13</div></td>
+  <td><div class="d-label">Sun 24 May</div><div class="d-num">Day 14</div></td>
+</tr>
+
+<!-- ACCOM -->
+<tr class="accom-row">
+  <td class="rlabel" style="padding:6px 11px;font-size:8.5px">ACCOM</td>
+  <td><div class="abar emp">—</div></td>
+  <td colspan="6"><div class="abar cdu">🏨 隐栖堂精品酒店 — The Hidden House, Chunxi Road / Tianfu Square Branch</div></td>
+  <td colspan="3"><div class="abar cqg">🏨 Chongqing — book near Jiefangbei / Yuzhong District</div></td>
+  <td colspan="2"><div class="abar emp">—</div></td>
+  <td colspan="3"><div class="abar zjj">🏨 Wulingyuan Town — near East Gate (e.g. Bei'an Qingshe Holiday Inn or similar)</div></td>
+</tr>
+
+<!-- ═════════ BREAKFAST ═════════ -->
+<tr>
+  <td class="rlabel"><span class="ri">🥢</span>Breakfast</td>
+
+  <!-- Day 1: Mon 11 -->
+  <td class="cell emp"><div class="cb" style="color:var(--muted);font-style:italic">In-flight meal</div></td>
+
+  <!-- Day 2: Tue 12 Arrive Chengdu -->
+  <td class="cell bkf">
+    <div class="cb">
+      <div class="time">5:20am arrival</div>
+      Hotel won't have room yet — drop bags at lobby. Wander Chunxi Rd before the city wakes up.<br>
+      <ul><li>Breakfast: explore nearby street stalls</li></ul>
+      <div class="tip">Chunxi Rd at 7am is magical — almost zero crowds vs midday chaos</div>
+    </div>
+  </td>
+
+  <!-- Day 3: Wed 13 -->
+  <td class="cell bkf">
+    <div class="cb">Leave by 7am for panda base — grab a quick bowl at a street stall near hotel first. Many <span class="zh">豆浆油条</span> (soy milk + fried dough) spots open by 6:30am.<div class="cost">¥10–15pp</div></div>
+  </td>
+
+  <!-- Day 4: Thu 14 Dujiangyan -->
+  <td class="cell bkf">
+    <div class="cb">
+      <div class="time">7:15am</div>
+      Light bite before leaving. Head to Tianfu Square Station.
+      <div class="warn">Leave hotel by 7:30am latest. Train timing is tight.</div>
+    </div>
+  </td>
+
+  <!-- Day 5: Fri 15 -->
+  <td class="cell bkf">
+    <div class="cb">Sleep in. Grab <span class="zh">钟水饺 Zhong Shui Jiao</span> (red oil wontons) from a local shop near hotel. Classic Chengdu breakfast.<div class="cost">¥10–15pp</div></div>
+  </td>
+
+  <!-- Day 6: Sat 16 -->
+  <td class="cell bkf">
+    <div class="cb">Hotel breakfast or nearby noodle shop. Check out after. Train to Chongqing mid-morning.</div>
+  </td>
+
+  <!-- Day 7: Sun 17 Chongqing -->
+  <td class="cell bkf">
+    <div class="cb">
+      <strong>油茶 Yóuchá</strong><span class="zh">— Chongqing's iconic breakfast, only found here</span><br>
+      Creamy rice porridge + crispy youtiao crumbs + chili oil + pickled veg. Find at any hole-in-the-wall street stall near hotel.<div class="cost">¥8–12pp</div>
+    </div>
+  </td>
+
+  <!-- Day 8: Mon 18 -->
+  <td class="cell bkf">
+    <div class="cb">
+      <strong>重庆小面</strong><span class="zh">Xiǎo Miàn — sidewalk noodle stalls everywhere</span><br>
+      Spicy wheat noodles in 10-herb broth, minced pork, pickled veg. The real Chongqing breakfast.<div class="cost">¥6–10 a bowl</div>
+    </div>
+  </td>
+
+  <!-- Day 9: Tue 19 Travel CQ→ZJJ -->
+  <td class="cell bkf">
+    <div class="cb">Hotel breakfast before checking out. Train food or station snacks.<div class="nav">Morning train: Chongqing → Zhangjiajie (~4–5 hrs). Book ahead.</div></div>
+  </td>
+
+  <!-- Day 10: Wed 20 ZJJ Day 1 -->
+  <td class="cell bkf">
+    <div class="cb">Hotel breakfast early. Pack water + snacks for the park — food inside is limited and overpriced.<div class="warn">Enter park by 7:30–8am. Timed entry is strictly enforced. Bring passport.</div></div>
+  </td>
+
+  <!-- Day 11: Thu 21 ZJJ Day 2 -->
+  <td class="cell bkf">
+    <div class="cb">Hotel breakfast. Pack light lunch snacks again. Register Day 2 entry at ticket office after Day 1 entry is verified.</div>
+  </td>
+
+  <!-- Day 12: Fri 22 ZJJ→CDU -->
+  <td class="cell bkf">
+    <div class="cb">Hotel checkout early. Transfer to Zhangjiajie city station (~45 min Didi, ~¥60–80). Train back to Chengdu.</div>
+  </td>
+
+  <!-- Day 13: Sat 23 Last CDU day -->
+  <td class="cell bkf">
+    <div class="cb">Final Chengdu morning. Street stalls near 文殊院 Wenshu Monastery are excellent on weekends — <span class="zh">糍粑、叶儿粑</span> sticky rice cakes.<div class="cost">¥5–20pp</div></div>
+  </td>
+
+  <!-- Day 14: Sun 24 flight day -->
+  <td class="cell emp flt"><div class="cb"><div class="time">1:40am departure</div>Sichuan Airlines 3U3885<br><span class="zh">Arrives Melbourne 2:20pm Mon 25 May</span></div></td>
+</tr>
+
+<!-- ═════════ MORNING ═════════ -->
+<tr>
+  <td class="rlabel"><span class="ri">🌅</span>Morning</td>
+
+  <!-- Day 1 Flight -->
+  <td class="cell mrn flt">
+    <div class="ct"><div class="dot"></div>Melbourne Departure</div>
+    <div class="cb">
+      <div class="time">8:20PM Mon 11 May</div>
+      3U3886 · Economy · A330-200<br>
+      <span class="zh">Melbourne (MEL) → Chengdu (CTU)</span><br>
+      Flight time ~11 hrs
+    </div>
+  </td>
+
+  <!-- Day 2: Arrive CDU -->
+  <td class="cell mrn">
+    <div class="ct"><div class="dot"></div>Arrive Chengdu</div>
+    <div class="cb">
+      <div class="time">5:20am</div>
+      Metro from airport: Line 10 → transfer → ~40 min, ¥10. Taxi ~¥80-100, 45 min.<br>
+      Drop bags at hotel lobby. Can't check in until ~2–3pm.
+      <ul>
+        <li>Stroll 春熙路 Chunxi Road</li>
+        <li>IFS Square + Taikoo Li (shops open ~10am)</li>
+      </ul>
+      <div class="tip">The pedestrian mall at dawn — just locals doing morning tai chi. Treasure it.</div>
+    </div>
+  </td>
+
+  <!-- Day 3: Panda Base -->
+  <td class="cell mrn">
+    <div class="ct"><div class="dot"></div>Giant Panda Base</div>
+    <div class="cb">
+      <div class="time">7:30am</div>
+      <strong>成都大熊猫繁育研究基地</strong><span class="zh">Chengdu Research Base</span>
+      <div class="nav">🚌 From hotel: Bus 87 or Didi (¥15–25, ~30 min). Or rent a bike via DiDi cycling.</div>
+      Pandas feed and play in the AM — by 10am they've retreated inside and are napping. Go early.
+      <div class="cost">Entry: ¥55pp. Book on WeChat/Trip.com the night before.</div>
+    </div>
+  </td>
+
+  <!-- Day 4: Dujiangyan transit + site -->
+  <td class="cell mrn">
+    <div class="ct"><div class="dot"></div>Dujiangyan Day Trip</div>
+    <div class="cb">
+      <div class="time">8:00am</div>
+      <div class="nav">🚇 Tianfu Square Stn → Metro Line 2 → Xipu (50 min, ¥5) → Cross-platform to high-speed rail → Lidui Park Station (20 min, ¥15–20). <strong>Pre-book on Trip.com or 12306.</strong> Total: ~1hr 20min.</div>
+      <strong>都江堰水利工程</strong><span class="zh">UNESCO Irrigation System</span><br>
+      Walk: Lidui Park → Fish Mouth weir → Feisha weir → 二王庙 Erwang Temple. Allow 2.5–3 hrs.
+      <div class="cost">Entry: ¥80pp</div>
+    </div>
+  </td>
+
+  <!-- Day 5: Wenshu + prep -->
+  <td class="cell mrn">
+    <div class="ct"><div class="dot"></div>Wenshu Monastery</div>
+    <div class="cb">
+      <div class="time">9–11am</div>
+      <strong>文殊院</strong><span class="zh">Peaceful Buddhist temple in city centre</span><br>
+      Morning incense, resident monks, shaded courtyards. One of the best quiet hours in Chengdu.
+      <div class="nav">🚇 Metro Line 1, Wenshu Yuan station. Free entry.</div>
+      <div class="tip">Then afternoon: rest up before the Shuyanfu banquet dinner. You need to arrive 1.5hrs early for costume & hair.</div>
+    </div>
+  </td>
+
+  <!-- Day 6: Chengdu→Chongqing -->
+  <td class="cell mrn">
+    <div class="ct"><div class="dot"></div>Chengdu → Chongqing</div>
+    <div class="cb">
+      Hotel checkout. Bullet train: Chengdu East → Chongqing North / Bei (~1hr 30min).
+      <div class="nav">🚆 Trains depart every 30 min from Chengdu East Station. ¥160–200pp. Book on Trip.com or 12306.</div>
+      Arrive, check in, explore neighbourhood.
+    </div>
+  </td>
+
+  <!-- Day 7: Shancheng Walkway -->
+  <td class="cell mrn">
+    <div class="ct"><div class="dot"></div>Shancheng Walkway</div>
+    <div class="cb">
+      <strong>山城步道</strong><span class="zh">Mountain City Trail — the soul of old Chongqing</span><br>
+      Winds through hillside neighbourhoods, narrow staircases, quiet courtyards, Yangtze panoramas. Then:
+      <ul>
+        <li><strong>湖广会馆</strong> Huguang Guild Hall — Ming/Qing architecture, small museum inside</li>
+        <li><strong>朝天门</strong> Chaotianmen — Yangtze + Jialing confluence</li>
+      </ul>
+      <div class="cost">Walkway: free. Guild Hall: ¥30pp.</div>
+    </div>
+  </td>
+
+  <!-- Day 8: Liziba + Eling -->
+  <td class="cell mrn">
+    <div class="ct"><div class="dot"></div>Liziba + Eling Park</div>
+    <div class="cb">
+      <strong>李子坝站 Liziba Station</strong> — Take Line 2 through the building yourself, or watch from the viewing platform below (ground floor of the station building).
+      <div class="nav">🚇 Metro Line 2. Free to ride. Viewing platform: free.</div>
+      Then → <strong>鹅岭公园 Eling Park</strong> — panoramic views of both rivers + skyline. Many stairs, zero crowds vs tourist spots.
+      <div class="cost">Eling Park: free.</div>
+    </div>
+  </td>
+
+  <!-- Day 9: Travel CQ→ZJJ -->
+  <td class="cell mrn">
+    <div class="ct"><div class="dot"></div>Train to Zhangjiajie</div>
+    <div class="cb">
+      Check out of Chongqing hotel.
+      <div class="nav">🚆 Chongqing → Zhangjiajie West: ~4–5 hrs high-speed. Depart by 9–10am to arrive by 2–3pm. ¥200–280pp. Book ahead — popular route.</div>
+      Arrive Zhangjiajie city → Didi/taxi to Wulingyuan Town (~30 km, 45 min, ¥80–100). Check in near East Gate.
+      <div class="tip">Staying in Wulingyuan saves 1hr+ commute each park day vs staying in Zhangjiajie city.</div>
+    </div>
+  </td>
+
+  <!-- Day 10: ZJJ Forest Park Day 1 -->
+  <td class="cell mrn">
+    <div class="ct"><div class="dot"></div>Forest Park — Avatar Mountains</div>
+    <div class="cb">
+      <div class="time">7:30am</div> East Gate → shuttle bus → <strong>百龙天梯 Bailong Elevator</strong><br>
+      3 glass elevators, 326m, 88 seconds to top. World record.<br>
+      → <strong>袁家界 Yuanjiajie</strong> — Avatar viewpoints:
+      <ul>
+        <li>南天一柱 — the actual "Hallelujah Mountain" from the film</li>
+        <li>乾坤柱 — ridge walk with drop-off views both sides</li>
+      </ul>
+      → Shuttle → <strong>天子山 Tianzi Mountain</strong> — take cable car up, walk the Sea of Clouds ridge.
+      <div class="cost">4-day park pass + Bailong Elevator (1-way) + Tianzishan Cable Car (1-way): ~¥376pp. Book on Klook/Trip.com with passport number.</div>
+      <div class="tip">Fog after rain = surreal. Don't panic — let the mist roll through, then shoot.</div>
+    </div>
+  </td>
+
+  <!-- Day 11: ZJJ Day 2 Golden Whip + Huangshi -->
+  <td class="cell mrn">
+    <div class="ct"><div class="dot"></div>Golden Whip Stream</div>
+    <div class="cb">
+      <div class="time">7:30am</div> Enter park early → <strong>金鞭溪 Golden Whip Stream</strong><br>
+      5.7km valley hike at the BASE of the pillars — ground-level views, a stream, and wild macaques. Very different feel from the clifftop views.
+      <ul>
+        <li>~2.5 hrs, relatively flat</li>
+        <li>Far fewer crowds than the elevator areas</li>
+      </ul>
+      <div class="tip">This is the best-kept secret of the park. Most tourists skip it entirely.</div>
+    </div>
+  </td>
+
+  <!-- Day 12: Return CDU -->
+  <td class="cell mrn">
+    <div class="ct"><div class="dot"></div>Zhangjiajie → Chengdu</div>
+    <div class="cb">
+      Hotel checkout. Didi to Zhangjiajie station (~45 min, ¥60–80).
+      <div class="nav">🚆 Zhangjiajie → Chengdu East: ~4–5 hrs. ¥200–280pp. Depart by 9am → arrive Chengdu ~2pm.</div>
+      Check in to hotel. Rest, explore neighbourhood.
+    </div>
+  </td>
+
+  <!-- Day 13: Last CDU day -->
+  <td class="cell mrn">
+    <div class="ct"><div class="dot"></div>Final Chengdu Morning</div>
+    <div class="cb">
+      Choose based on what you missed:
+      <ul>
+        <li>四川博物馆 Sichuan Museum (free, excellent)</li>
+        <li>金沙遗址博物馆 Jinsha Site Museum (Bronze Age archaeology)</li>
+        <li>杜甫草堂 Du Fu Thatched Cottage (Tang Dynasty poet's home)</li>
+      </ul>
+      <div class="cost">Sichuan Museum: free. Others: ¥30–80pp.</div>
+    </div>
+  </td>
+
+  <!-- Day 14 in flight -->
+  <td class="cell mrn flt">
+    <div class="cb"><div class="time">In flight</div>Sichuan Airlines 3U3885<br><span class="zh">Chengdu → Melbourne</span><br>Arrives 2:20pm Mon 25 May</div>
+  </td>
+</tr>
+
+<!-- ═════════ LUNCH ═════════ -->
+<tr>
+  <td class="rlabel"><span class="ri">🥡</span>Lunch</td>
+
+  <td class="cell emp"><div class="cb" style="color:var(--muted);font-style:italic">In-flight</div></td>
+
+  <!-- Day 2 -->
+  <td class="cell lun">
+    <div class="ct"><div class="dot"></div>皇城老妈</div>
+    <div class="cb">
+      <span class="zh">Huang Cheng Old Beef Restaurant — classic Chengdu beef hotpot institution</span>
+      <div class="cost">~¥80–120pp</div>
+    </div>
+  </td>
+
+  <!-- Day 3 -->
+  <td class="cell lun">
+    <div class="ct"><div class="dot"></div>纯阳馆面馆</div>
+    <div class="cb">
+      <span class="zh">Chun Yang Guan Noodle Shop</span><br>
+      <div class="order">Order: 抄手 chaoshou (wontons in red oil) + 担担面 dandan mian</div>
+      <div class="cost">~¥30–40pp</div>
+    </div>
+  </td>
+
+  <!-- Day 4 Dujiangyan -->
+  <td class="cell lun">
+    <div class="ct"><div class="dot"></div>林记渣渣面</div>
+    <div class="cb">
+      <span class="zh">Lin Ji Zhazha Mian — West Street branch, near the irrigation site</span>
+      <div class="order">Order: 干拌渣渣面 · 伤心凉粉 · 红糖冰粉</div>
+      <div class="nav">📍 Walk from Lidui Park exit toward West Street (~10 min)</div>
+      <div class="cost">~¥30–45pp</div>
+    </div>
+  </td>
+
+  <!-- Day 5 -->
+  <td class="cell lun">
+    <div class="ct"><div class="dot"></div>龙抄手</div>
+    <div class="cb">
+      <span class="zh">Long Chaoshou — century-old wonton institution in city centre</span><br>
+      Order the red oil wontons + clear broth version to compare. Light lunch before big dinner.
+      <div class="cost">~¥40–60pp</div>
+      <div class="tip">Light lunch is intentional — Shuyanfu banquet tonight has 8+ courses.</div>
+    </div>
+  </td>
+
+  <!-- Day 6 transit -->
+  <td class="cell lun">
+    <div class="cb">Station food on the way or first Chongqing meal after arrival. Try <span class="zh">重庆鸡公煲 Chicken Claypot</span> near the hotel.</div>
+  </td>
+
+  <!-- Day 7 CQ -->
+  <td class="cell lun">
+    <div class="ct"><div class="dot"></div>石蹦牛肉面</div>
+    <div class="cb">
+      <span class="zh">Shibati Yanjing Noodles — legendary beef noodles since 1988</span><br>
+      Springy noodles, tender brisket, spicy red oil broth. Order 牛肉面.
+      <div class="nav">📍 Shibati area, near the walkway</div>
+      <div class="cost">~¥20–30pp</div>
+    </div>
+  </td>
+
+  <!-- Day 8 CQ -->
+  <td class="cell lun">
+    <div class="ct"><div class="dot"></div>华石碗杂面</div>
+    <div class="cb">
+      <span class="zh">Huashi Wanza Noodles — consistently top-10 Chongqing noodle shop</span><br>
+      Wanza noodles with slow-cooked pork rib broth + minced pork sauce.
+      <div class="cost">~¥20–30pp</div>
+    </div>
+  </td>
+
+  <!-- Day 9 travel -->
+  <td class="cell emp"><div class="cb" style="color:var(--muted)">Train food or pack snacks. Arrive Wulingyuan ~2–3pm.</div></td>
+
+  <!-- Day 10 ZJJ D1 -->
+  <td class="cell lun">
+    <div class="cb">
+      Pack a light lunch or eat at a canteen stall inside the park (limited options, mediocre quality, ~¥30–50). Better to eat a big breakfast + carry snacks.
+      <div class="tip">Don't waste golden afternoon light looking for food. Eat early, snack through the park.</div>
+    </div>
+  </td>
+
+  <!-- Day 11 ZJJ D2 -->
+  <td class="cell lun">
+    <div class="cb">After Golden Whip Stream, exit park by noon and eat in Wulingyuan town. Simple 湘菜 Hunan food:<br>
+      <span class="zh">剁椒鱼头 steamed fish head with chopped chili · 小炒肉 wok pork</span>
+      <div class="cost">~¥50–80 for two</div>
+    </div>
+  </td>
+
+  <!-- Day 12 return -->
+  <td class="cell emp"><div class="cb" style="color:var(--muted)">Train snacks / arrive Chengdu ~2pm, grab a quick bite near hotel.</div></td>
+
+  <!-- Day 13 CDU -->
+  <td class="cell lun">
+    <div class="ct"><div class="dot"></div>双流老妈兔头</div>
+    <div class="cb">
+      <span class="zh">Shuangliu Lao Ma Rabbit Head — the most iconic Chengdu snack</span><br>
+      Order medium spice. Eat with local beer. Messy, addictive, and completely uniquely Chengdu.
+      <div class="cost">~¥8–15 per head</div>
+    </div>
+  </td>
+
+  <td class="cell emp flt"><div class="cb" style="color:rgba(255,255,255,.45);font-style:italic">In flight</div></td>
+</tr>
+
+<!-- ═════════ AFTERNOON ═════════ -->
+<tr>
+  <td class="rlabel"><span class="ri">🏛</span>Afternoon</td>
+
+  <td class="cell emp flt"><div class="cb" style="color:rgba(255,255,255,.45);font-style:italic">In flight overnight</div></td>
+
+  <!-- Day 2 CDU -->
+  <td class="cell aft">
+    <div class="cb">
+      <ul>
+        <li><strong>武侯祠</strong> Wuhou Shrine + park — Three Kingdoms temple, shaded grounds</li>
+        <li><strong>锦里</strong> Jinli Ancient Town — snacks, teahouses, evening vibe</li>
+      </ul>
+      <div class="cost">Wuhou Shrine: ¥50pp</div>
+      <div class="tip">Jinli is touristy but the food stalls (rabbit heads, 串串) are genuinely good</div>
+    </div>
+  </td>
+
+  <!-- Day 3 after pandas -->
+  <td class="cell aft">
+    <div class="cb">
+      <ul>
+        <li><strong>宽窄巷子</strong> Kuanzhai Alley — wide + narrow lanes, good cafés</li>
+        <li><strong>奎星楼街</strong> Kuixinglou Jie — hip local street with independent coffee shops</li>
+      </ul>
+      <div class="tip">Stop at a teahouse in the Kuanzhai courtyard. Order a pot of green tea and stay an hour.</div>
+    </div>
+  </td>
+
+  <!-- Day 4 Dujiangyan BOOKSTORE -->
+  <td class="cell aft">
+    <div class="ct"><div class="dot"></div>钟书阁 Zhongshuge Bookstore ⭐</div>
+    <div class="cb">
+      One of the world's 10 most beautiful bookstores (2025). Mirrored infinity ceilings, C-shaped walnut shelves, surreal cathedral-like space. Free entry.
+      <div class="nav">📍 2F, Rongchuang Mao (Sunac) Mall, 1 Zhizhen Road — 10–15 min taxi from Lidui Park (¥15–20). <strong>Do NOT take the tram — it's a long, confusing walk from the stop.</strong></div>
+      Then: wander the <strong>南桥 Nanqiao pedestrian street</strong> nearby — tea, snacks, local atmosphere.
+      <div class="cost">Bookstore: free. Café inside if you want: ¥30–50pp.</div>
+    </div>
+  </td>
+
+  <!-- Day 5 -->
+  <td class="cell aft">
+    <div class="cb">
+      <div class="time">~4:30pm</div>
+      Head to <strong>东郊记忆 Eastern Suburb Memory</strong> arts district — where Shuyanfu is located. Browse the district before the banquet.<br>
+      Arrive at Shuyanfu by <strong>5:00pm</strong> — you need ~1.5 hrs for hair + costume before the 6:30pm dinner show.
+      <div class="nav">🚇 Metro Line 4 → Erlang Station, then 10 min walk south to Jianshe South Branch Rd. Or Didi ~¥20–30.</div>
+    </div>
+  </td>
+
+  <!-- Day 6 transit -->
+  <td class="cell aft">
+    <div class="cb">Arrive Chongqing ~12–1pm. Check in. Head to <strong>磁器口 Ciqikou Ancient Town</strong> for a walk + snacks (NOT proper meals — food stalls only).<br>
+      <ul>
+        <li>陈建平麻花 twisted fried dough</li>
+        <li>Spicy duck blood cubes</li>
+      </ul>
+      <div class="nav">🚇 Metro Line 1 → Ciqikou Station</div>
+    </div>
+  </td>
+
+  <!-- Day 7 CQ -->
+  <td class="cell aft">
+    <div class="cb">
+      <div class="time">~5:30pm onwards</div>
+      Walk toward <strong>洪崖洞 Hongya Cave</strong> — lights begin at 6:30–7pm. The 11-story stilt-house architecture is genuinely spectacular at dusk. Walk through each level slowly.<br>
+      Cross the pedestrian bridge for photos from across the river.
+      <div class="cost">Free to enter and walk.</div>
+    </div>
+  </td>
+
+  <!-- Day 8 CQ -->
+  <td class="cell aft">
+    <div class="cb">
+      <strong>三峡博物馆</strong><span class="zh">Three Gorges Museum</span> — comprehensive history of Chongqing + the Yangtze. Well organised. Free entry.<br>
+      Then → <strong>重庆人民大礼堂</strong> People's Auditorium — Soviet-inspired grand hall exterior. Free to view from outside.
+      <div class="cost">Museum: free.</div>
+    </div>
+  </td>
+
+  <!-- Day 9 travel to ZJJ -->
+  <td class="cell aft">
+    <div class="cb">Arrive Wulingyuan by ~2–3pm. Check in. Walk to the park East Gate entrance (5–20 min depending on hotel) to scope the layout. Buy water + snacks from local shops. Get an early night — big park days ahead.</div>
+  </td>
+
+  <!-- Day 10 ZJJ D1 -->
+  <td class="cell aft">
+    <div class="cb">
+      After Tianzi Mountain, take the Yangjiajie Cable Car down (if included in pass) or Tianzi Cable Car down.
+      <div class="tip">The cable cars offer completely different views from the elevators. Worth the ride even if just to descend.</div>
+      Back at hotel by 4:30–5pm. Legs will be tired.
+    </div>
+  </td>
+
+  <!-- Day 11 ZJJ D2 -->
+  <td class="cell aft">
+    <div class="ct"><div class="dot"></div>黄石寨 Huangshizhai</div>
+    <div class="cb">
+      Take Huangshizhai Cable Car up → walk the large natural viewing deck platform. Less visited than Yuanjiajie, excellent panoramic views of Five Fingers Peak.
+      <div class="cost">Huangshizhai Cable Car: ¥65pp one-way (if not on all-cable pass)</div>
+      <div class="tip">Afternoon clouds often clear here — different light from the morning shots.</div>
+    </div>
+  </td>
+
+  <!-- Day 12 return -->
+  <td class="cell aft">
+    <div class="cb">Arrive Chengdu ~2pm. Check in. Rest up. Revisit favourite spots or try a new neighbourhood — <strong>玉林路 Yulin Road</strong> is a locals' favourite bar/café strip.</div>
+  </td>
+
+  <!-- Day 13 CDU last full day -->
+  <td class="cell aft">
+    <div class="cb">
+      Last afternoon to mop up anything missed:<br>
+      <ul>
+        <li>太古里 Taikoo Li stroll + coffee</li>
+        <li>Follow locals into 望平街 Wangping Street for snacks</li>
+        <li>Pick up Sichuan peppercorns, chili oil to take home</li>
+      </ul>
+      <div class="tip">Best Sichuan spice shops: look for ones that sell to local restaurants, not just tourists</div>
+    </div>
+  </td>
+
+  <td class="cell emp flt"><div class="cb" style="color:rgba(255,255,255,.45);font-style:italic">In flight</div></td>
+</tr>
+
+<!-- ═════════ DINNER ═════════ -->
+<tr>
+  <td class="rlabel"><span class="ri">🍲</span>Dinner</td>
+
+  <td class="cell emp flt"><div class="cb" style="color:rgba(255,255,255,.45);font-style:italic">In flight</div></td>
+
+  <!-- Day 2 CDU -->
+  <td class="cell din">
+    <div class="ct"><div class="dot"></div>陈麻婆豆腐</div>
+    <div class="cb">
+      <span class="zh">Chen Mapo Tofu — the original, opened 1862</span><br>
+      <div class="order">Order: 麻婆豆腐 · 夫妻肺片 · 白米饭</div>
+      <div class="nav">📍 Qintai Lu branch is closest to city centre. Jiuyan Qiao area also has a branch.</div>
+      <div class="cost">~¥60–80pp</div>
+    </div>
+  </td>
+
+  <!-- Day 3 CDU -->
+  <td class="cell din">
+    <div class="ct"><div class="dot"></div>琴台路夜市 Fuqin Night Market</div>
+    <div class="cb">
+      Graze across multiple stalls: 串串 skewers, cold dishes, ice jelly, 钵钵鸡 bobo chicken. This is a local-facing market, not a tourist set piece.
+      <div class="cost">~¥40–70pp (however much you want to graze)</div>
+    </div>
+  </td>
+
+  <!-- Day 4 Dujiangyan dinner -->
+  <td class="cell din">
+    <div class="ct"><div class="dot"></div>钟鸭子 Zhongyazi</div>
+    <div class="cb">
+      <span class="zh">Non-Material Cultural Heritage duck restaurant</span><br>
+      Or: 南桥夜市 Nanqiao Night Market — graze local street food before returning to Chengdu.<br>
+      Return train: Lidui Park → Xipu → Metro → hotel (~1hr 30min).
+      <div class="cost">Dinner: ~¥50–80pp</div>
+    </div>
+  </td>
+
+  <!-- Day 5 SHUYANFU BANQUET ⭐ -->
+  <td class="cell din" style="background:#FFF0F8;border-left:3px solid #B83280">
+    <div class="ct"><div class="dot" style="background:#B83280"></div>蜀宴赋 SHUYANFU ⭐ Imperial Banquet</div>
+    <div class="cb">
+      <span class="zh">Immersive Han dynasty banquet dinner show — 8+ course meal + live performance</span>
+      <div class="time">6:30pm show starts. Arrive by 5:00pm for hair + costume.</div>
+      Han/Tang/Song dynasty court life recreated: costumed servers, NPC interactions (Li Bai, Yang Guifei), dance per dish.<br>
+      <ul>
+        <li>9 seasonal courses — food quality is genuinely excellent</li>
+        <li>Jasmine plum wine included per person</li>
+        <li>Hanfu costume + makeup add-on: highly recommended</li>
+      </ul>
+      <div class="nav">📍 Building 27, 4 Jianshe South Branch Rd, Chenghua District (East Suburb Memory / 东郊记忆 south gate). Metro Line 4 → Erlang + 10 min walk. Or Didi ~¥25.</div>
+      <div class="cost">Seats: ¥298 (standard) · ¥398 (mid) · ¥498 (front row VIP)<br>Hanfu costume + hair/makeup: +¥100–200pp<br>Book via WeChat mini-program: search 蜀宴赋 up to 7 days ahead. ¥100pp deposit required via WeChat Pay.</div>
+      <div class="warn">This sells out regularly. Book as soon as you arrive in China. For 2 people, front/mid row recommended.</div>
+    </div>
+  </td>
+
+  <!-- Day 6 CQ first night -->
+  <td class="cell din">
+    <div class="ct"><div class="dot"></div>饭粑跎 Fanbatuo</div>
+    <div class="cb">
+      <span class="zh">Cozy local spot, Chongqing home-style cooking</span><br>
+      <div class="order">Order: 拌土豆丝 · 豆花 (savory tofu) · 拌白肉 (pork in garlic sauce)</div>
+      No theatre, no tourists — just locals and great food.
+      <div class="cost">~¥60–80 for two</div>
+    </div>
+  </td>
+
+  <!-- Day 7 CQ -->
+  <td class="cell din">
+    <div class="ct"><div class="dot"></div>周师兄腰片老火锅 🔥</div>
+    <div class="cb">
+      <span class="zh">Zhoushixiong Hot Pot — order via QR code (Alipay translation works), they give you aprons</span><br>
+      Order 3 broth bases: bone broth + tomato + spicy (Chongqing "mild" = Sichuan medium elsewhere).
+      <div class="order">Order: 腰片 pork kidney · 毛肚 tripe · 血旺 blood tofu · 豆芽 bean sprouts</div>
+      <div class="cost">~¥100–150pp</div>
+      <div class="tip">Sit outside if you can — Chongqing nights in May are warm and the streets are alive.</div>
+    </div>
+  </td>
+
+  <!-- Day 8 CQ -->
+  <td class="cell din">
+    <div class="ct"><div class="dot"></div>老甘家小龙虾</div>
+    <div class="cb">
+      <span class="zh">Lao Ganjia Crayfish — a Chongqing institution, not found elsewhere</span><br>
+      <div class="order">Order: 蒜香小龙虾 garlic crayfish (recommended) + spicy version to compare</div>
+      Good with cold beer. Messy, excellent.
+      <div class="cost">~¥80–120pp</div>
+    </div>
+  </td>
+
+  <!-- Day 9 arrive ZJJ -->
+  <td class="cell din">
+    <div class="cb">
+      Dinner in Wulingyuan town — simple 湘菜 Hunan food at a local restaurant near hotel:<br>
+      <span class="zh">剁椒鱼头 Chopped chili steamed fish head · 炒腊肉 Wok-fried cured pork · 小炒黄牛肉 Stir-fry beef</span>
+      <div class="cost">~¥80–120 for two</div>
+    </div>
+  </td>
+
+  <!-- Day 10 ZJJ -->
+  <td class="cell din">
+    <div class="cb">
+      Back in Wulingyuan. Eat at your hotel or a nearby local restaurant. Simple is fine — you'll be tired. Cold beer + easy stir-fries.
+      <div class="tip">Get the ¥5 ice jelly (红糖冰粉) from a street stall for dessert — it's everywhere and perfect after a big day.</div>
+    </div>
+  </td>
+
+  <!-- Day 11 ZJJ D2 dinner -->
+  <td class="cell din">
+    <div class="cb">
+      Final Wulingyuan dinner. Try <span class="zh">土家族 Tujia</span> local specialties:<br>
+      <ul>
+        <li>土豆饼 Potato cakes</li>
+        <li>腊猪脚 Cured pig's trotters</li>
+        <li>合渣 Coarse tofu soup</li>
+      </ul>
+      <div class="cost">~¥80–120 for two</div>
+    </div>
+  </td>
+
+  <!-- Day 12 back in CDU -->
+  <td class="cell din">
+    <div class="ct"><div class="dot"></div>冒椒火辣 Maojiao Huola</div>
+    <div class="cb">
+      <span class="zh">串串香 Chuanchuanxiang — Chengdu's skewer hotpot, different from Chongqing version</span><br>
+      Choose your skewers from a display fridge, cook at your table.
+      <div class="nav">📍 Kuixinglou Street, Qingyang District — Metro Line 4, Kuixinglou Stn</div>
+      <div class="cost">~¥80–100pp</div>
+    </div>
+  </td>
+
+  <!-- Day 13 last CDU night -->
+  <td class="cell din">
+    <div class="ct"><div class="dot"></div>小龙坎 Xiaolong Kan Hot Pot</div>
+    <div class="cb">
+      <span class="zh">Chunxi Road branch — the city's most respected hotpot chain, genuinely loved by locals</span><br>
+      Last big Chengdu meal. Go all out.
+      <div class="order">Order: 毛肚 tripe · 鸭肠 duck intestine · 脑花 brain (optional) · 嫩牛肉 tender beef</div>
+      <div class="cost">~¥110–150pp. Go at 2:30pm or 9pm to avoid 1–2hr waits.</div>
+      <div class="nav">📍 No. 15 Zhonglieci East Street, Jinjiang District</div>
+    </div>
+  </td>
+
+  <td class="cell emp flt"><div class="cb" style="color:rgba(255,255,255,.45);font-style:italic">In flight</div></td>
+</tr>
+
+<!-- ═════════ EVENING ═════════ -->
+<tr>
+  <td class="rlabel"><span class="ri">🌙</span>Evening</td>
+
+  <!-- Day 1 -->
+  <td class="cell eve flt">
+    <div class="ct"><div class="dot"></div>Departure</div>
+    <div class="cb"><div class="time">8:20PM</div>Board flight at MEL. 11hr flight overnight.</div>
+  </td>
+
+  <!-- Day 2 -->
+  <td class="cell eve">
+    <div class="ct"><div class="dot"></div>Shufeng Yayun Opera 🎭</div>
+    <div class="cb">
+      <strong>蜀风雅韵 Shufeng Yayun Sichuan Opera House</strong><span class="zh">inside Chengdu Culture Park</span><br>
+      <div class="time">8:00pm show</div>
+      Face-changing (变脸), fire-breathing, puppet shows, hand-shadow acts, music. ~1 hr. One of the best hour you'll spend in China.
+      <div class="nav">🚇 Metro Line 1, Tonghuimen Station → 500m walk. Or Didi ~¥15.</div>
+      <div class="cost">Liyuan House: ¥150–180pp. VIP Chinese Opera House: ¥280–320pp. Book via Trip.com or directly. Includes tea service.</div>
+    </div>
+  </td>
+
+  <!-- Day 3 -->
+  <td class="cell eve">
+    <div class="cb">
+      <ul>
+        <li>九眼桥 / 安顺桥 Nine Eyes Bridge / Anshun Bridge — walk the lit-up riverside</li>
+        <li>Bar strip along Jiuyan Qiao — local 酒吧 bars, ¥30–50 a drink</li>
+      </ul>
+      <div class="tip">Chengdu's nightlife is relaxed and local — not Chongqing neon. Pick a riverside bar and stay a while.</div>
+    </div>
+  </td>
+
+  <!-- Day 4 return from DJY -->
+  <td class="cell eve">
+    <div class="cb">
+      Train back to Chengdu from Lidui Park/Dujiangyan.
+      <div class="nav">🚆 Last HSR departs ~8pm. Check schedule in advance — don't miss it. Total journey home ~1hr 30min.</div>
+      Early night — tomorrow is a free day.
+    </div>
+  </td>
+
+  <!-- Day 5 post banquet -->
+  <td class="cell eve">
+    <div class="cb">
+      Shuyanfu banquet ends ~8:30pm.<br>
+      Post-dinner photos in costume outside 东郊记忆 arts district — the surroundings are photogenic at night.<br>
+      Then: stroll or Didi home. You'll be full and content.
+    </div>
+  </td>
+
+  <!-- Day 6 CQ first night -->
+  <td class="cell eve">
+    <div class="cb">
+      Walk the <strong>解放碑步行街 Jiefangbei Pedestrian Street</strong> — see the buildings lit up. Then cross to <strong>江北嘴江滩公园 Jiangbeizui River Beach Park</strong> near Chongqing Grand Theatre.<br>
+      Front-row city skyline views, far fewer tourists than Hongya Cave.
+      <div class="cost">Free</div>
+    </div>
+  </td>
+
+  <!-- Day 7 CQ -->
+  <td class="cell eve">
+    <div class="cb">
+      Yangtze river cruise or just drinks with river views.<br>
+      Or: bar at Jiangbeizui Financial Center rooftops — cocktails overlooking both rivers.
+      <div class="cost">Cocktails: ¥60–150pp</div>
+      <div class="tip">Order a "Chongqing Mule" — local twist on Moscow Mule, everywhere in the rooftop bars</div>
+    </div>
+  </td>
+
+  <!-- Day 8 CQ last night -->
+  <td class="cell eve">
+    <div class="cb">
+      <strong>八一好吃街 Bayi Food Street</strong> — dessert grazing walk. Good for:<br>
+      <ul>
+        <li>冰粉 Ice jelly ¥5</li>
+        <li>酸辣粉 Hot sour glass noodles ¥15</li>
+        <li>小汤圆 Mini glutinous rice balls</li>
+      </ul>
+      <div class="tip">The street has a tourist reputation but the snacks are actually solid. Go late (after 8pm) when it thins out.</div>
+    </div>
+  </td>
+
+  <!-- Day 9 arrive ZJJ -->
+  <td class="cell eve"><div class="cb">Early night in Wulingyuan. Download the park map offline. Charge all devices. Set alarm for 6:30am.</div></td>
+
+  <!-- Day 10 ZJJ D1 -->
+  <td class="cell eve"><div class="cb">Cold beer + early bed. Legs will thank you.<br><div class="tip">Walk to the East Gate to check tomorrow's entry window — confirm your Day 2 slot with park staff in person as required by new policy.</div></div></td>
+
+  <!-- Day 11 ZJJ D2 -->
+  <td class="cell eve"><div class="cb">Pack bags and set out luggage. Early checkout tomorrow — train to Chengdu. Last look at the park town at night.</div></td>
+
+  <!-- Day 12 back in CDU -->
+  <td class="cell eve"><div class="cb"><strong>玉林路 Yulin Road</strong> — Chengdu's best local bar and café strip. Order a cocktail or local craft beer, watch the neighbourhood go by.<div class="tip">If you only have one evening bar street in Chengdu, Yulin is the local choice over Jiuyanqiao.</div></div></td>
+
+  <!-- Day 13 last night CDU -->
+  <td class="cell eve">
+    <div class="ct"><div class="dot"></div>Departure Night 🛫</div>
+    <div class="cb">
+      Head to Chengdu Tianfu International Airport (CTU) by <strong>11pm</strong>.<br>
+      <div class="nav">🚇 Metro Line 18 direct from downtown to CTU airport, ~50 min, ¥20. Or taxi ~¥120–150, 60 min.</div>
+      Check in opens ~3hrs before: <strong>10:40pm</strong>. Flight departs <strong>1:40am Sun 24 May.</strong>
+      <div class="warn">Confirm it's Tianfu Airport (CTU) not Shuangliu (which also uses CTU code in some systems). Double-check your boarding pass.</div>
+    </div>
+  </td>
+
+  <td class="cell emp flt"><div class="cb" style="color:rgba(255,255,255,.45)">Arrive Melbourne<br><div class="time" style="color:var(--gold-light)">2:20pm Mon 25 May</div></div></td>
+</tr>
+
+</table>
+</div>
+
+<!-- FOOTER -->
+<div class="ftr">
+  <div><strong>China — May 2026</strong></div>
+  <div>成都 · 都江堰 · 重庆 · 张家界 · 2 travellers · 14 nights</div>
+  <div>All prices in CNY (¥). 1 AUD ≈ ¥4.7 approx.</div>
+</div>
+
+</body>
+</html>
