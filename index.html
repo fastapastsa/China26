@@ -340,7 +340,13 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
 .pack-item.checked label{text-decoration:line-through;color:var(--ink-faint)}
 
 @media print{.sidebar{position:static;height:auto}.main{display:block}.panel{display:block!important;page-break-before:always}.panel:first-child{page-break-before:auto}}
+
+/* DAY MAP */
+.day-map-wrap{margin:24px 40px 8px;border-radius:12px;overflow:hidden;border:1px solid var(--paper-mid);background:var(--paper-warm)}
+.day-map-label{font-size:10px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-light);padding:12px 16px 10px}
+.day-map-canvas{height:420px;width:100%}
 </style>
+
 </head>
 <body>
 
@@ -800,10 +806,19 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
             <div class="tl-item"><div class="tl-time">Afternoon</div><div class="tl-dot" style="background:var(--cdu)"></div><div class="tl-content"><div class="tl-act-title"><ruby>武<rt>wǔ</rt></ruby><ruby>侯<rt>hóu</rt></ruby><ruby>祠<rt>cí</rt></ruby> Wuhou Shrine + <ruby>锦<rt>jǐn</rt></ruby><ruby>里<rt>lǐ</rt></ruby> Jinli Ancient Town <span class="cost-badge">Wuhou Shrine ¥50pp</span></div><div class="tl-act-desc">Three Kingdoms temple complex — shaded grounds, historic halls, some of the best Chengdu street food in Jinli next door. Get <ruby>兔<rt>tù</rt></ruby><ruby>头<rt>tóu</rt></ruby> rabbit heads and <ruby>串<rt>chuàn</rt></ruby><ruby>串<rt>chuàn</rt></ruby> skewers from the stalls inside Jinli. More local-facing than Kuanzhai Alley.</div></div></div>
             <div class="tl-item"><div class="tl-time">Dinner</div><div class="tl-dot" style="background:var(--cdu)"></div><div class="tl-content"><div class="tl-act-title"><ruby>陈<rt>chén</rt></ruby><ruby>麻<rt>má</rt></ruby><ruby>婆<rt>pó</rt></ruby><ruby>豆<rt>dòu</rt></ruby><ruby>腐<rt>fǔ</rt></ruby> Chen Mapo Tofu — the original <span class="cost-badge">~¥60–80pp</span></div><div class="tl-act-desc">Opened 1862. Order: <ruby>麻<rt>má</rt></ruby><ruby>婆<rt>pó</rt></ruby><ruby>豆<rt>dòu</rt></ruby><ruby>腐<rt>fǔ</rt></ruby> (the tofu), <ruby>夫<rt>fū</rt></ruby><ruby>妻<rt>qī</rt></ruby><ruby>肺<rt>fèi</rt></ruby><ruby>片<rt>piàn</rt></ruby> (beef tendon cold dish), <ruby>白<rt>bái</rt></ruby><ruby>米<rt>mǐ</rt></ruby><ruby>饭<rt>fàn</rt></ruby> (steamed rice). Medium spice is very manageable here.</div><div class="nav-badge">📍 Qintai Lu branch, central Chengdu</div></div></div>
             <div class="tl-item"><div class="tl-time">8:00 PM</div><div class="tl-dot" style="background:#b8882a"></div><div class="tl-content"><div class="tl-act-title"><ruby>蜀<rt>shǔ</rt></ruby><ruby>风<rt>fēng</rt></ruby><ruby>雅<rt>yǎ</rt></ruby><ruby>韵<rt>yùn</rt></ruby> Shufeng Yayun Sichuan Opera 🎭 <span class="cost-badge">¥150–320pp incl. tea</span></div><div class="tl-act-desc">The best single hour you'll spend in China. Face-changing (<ruby>变<rt>biàn</rt></ruby><ruby>脸<rt>liǎn</rt></ruby>), fire-breathing, puppet shows, hand-shadow acts, traditional music. ~1 hr show. Book in advance via Trip.com or directly.</div><div class="nav-badge">🚇 Metro Line 1 → Tonghuimen Stn → 500m walk</div></div></div>
-          </div></div>
+          </div>
+
+          <!-- Day 2 Map -->
+          <div class="day-map-wrap" onclick="event.stopPropagation()">
+            <div class="day-map-label">Day 2 — locations</div>
+            <div id="day2-map" class="day-map-canvas"></div>
+          </div>
+
+          </div>
         </div>
 
         <!-- Day 3: Pandas -->
+        <!-- Day 3 -->
         <div class="day-block" onclick="toggleDay(this)">
           <div class="day-header"><div class="day-number">3</div><div class="day-info"><div class="day-date-str">Wednesday 13 May</div><div class="day-title-str">Giant Panda Base, Kuanzhai Alley, Fuqin Night Market</div></div><div class="day-toggle">›</div></div>
           <div class="day-body"><div class="timeline">
@@ -813,7 +828,10 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
             <div class="tl-item"><div class="tl-time">Dinner</div><div class="tl-dot" style="background:var(--cdu)"></div><div class="tl-content"><div class="tl-act-title"><ruby>琴<rt>qín</rt></ruby><ruby>台<rt>tái</rt></ruby><ruby>路<rt>lù</rt></ruby><ruby>夜<rt>yè</rt></ruby><ruby>市<rt>shì</rt></ruby> Fuqin Night Market — graze local <span class="cost-badge">~¥40–70pp</span></div><div class="tl-act-desc">Not a tourist market — locals eating here after work. <ruby>串<rt>chuàn</rt></ruby><ruby>串<rt>chuàn</rt></ruby> skewers, cold dishes, <ruby>钵<rt>bō</rt></ruby><ruby>钵<rt>bō</rt></ruby><ruby>鸡<rt>jī</rt></ruby> bobo chicken, <ruby>冰<rt>bīng</rt></ruby><ruby>粉<rt>fěn</rt></ruby> ice jelly. Graze as many stalls as you want. This is the Chengdu street food experience.</div></div></div>
             <div class="tl-item"><div class="tl-time">Evening</div><div class="tl-dot" style="background:#3a3a8a"></div><div class="tl-content"><div class="tl-act-title"><ruby>九<rt>jiǔ</rt></ruby><ruby>眼<rt>yǎn</rt></ruby><ruby>桥<rt>qiáo</rt></ruby> Nine Eyes Bridge / Jiuyan Qiao bar strip</div><div class="tl-act-desc">Walk the lit-up riverside, then settle into a bar on Jiuyan Qiao strip. Chengdu nightlife is low-key and genuinely local — pick a riverside spot and watch the city go by. ¥30–50 a drink.</div></div></div>
           </div>
-          <div class="food-card"><div class="food-card-label">Chengdu food checklist — don't leave without trying</div><div class="food-card-content"><strong><ruby>麻<rt>má</rt></ruby><ruby>婆<rt>pó</rt></ruby><ruby>豆<rt>dòu</rt></ruby><ruby>腐<rt>fǔ</rt></ruby> Mapo tofu</strong> (numbing + spicy). <strong><ruby>担<rt>dān</rt></ruby><ruby>担<rt>dān</rt></ruby><ruby>面<rt>miàn</rt></ruby> Dandan mian</strong> (minced pork noodles). <strong><ruby>抄<rt>chāo</rt></ruby><ruby>手<rt>shǒu</rt></ruby> Chaoshou</strong> (red oil wontons). <strong><ruby>兔<rt>tù</rt></ruby><ruby>头<rt>tóu</rt></ruby> Rabbit head</strong> ~¥8–15 each (iconic local snack). <strong><ruby>钵<rt>bō</rt></ruby><ruby>钵<rt>bō</rt></ruby><ruby>鸡<rt>jī</rt></ruby> Bobo chicken</strong> (cold chicken on skewers, chili oil). <strong><ruby>串<rt>chuàn</rt></ruby><ruby>串<rt>chuàn</rt></ruby><ruby>香<rt>xiāng</rt></ruby></strong> skewer hotpot. <strong><ruby>甜<rt>tián</rt></ruby><ruby>水<rt>shuǐ</rt></ruby><ruby>面<rt>miàn</rt></ruby> Sweet water noodles</strong> (thick, sweet-savory, excellent). <strong><ruby>红<rt>hóng</rt></ruby><ruby>糖<rt>táng</rt></ruby><ruby>冰<rt>bīng</rt></ruby><ruby>粉<rt>fěn</rt></ruby> Red sugar ice jelly</strong> ¥5 (perfect street dessert). Medium spice on everything — Chengdu "medium" is very manageable.</div></div>
+          <div class="day-map-wrap" onclick="event.stopPropagation()">
+            <div class="day-map-label">Day 3 — locations</div>
+            <div id="day3-map" class="day-map-canvas"></div>
+          </div>
           </div>
         </div>
 
@@ -828,7 +846,12 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
             <div class="tl-item"><div class="tl-time">Afternoon</div><div class="tl-dot" style="background:var(--djy)"></div><div class="tl-content"><div class="tl-act-title"><ruby>都<rt>dōu</rt></ruby><ruby>江<rt>jiāng</rt></ruby><ruby>堰<rt>yàn</rt></ruby><ruby>景<rt>jǐng</rt></ruby><ruby>区<rt>qū</rt></ruby> Dujiangyan Scenic Area <span class="cost-badge">¥80pp · 3–4 hrs</span></div><div class="tl-act-desc">Main route: Lidui Gate → Qingxi Garden → Fulong Temple (Bottle-Neck Channel) → Flying Sand Weir → Fish Mouth Levee → Anlan Suspension Bridge → Two Kings Temple → Yulei Mountain Square → Guanxian Ancient City. Wander West Street (Xijie) and Yangliu River Street afterwards.<br><br><em>Alt route:</em> Enter Gate 6 (Qinyan Tower <ruby>秦<rt>qín</rt></ruby><ruby>堰<rt>yàn</rt></ruby><ruby>楼<rt>lóu</rt></ruby>) → Erwang Temple → Anlan Suspension Bridge → Yuzui Fish Mouth → Feishang Spillway → Baopingkou → Fulong Temple → exit South Gate.</div></div></div>
             <div class="tl-item"><div class="tl-time">Dinner</div><div class="tl-dot" style="background:var(--djy)"></div><div class="tl-content"><div class="tl-act-title"><ruby>钟<rt>zhōng</rt></ruby><ruby>鸭<rt>yā</rt></ruby><ruby>子<rt>zi</rt></ruby> Zhongyazi or Night Market @Yangliu Street</div><div class="tl-act-desc">Zhongyazi is a Non-Material Cultural Heritage duck restaurant — excellent for a final Dujiangyan meal. Or graze the Night Market stalls on Yangliu Street in the Old Town.</div></div></div>
             <div class="tl-item"><div class="tl-time">After dinner</div><div class="tl-dot" style="background:var(--djy)"></div><div class="tl-content"><div class="tl-act-title">Blue-tear river walk</div><div class="tl-act-desc">Walk along the Neijiang river from Nanqiao bridge upstream, passing the Tianfuyuan bridge, ending at Guanxian Xuanhua Gate. Then Didi back to Dujiangyan Railway Station for the return train to Xipu (or all the way to hotel). Last HSR ~8pm.</div></div></div>
-          </div></div>
+          </div>
+          <div class="day-map-wrap" onclick="event.stopPropagation()">
+            <div class="day-map-label">Day 4 — Dujiangyan locations</div>
+            <div id="day4-map" class="day-map-canvas"></div>
+          </div>
+          </div>
         </div>
 
         <!-- Day 5: Free/Buffer + Banquet -->
@@ -840,7 +863,12 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
             <div class="tl-item"><div class="tl-time">Lunch</div><div class="tl-dot" style="background:var(--cdu)"></div><div class="tl-content"><div class="tl-act-title"><ruby>龙<rt>lóng</rt></ruby><ruby>抄<rt>chāo</rt></ruby><ruby>手<rt>shǒu</rt></ruby> Long Chaoshou — century-old wonton institution <span class="cost-badge">~¥40–60pp</span></div><div class="tl-act-desc">Keep it light — the Shuyanfu banquet tonight is 8+ courses. Order a small bowl of red oil wontons + clear broth to compare styles.</div></div></div>
             <div class="tl-item"><div class="tl-time">~1:00 PM</div><div class="tl-dot" style="background:var(--cdu)"></div><div class="tl-content"><div class="tl-act-title">Head to <ruby>东<rt>dōng</rt></ruby><ruby>郊<rt>jiāo</rt></ruby><ruby>记<rt>jì</rt></ruby><ruby>忆<rt>yì</rt></ruby> Eastern Suburb Memory arts district</div><div class="tl-act-desc">The converted factory arts district where Shuyanfu is located. Browse galleries before the banquet. Arrive at Shuyanfu by <strong>5:00 PM</strong> — you need 1.5 hrs for hair + costume before the 6:30 PM show.</div><div class="nav-badge">🚇 Metro Line 4 → Erlang Station + 10 min walk. Or Didi ~¥25</div></div></div>
             <div class="tl-item"><div class="tl-time">6:30 PM</div><div class="tl-dot" style="background:#B83280"></div><div class="tl-content"><div class="tl-act-title"><ruby>蜀<rt>shǔ</rt></ruby><ruby>宴<rt>yàn</rt></ruby><ruby>赋<rt>fù</rt></ruby> SHUYANFU Imperial Banquet 👘 <span class="cost-badge">¥298–498pp + ¥100–200pp costume · Book via WeChat 7 days ahead</span></div><div class="tl-act-desc">Immersive Han/Tang/Song dynasty banquet dinner show — 8+ seasonal courses, one live performance per dish, NPC characters (Li Bai, Yang Guifei), costumed servers. Jasmine plum wine included. <strong>Arrive at 5:00 PM</strong> for Hanfu costume + hair styling (strongly recommended). Show runs ~98 min. Food quality is genuinely excellent — not just a set dressing. Ends ~8:30 PM. Take photos in costume outside the <ruby>东<rt>dōng</rt></ruby><ruby>郊<rt>jiāo</rt></ruby><ruby>记<rt>jì</rt></ruby><ruby>忆<rt>yì</rt></ruby> arts precinct afterwards — beautiful at night.</div></div></div>
-          </div></div>
+          </div>
+          <div class="day-map-wrap" onclick="event.stopPropagation()">
+            <div class="day-map-label">Day 5 — locations</div>
+            <div id="day5-map" class="day-map-canvas"></div>
+          </div>
+          </div>
         </div>
 
         <!-- Day 6: Check out, CDU→CQ -->
@@ -852,7 +880,12 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
             <div class="tl-item"><div class="tl-time">Afternoon</div><div class="tl-dot" style="background:var(--cqg)"></div><div class="tl-content"><div class="tl-act-title"><ruby>磁<rt>cí</rt></ruby><ruby>器<rt>qì</rt></ruby><ruby>口<rt>kǒu</rt></ruby> Ciqikou Ancient Town snack walk</div><div class="tl-act-desc">Ming Dynasty cobblestone lanes — walk and snack only, don't eat proper mains here (tourist-trap quality). Snack targets: <ruby>陈<rt>chén</rt></ruby><ruby>建<rt>jiàn</rt></ruby><ruby>平<rt>píng</rt></ruby><ruby>麻<rt>má</rt></ruby><ruby>花<rt>huā</rt></ruby> twisted fried dough (¥15–20), spicy duck blood cubes, hand-pulled peanut candy.</div><div class="nav-badge">🚇 Metro Line 1 → Ciqikou Station</div></div></div>
             <div class="tl-item"><div class="tl-time">Dinner</div><div class="tl-dot" style="background:var(--cqg)"></div><div class="tl-content"><div class="tl-act-title"><ruby>饭<rt>fàn</rt></ruby><ruby>粑<rt>bā</rt></ruby><ruby>跎<rt>tuó</rt></ruby> Fanbatuo — Chongqing home-style cooking <span class="cost-badge">~¥60–80 for two</span></div><div class="tl-act-desc">Zero tourists, all locals. Order: <ruby>拌<rt>bàn</rt></ruby><ruby>土<rt>tǔ</rt></ruby><ruby>豆<rt>dòu</rt></ruby><ruby>丝<rt>sī</rt></ruby> (shredded potato in vinegar), <ruby>豆<rt>dòu</rt></ruby><ruby>花<rt>huā</rt></ruby> (savory soft tofu), <ruby>拌<rt>bàn</rt></ruby><ruby>白<rt>bái</rt></ruby><ruby>肉<rt>ròu</rt></ruby> (pork in garlic sauce). Exactly what a Chongqing local family eats.</div></div></div>
             <div class="tl-item"><div class="tl-time">Evening</div><div class="tl-dot" style="background:var(--cqg)"></div><div class="tl-content"><div class="tl-act-title"><ruby>解<rt>jiě</rt></ruby><ruby>放<rt>fàng</rt></ruby><ruby>碑<rt>bēi</rt></ruby> Jiefangbei Pedestrian Street + <ruby>江<rt>jiāng</rt></ruby><ruby>北<rt>běi</rt></ruby><ruby>嘴<rt>zuǐ</rt></ruby> river views</div><div class="tl-act-desc">Walk Jiefangbei with the buildings lit up. Cross to Jiangbeizui River Beach Park (near Chongqing Grand Theatre) for front-row views of the illuminated skyline — far fewer tourists than Hongya Cave, far better view. Free.</div></div></div>
-          </div></div>
+          </div>
+          <div class="day-map-wrap" onclick="event.stopPropagation()">
+            <div class="day-map-label">Day 6 — locations</div>
+            <div id="day6-map" class="day-map-canvas"></div>
+          </div>
+          </div>
         </div>
       </div>
     </div>
@@ -915,6 +948,10 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
             <div class="tl-item"><div class="tl-time">5:30 PM</div><div class="tl-dot" style="background:var(--cqg)"></div><div class="tl-content"><div class="tl-act-title"><ruby>洪<rt>hóng</rt></ruby><ruby>崖<rt>yá</rt></ruby><ruby>洞<rt>dòng</rt></ruby> Hongya Cave — arrive at dusk <span class="cost-badge">Free to enter and walk</span></div><div class="tl-act-desc">11-story traditional stilt-house structure built into a cliff face. Lights come on at 6:30–7pm — genuinely spectacular. Walk through each floor slowly. Cross the pedestrian bridge for photos from across the Jialing River. The hotel (Sense Scene) is right here — great for wandering back after dark.</div></div></div>
             <div class="tl-item"><div class="tl-time">Dinner</div><div class="tl-dot" style="background:var(--cqg)"></div><div class="tl-content"><div class="tl-act-title"><ruby>周<rt>zhōu</rt></ruby><ruby>师<rt>shī</rt></ruby><ruby>兄<rt>xiōng</rt></ruby><ruby>腰<rt>yāo</rt></ruby><ruby>片<rt>piàn</rt></ruby><ruby>老<rt>lǎo</rt></ruby><ruby>火<rt>huǒ</rt></ruby><ruby>锅<rt>guō</rt></ruby> Zhoushixiong Hot Pot 🔥 <span class="cost-badge">~¥100–150pp</span></div><div class="tl-act-desc">Order via QR code — use Alipay translation. They give you aprons; use them. Order 3 broths: bone broth + tomato + spicy. Must-orders: <ruby>腰<rt>yāo</rt></ruby><ruby>片<rt>piàn</rt></ruby> (pork kidney slices), <ruby>毛<rt>máo</rt></ruby><ruby>肚<rt>dù</rt></ruby> (tripe), <ruby>血<rt>xuè</rt></ruby><ruby>旺<rt>wàng</rt></ruby> (blood tofu), <ruby>豆<rt>dòu</rt></ruby><ruby>芽<rt>yá</rt></ruby> (bean sprouts). Sit outside if possible — Chongqing nights in May are warm and the streets are alive.</div></div></div>
           </div>
+          <div class="day-map-wrap" onclick="event.stopPropagation()">
+            <div class="day-map-label">Day 7 — Chongqing locations</div>
+            <div id="day7-map" class="day-map-canvas"></div>
+          </div>
           <div class="food-card"><div class="food-card-label">Chongqing food checklist — very different from Chengdu</div><div class="food-card-content"><strong><ruby>油<rt>yóu</rt></ruby><ruby>茶<rt>chá</rt></ruby> Youcha</strong> (breakfast rice porridge + chili + crispy dough — only in CQ). <strong><ruby>重<rt>zhòng</rt></ruby><ruby>庆<rt>qìng</rt></ruby><ruby>小<rt>xiǎo</rt></ruby><ruby>面<rt>miàn</rt></ruby> Xiaomian</strong> ~¥8/bowl (sidewalk noodles). <strong><ruby>石<rt>shí</rt></ruby><ruby>蹦<rt>bèng</rt></ruby><ruby>牛<rt>niú</rt></ruby><ruby>肉<rt>ròu</rt></ruby><ruby>面<rt>miàn</rt></ruby></strong> beef noodles (1988 institution). <strong><ruby>重<rt>zhòng</rt></ruby><ruby>庆<rt>qìng</rt></ruby><ruby>火<rt>huǒ</rt></ruby><ruby>锅<rt>guō</rt></ruby> Hotpot</strong> (the real thing — significantly spicier than Chengdu). <strong><ruby>老<rt>lǎo</rt></ruby><ruby>甘<rt>gān</rt></ruby><ruby>家<rt>jiā</rt></ruby><ruby>小<rt>xiǎo</rt></ruby><ruby>龙<rt>lóng</rt></ruby><ruby>虾<rt>xiā</rt></ruby> Garlic crayfish</strong> (only here). <strong><ruby>豆<rt>dòu</rt></ruby><ruby>花<rt>huā</rt></ruby><ruby>饭<rt>fàn</rt></ruby> Douhua</strong> (savory soft tofu over rice — unique to CQ). Spice note: CQ "mild" (<ruby>微<rt>wēi</rt></ruby><ruby>辣<rt>là</rt></ruby>) ≈ Chengdu "spicy" (<ruby>辣<rt>là</rt></ruby>). Order accordingly.</div></div>
           </div>
         </div>
@@ -930,7 +967,12 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
             <div class="tl-item"><div class="tl-time">Afternoon</div><div class="tl-dot" style="background:var(--cqg)"></div><div class="tl-content"><div class="tl-act-title"><ruby>三<rt>sān</rt></ruby><ruby>峡<rt>xiá</rt></ruby><ruby>博<rt>bó</rt></ruby><ruby>物<rt>wù</rt></ruby><ruby>馆<rt>guǎn</rt></ruby> Three Gorges Museum <span class="cost-badge">Free</span></div><div class="tl-act-desc">280,000+ relics — fascinating history of Chongqing from ancient Ba-Yu culture, through WWII wartime capital, to the Three Gorges Dam project. Well-organised, good English signage. Then: <ruby>人<rt>rén</rt></ruby><ruby>民<rt>mín</rt></ruby><ruby>大<rt>dà</rt></ruby><ruby>礼<rt>lǐ</rt></ruby><ruby>堂<rt>táng</rt></ruby> People's Auditorium — extraordinary Soviet-inspired grand hall, free to view exterior.</div></div></div>
             <div class="tl-item"><div class="tl-time">Dinner</div><div class="tl-dot" style="background:var(--cqg)"></div><div class="tl-content"><div class="tl-act-title"><ruby>老<rt>lǎo</rt></ruby><ruby>甘<rt>gān</rt></ruby><ruby>家<rt>jiā</rt></ruby><ruby>小<rt>xiǎo</rt></ruby><ruby>龙<rt>lóng</rt></ruby><ruby>虾<rt>xiā</rt></ruby> Lao Ganjia Crayfish <span class="cost-badge">~¥80–120pp</span></div><div class="tl-act-desc">A Chongqing institution — not found elsewhere. Order the <ruby>蒜<rt>suàn</rt></ruby><ruby>香<rt>xiāng</rt></ruby><ruby>小<rt>xiǎo</rt></ruby><ruby>龙<rt>lóng</rt></ruby><ruby>虾<rt>xiā</rt></ruby> (garlic crayfish, recommended) and one spicy version to compare. Cold beer is mandatory. Messy, addictive, excellent.</div></div></div>
             <div class="tl-item"><div class="tl-time">Evening</div><div class="tl-dot" style="background:var(--cqg)"></div><div class="tl-content"><div class="tl-act-title"><ruby>八<rt>bā</rt></ruby><ruby>一<rt>yī</rt></ruby><ruby>好<rt>hǎo</rt></ruby><ruby>吃<rt>chī</rt></ruby><ruby>街<rt>jiē</rt></ruby> Bayi Food Street dessert walk</div><div class="tl-act-desc">Cold ice jelly ¥5, hot-sour glass noodles ¥15, mini glutinous rice balls. Go after 8pm when tourist crowds thin. Good snacking while walking the lit-up street.</div></div></div>
-          </div></div>
+          </div>
+          <div class="day-map-wrap" onclick="event.stopPropagation()">
+            <div class="day-map-label">Day 8 — Chongqing locations</div>
+            <div id="day8-map" class="day-map-canvas"></div>
+          </div>
+          </div>
         </div>
 
         <!-- Day 9 CQ Day 3 -->
@@ -942,7 +984,12 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
             <div class="tl-item"><div class="tl-time">Afternoon</div><div class="tl-dot" style="background:var(--cqg)"></div><div class="tl-content"><div class="tl-act-title"><ruby>南<rt>nán</rt></ruby><ruby>山<rt>shān</rt></ruby> Nanshan — best city panorama in Chongqing</div><div class="tl-act-desc">Take the cable car up for sweeping views over both rivers and the entire mountain city. Locals come here to escape heat; far less crowded than tourist viewpoints. The view at dusk or late afternoon is particularly dramatic.</div><div class="nav-badge">📍 Nanshan Scenic Area, cable car from Tanzikou · ¥20–30 return</div></div></div>
             <div class="tl-item"><div class="tl-time">Dinner</div><div class="tl-dot" style="background:var(--cqg)"></div><div class="tl-content"><div class="tl-act-title"><ruby>大<rt>dà</rt></ruby><ruby>渝<rt>yú</rt></ruby><ruby>火<rt>huǒ</rt></ruby><ruby>锅<rt>guō</rt></ruby> Dayu Hot Pot — farewell Chongqing hotpot <span class="cost-badge">~¥100–150pp</span></div><div class="tl-act-desc">One of Chongqing's most-loved local hotpot chains — locals genuinely eat here, not just tourists. Authentic broth, no tourist dilution. Final night in Chongqing — go all out. Order: <ruby>毛<rt>máo</rt></ruby><ruby>肚<rt>dù</rt></ruby> tripe, <ruby>鸭<rt>yā</rt></ruby><ruby>肠<rt>cháng</rt></ruby> duck intestine, <ruby>嫩<rt>nèn</rt></ruby><ruby>牛<rt>niú</rt></ruby><ruby>肉<rt>ròu</rt></ruby> tender beef, <ruby>脆<rt>cuì</rt></ruby><ruby>肠<rt>cháng</rt></ruby> crispy intestine.</div></div></div>
             <div class="tl-item"><div class="tl-time">Evening</div><div class="tl-dot" style="background:var(--cqg)"></div><div class="tl-content"><div class="tl-act-title">Rooftop bar — Jiangbeizui Financial Centre</div><div class="tl-act-desc">Cocktails overlooking both rivers from a high-rise rooftop. Order a "Chongqing Mule" — the local take on the Moscow Mule. Pack bags tonight: early departure tomorrow.</div></div></div>
-          </div></div>
+          </div>
+          <div class="day-map-wrap" onclick="event.stopPropagation()">
+            <div class="day-map-label">Day 9 — Chongqing locations</div>
+            <div id="day9-map" class="day-map-canvas"></div>
+          </div>
+          </div>
         </div>
       </div>
     </div>
@@ -971,7 +1018,12 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
             <div class="tl-item"><div class="tl-time">Morning</div><div class="tl-dot" style="background:var(--trv)"></div><div class="tl-content"><div class="tl-act-title">Check out Sense Scene Hotel → train to Zhangjiajie <span class="cost-badge">$50pp · ~2 hrs</span></div><div class="tl-act-desc">Morning train from Chongqing East Station (9:52 AM to 11:58 AM). Book on Trip.com or 12306 — this is a popular route. Bring snacks and water for the train. Depart by 9 AM to arrive with time to settle.</div></div></div>
             <div class="tl-item"><div class="tl-time">~2:30 PM</div><div class="tl-dot" style="background:var(--zjj)"></div><div class="tl-content"><div class="tl-act-title">Arrive Zhangjiajie West → Didi to Wulingyuan <span class="cost-badge">¥80–100 · 45 min</span></div><div class="tl-act-desc">Check in to Jinpu Ju Hotel. Walk to the East Gate to scope the layout (5–10 min). Buy water and snacks from local shops — food inside the park is limited and overpriced. Get the park map, confirm your entry slot, and set alarm for 6:30 AM.</div></div></div>
             <div class="tl-item"><div class="tl-time">Dinner</div><div class="tl-dot" style="background:var(--zjj)"></div><div class="tl-content"><div class="tl-act-title">Local Hunan food near Jinpu Ju <span class="cost-badge">~¥80–120 for two</span></div><div class="tl-act-desc">Simple <ruby>湘<rt>xiāng</rt></ruby><ruby>菜<rt>cài</rt></ruby> Hunan dishes: <ruby>剁<rt>duò</rt></ruby><ruby>椒<rt>jiāo</rt></ruby><ruby>鱼<rt>yú</rt></ruby><ruby>头<rt>tóu</rt></ruby> chopped chili steamed fish head, <ruby>炒<rt>chǎo</rt></ruby><ruby>腊<rt>là</rt></ruby><ruby>肉<rt>ròu</rt></ruby> wok-fried cured pork, <ruby>小<rt>xiǎo</rt></ruby><ruby>炒<rt>chǎo</rt></ruby><ruby>黄<rt>huáng</rt></ruby><ruby>牛<rt>niú</rt></ruby><ruby>肉<rt>ròu</rt></ruby> stir-fry beef. Genuinely good and completely different from Sichuan food. Early night — two big park days ahead.</div></div></div>
-          </div></div>
+          </div>
+          <div class="day-map-wrap" onclick="event.stopPropagation()">
+            <div class="day-map-label">Day 10 — locations</div>
+            <div id="day10-map" class="day-map-canvas"></div>
+          </div>
+          </div>
         </div>
 
         <!-- Day 11: ZJJ Forest Park Day 1 -->
@@ -983,7 +1035,12 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
             <div class="tl-item"><div class="tl-time">8:30 AM</div><div class="tl-dot" style="background:var(--zjj)"></div><div class="tl-content"><div class="tl-act-title"><ruby>袁<rt>yuán</rt></ruby><ruby>家<rt>jiā</rt></ruby><ruby>界<rt>jiè</rt></ruby> Yuanjiajie — Avatar Mountain viewpoints</div><div class="tl-act-desc">The real-life location that inspired James Cameron's Hallelujah Mountains. Key viewpoints: <strong><ruby>南<rt>nán</rt></ruby><ruby>天<rt>tiān</rt></ruby><ruby>一<rt>yī</rt></ruby><ruby>柱<rt>zhù</rt></ruby></strong> ("Avatar Mountain" — the actual pillar from the film) and <strong><ruby>乾<rt>qián</rt></ruby><ruby>坤<rt>kūn</rt></ruby><ruby>柱<rt>zhù</rt></ruby></strong> (ridge walk with sheer drop views both sides). Go in the morning before mist clears for the most atmospheric shots. If it's foggy — stay. The fog makes it better.</div></div></div>
             <div class="tl-item"><div class="tl-time">11:30 AM</div><div class="tl-dot" style="background:var(--zjj)"></div><div class="tl-content"><div class="tl-act-title">Shuttle bus → <ruby>天<rt>tiān</rt></ruby><ruby>子<rt>zi</rt></ruby><ruby>山<rt>shān</rt></ruby> Tianzi Mountain (<ruby>天<rt>tiān</rt></ruby><ruby>子<rt>zi</rt></ruby><ruby>山<rt>shān</rt></ruby><ruby>索<rt>suǒ</rt></ruby><ruby>道<rt>dào</rt></ruby> Cable Car up) <span class="cost-badge">Included in combo pass</span></div><div class="tl-act-desc">Known as the "King of the Peak Forest." Walk the Sea of Clouds ridge: <ruby>御<rt>yù</rt></ruby><ruby>笔<rt>bǐ</rt></ruby><ruby>峰<rt>fēng</rt></ruby> (Imperial Writing Brush peaks) and <ruby>仙<rt>xiān</rt></ruby><ruby>女<rt>nǚ</rt></ruby><ruby>散<rt>sàn</rt></ruby><ruby>花<rt>huā</rt></ruby> (Fairy Scattering Flowers) viewpoints. Very different mood from Yuanjiajie — more open, more sweeping. Tianzishan Cable Car down.</div></div></div>
             <div class="tl-item"><div class="tl-time">Dinner</div><div class="tl-dot" style="background:var(--zjj)"></div><div class="tl-content"><div class="tl-act-title">Hotel or nearby in Wulingyuan + confirm Day 2 park entry</div><div class="tl-act-desc">Simple dinner. Register tomorrow's entry with park staff in person before leaving today — required by the new 2025 policy. Cold beer, early bed. Legs will be happy you rested.</div></div></div>
-          </div></div>
+          </div>
+          <div class="day-map-wrap" onclick="event.stopPropagation()">
+            <div class="day-map-label">Day 11 — Zhangjiajie locations</div>
+            <div id="day11-map" class="day-map-canvas"></div>
+          </div>
+          </div>
         </div>
 
         <!-- Day 12: ZJJ Forest Park Day 2 -->
@@ -994,7 +1051,12 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
             <div class="tl-item"><div class="tl-time">Lunch</div><div class="tl-dot" style="background:var(--zjj)"></div><div class="tl-content"><div class="tl-act-title">Exit park → eat in Wulingyuan town <span class="cost-badge">~¥50–80 for two</span></div><div class="tl-act-desc">Simple Hunan lunch: <ruby>剁<rt>duò</rt></ruby><ruby>椒<rt>jiāo</rt></ruby><ruby>鱼<rt>yú</rt></ruby><ruby>头<rt>tóu</rt></ruby> + <ruby>小<rt>xiǎo</rt></ruby><ruby>炒<rt>chǎo</rt></ruby><ruby>肉<rt>ròu</rt></ruby> wok pork. Restaurant near the East Gate.</div></div></div>
             <div class="tl-item"><div class="tl-time">Afternoon</div><div class="tl-dot" style="background:var(--zjj)"></div><div class="tl-content"><div class="tl-act-title"><ruby>黄<rt>huáng</rt></ruby><ruby>石<rt>shí</rt></ruby><ruby>寨<rt>zhài</rt></ruby> Huangshizhai — afternoon viewpoint <span class="cost-badge">Huangshizhai Cable Car: ¥65pp one-way</span></div><div class="tl-act-desc">The largest natural viewing platform in the park. Less visited than Yuanjiajie — far fewer queues. Excellent views of Five Fingers Peak. Afternoon clouds here are entirely different from morning mist at Yuanjiajie. This is the third completely different perspective on the same landscape.</div></div></div>
             <div class="tl-item"><div class="tl-time">Dinner</div><div class="tl-dot" style="background:var(--zjj)"></div><div class="tl-content"><div class="tl-act-title"><ruby>土<rt>tǔ</rt></ruby><ruby>家<rt>jiā</rt></ruby><ruby>族<rt>zú</rt></ruby> Tujia local food — final Wulingyuan dinner <span class="cost-badge">~¥80–120 for two</span></div><div class="tl-act-desc"><ruby>土<rt>tǔ</rt></ruby><ruby>豆<rt>dòu</rt></ruby><ruby>饼<rt>bǐng</rt></ruby> (potato cakes), <ruby>腊<rt>là</rt></ruby><ruby>猪<rt>zhū</rt></ruby><ruby>脚<rt>jiǎo</rt></ruby> (cured pig's trotters), <ruby>合<rt>hé</rt></ruby><ruby>渣<rt>zhā</rt></ruby> (coarse tofu soup). Indigenous Tujia cuisine — you won't find this in Chengdu or Chongqing. Pack bags tonight for early departure tomorrow.</div></div></div>
-          </div></div>
+          </div>
+          <div class="day-map-wrap" onclick="event.stopPropagation()">
+            <div class="day-map-label">Day 12 — Zhangjiajie locations</div>
+            <div id="day12-map" class="day-map-canvas"></div>
+          </div>
+          </div>
         </div>
 
         <!-- Day 13: ZJJ→CDU -->
@@ -1004,7 +1066,12 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
             <div class="tl-item"><div class="tl-time">Morning</div><div class="tl-dot" style="background:var(--trv)"></div><div class="tl-content"><div class="tl-act-title">Hotel checkout → Didi to station → HSR to Chengdu <span class="cost-badge">¥200–280pp · ~4–5 hrs</span></div><div class="tl-act-desc">Didi from Wulingyuan to Zhangjiajie station: ~45 min, ¥60–80. Depart by 9 AM → arrive Chengdu East ~2 PM. Check in to The Temple House (<ruby>博<rt>bó</rt></ruby><ruby>舍<rt>shě</rt></ruby>) — right next to Taikoo Li. Rest, shower, recover.</div></div></div>
             <div class="tl-item"><div class="tl-time">Evening</div><div class="tl-dot" style="background:var(--cdu)"></div><div class="tl-content"><div class="tl-act-title"><ruby>冒<rt>mào</rt></ruby><ruby>椒<rt>jiāo</rt></ruby><ruby>火<rt>huǒ</rt></ruby><ruby>辣<rt>là</rt></ruby> <ruby>串<rt>chuàn</rt></ruby><ruby>串<rt>chuàn</rt></ruby><ruby>香<rt>xiāng</rt></ruby> skewer hotpot dinner <span class="cost-badge">~¥80–100pp</span></div><div class="tl-act-desc">Chengdu's version of hotpot — skewers rather than a communal pot. Choose ingredients from a display fridge, cook at your table. Completely different from Chongqing hotpot.</div><div class="nav-badge">📍 Kuixinglou Street, Qingyang District · Metro Line 4, Kuixinglou Stn</div></div></div>
             <div class="tl-item"><div class="tl-time">Late evening</div><div class="tl-dot" style="background:var(--cdu)"></div><div class="tl-content"><div class="tl-act-title"><ruby>玉<rt>yù</rt></ruby><ruby>林<rt>lín</rt></ruby><ruby>路<rt>lù</rt></ruby> Yulin Road — Chengdu's best local bar strip</div><div class="tl-act-desc">Cocktail or craft beer at a neighbourhood bar. More local than Jiuyanqiao — feels like a Chengdu neighbourhood rather than a tourist strip. Easy first night back in the city.</div></div></div>
-          </div></div>
+          </div>
+          <div class="day-map-wrap" onclick="event.stopPropagation()">
+            <div class="day-map-label">Day 13 — locations</div>
+            <div id="day13-map" class="day-map-canvas"></div>
+          </div>
+          </div>
         </div>
       </div>
     </div>
@@ -1035,7 +1102,12 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
             <div class="tl-item"><div class="tl-time">Late Arvo</div><div class="tl-dot" style="background:var(--ink-faint)"></div><div class="tl-content"><div class="tl-act-title">Spa and relaxation</div><div class="tl-act-desc">Spa - FuFu or Qianshen</div></div></div>
             <div class="tl-item"><div class="tl-time">Dinner</div><div class="tl-dot" style="background:var(--cdu)"></div><div class="tl-content"><div class="tl-act-title">Dinner at Spa Location </div></div></div>
             <div class="tl-item"><div class="tl-time">11:00 PM</div><div class="tl-dot" style="background:var(--trv)"></div><div class="tl-content"><div class="tl-act-title">Head to Chengdu Tianfu Airport (TFU) <span class="nav-badge">Metro Line 18 → ~50 min, ¥20. Or taxi ¥200–250, 60 min</span></div><div class="tl-act-desc">Check-in opens ~10:40 PM (3 hrs before departure).</div></div></div>
-          </div></div>
+          </div>
+          <div class="day-map-wrap" onclick="event.stopPropagation()">
+            <div class="day-map-label">Day 14 — Final Chengdu locations</div>
+            <div id="day14-map" class="day-map-canvas"></div>
+          </div>
+          </div>
         </div>
 
         <!-- Day 15: Departure -->
@@ -1366,6 +1438,12 @@ function toggleDay(el) {
   body.classList.toggle('open', !isOpen);
   el.classList.toggle('open', !isOpen);
 }
+// Prevent clicks inside day-body from closing the day block
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.day-body').forEach(function(body) {
+    body.addEventListener('click', function(e) { e.stopPropagation(); });
+  });
+});
 
 // Checkbox persistence
 function saveCheck(id, val) { try { localStorage.setItem('chk_cn_' + id, val ? '1' : '0'); } catch(e) {} }
@@ -1435,5 +1513,203 @@ function clearTracker() {
   renderTracker();
 }
 </script>
+
+
+<script>
+// ── Google Maps — all days ────────────────────────────────────────────────────
+var mapInitialised = {};
+
+var GMAPS_STYLE = [
+  { featureType: "poi", elementType: "labels", stylers: [{ visibility: "off" }] },
+  { featureType: "transit", elementType: "labels", stylers: [{ visibility: "off" }] }
+];
+
+var ALL_DAY_LOCATIONS = {
+  'day2-map': {
+    center: { lat: 30.655, lng: 104.060 },
+    locs: [
+      { num:1, name:"The Hidden House Hotel",         sub:"Drop bags · No.1 Gulou South St",       lat:30.660407, lng:104.072307, color:"#C0202A" },
+      { num:2, name:"People's Park 人民公园",           sub:"Morning tea · 12 Shaocheng Rd",         lat:30.6571,   lng:104.0572,   color:"#C0202A" },
+      { num:3, name:"Huang Cheng Lao Ma 皇城老妈",     sub:"Lunch · 49 Sangui Front St",            lat:30.661623, lng:104.073464, color:"#C0202A" },
+      { num:4, name:"Wuhou Shrine + Jinli 武侯祠",    sub:"Afternoon · 231 Wuhou Shrine St",       lat:30.6485,   lng:104.0436,   color:"#C0202A" },
+      { num:5, name:"Chen Mapo Tofu 陈麻婆豆腐",      sub:"Dinner · 51 Donghuamen St",             lat:30.664511, lng:104.068844, color:"#C0202A" },
+      { num:6, name:"Shufeng Yayun Opera 蜀风雅韵",   sub:"8:00 PM · 73 Qintai Rd, Culture Park",  lat:30.6637,   lng:104.0423,   color:"#C8922A" }
+    ]
+  },
+  'day3-map': {
+    center: { lat: 30.690, lng: 104.098 },
+    locs: [
+      { num:1, name:"Giant Panda Base 大熊猫繁育研究基地", sub:"7:30 AM · arrive early for feeding",  lat:30.7379,   lng:104.1399,   color:"#2E7A32" },
+      { num:2, name:"Chun Yang Guan Noodles 纯阳馆",    sub:"Lunch · wontons + dandan mian",        lat:30.6705,   lng:104.0563,   color:"#C0202A" },
+      { num:3, name:"Kuanzhai Alley 宽窄巷子",           sub:"Afternoon · Qing Dynasty lanes",       lat:30.6712,   lng:104.0551,   color:"#C0202A" },
+      { num:4, name:"Fuqin Night Market 琴台路夜市",     sub:"Dinner · local street food",           lat:30.676683, lng:104.040685, color:"#C0202A" },
+      { num:5, name:"Jiuyan Qiao Bar Strip 九眼桥",      sub:"Evening · riverside bars",             lat:30.6469,   lng:104.0828,   color:"#3a3a8a" }
+    ]
+  },
+  'day4-map': {
+    center: { lat: 30.998, lng: 103.617 },
+    locs: [
+      { num:1, name:"Zhongshuge Bookstore 钟书阁",       sub:"~9:30 AM · beautiful bookstore",       lat:30.959568, lng:103.616146, color:"#7B4EA0" },
+      { num:2, name:"Wenmiao Mountain Street 文庙山街",  sub:"~10:30 AM · teahouses + local life",   lat:30.9987,   lng:103.6167,   color:"#7B4EA0" },
+      { num:3, name:"Dujiangyan Scenic Area 都江堰景区", sub:"Afternoon · UNESCO irrigation system", lat:30.9978,   lng:103.6172,   color:"#7B4EA0" },
+      { num:4, name:"Zhongyazi / Yangliu Night Market",  sub:"Dinner · 45 Beijie St",                lat:30.9975,   lng:103.6204,   color:"#7B4EA0" },
+      { num:5, name:"Blue-tear River Walk",               sub:"After dinner · Nanjie St riverside",   lat:30.9988,   lng:103.6178,   color:"#7B4EA0" }
+    ]
+  },
+  'day5-map': {
+    center: { lat: 30.667, lng: 104.086 },
+    locs: [
+      { num:1, name:"Wenshu Monastery 文殊院",           sub:"Morning · Metro L1 Wenshu Yuan",       lat:30.6826,   lng:104.0648,   color:"#C0202A" },
+      { num:2, name:"Chunxi Road + Taikoo Li 春熙路",   sub:"~10 AM · browse + coffee",             lat:30.6576,   lng:104.0808,   color:"#C0202A" },
+      { num:3, name:"Long Chaoshou 龙抄手",              sub:"Lunch · century-old wontons",          lat:30.6579,   lng:104.0796,   color:"#C0202A" },
+      { num:4, name:"Eastern Suburb Memory 东郊记忆",   sub:"Afternoon · converted factory arts",    lat:30.6611,   lng:104.1267,   color:"#C0202A" },
+      { num:5, name:"Shuyanfu Imperial Banquet 蜀宴赋",  sub:"6:30 PM · arrive 5 PM for costume",    lat:30.6601,   lng:104.1258,   color:"#B83280" }
+    ]
+  },
+  'day6-map': {
+    center: { lat: 29.567, lng: 106.556 },
+    locs: [
+      { num:1, name:"Chengdu East Station 成都东站",     sub:"~10 AM · bullet train to Chongqing",   lat:30.6231,   lng:104.1414,   color:"#6D4C41" },
+      { num:2, name:"Ciqikou Ancient Town 磁器口",       sub:"Afternoon · Ming Dynasty lanes",       lat:29.5706,   lng:106.4779,   color:"#1D7070" },
+      { num:3, name:"Fanbatuo Restaurant 饭粑跎",        sub:"Dinner · home-style Chongqing",        lat:29.5723,   lng:106.5219,   color:"#1D7070" },
+      { num:4, name:"Jiefangbei + Jiangbeizui 解放碑",  sub:"Evening · skyline views",              lat:29.5572,   lng:106.5784,   color:"#1D7070" },
+      { num:5, name:"Sense Scene Hotel",                 sub:"Base · near Hongya Cave",              lat:29.5638,   lng:106.5702,   color:"#1D7070" }
+    ]
+  },
+  'day7-map': {
+    center: { lat: 29.560, lng: 106.575 },
+    locs: [
+      { num:1, name:"Shancheng Walkway 山城步道",        sub:"Morning · hillside trail",             lat:29.5581,   lng:106.5743,   color:"#1D7070" },
+      { num:2, name:"Huguang Guild Hall 湖广会馆",       sub:"Late morning · Ming/Qing architecture",lat:29.5564,   lng:106.5826,   color:"#1D7070" },
+      { num:3, name:"Chaotianmen 朝天门",                sub:"River confluence viewpoint",           lat:29.5633,   lng:106.5900,   color:"#1D7070" },
+      { num:4, name:"Hongya Cave 洪崖洞",                sub:"5:30 PM · arrive at dusk",             lat:29.5647,   lng:106.5706,   color:"#1D7070" },
+      { num:5, name:"Zhoushixiong Hot Pot 周师兄",       sub:"Dinner · authentic Chongqing hotpot",  lat:29.5631,   lng:106.5714,   color:"#C0202A" }
+    ]
+  },
+  'day8-map': {
+    center: { lat: 29.564, lng: 106.545 },
+    locs: [
+      { num:1, name:"Liziba Station 李子坝站",           sub:"~9 AM · train through a building",     lat:29.5658,   lng:106.5291,   color:"#1D7070" },
+      { num:2, name:"Eling Park 鹅岭公园",               sub:"10 AM · panoramic river views",        lat:29.5679,   lng:106.5327,   color:"#1D7070" },
+      { num:3, name:"Three Gorges Museum 三峡博物馆",    sub:"Afternoon · free, 280k relics",        lat:29.5594,   lng:106.5510,   color:"#1D7070" },
+      { num:4, name:"Lao Ganjia Crayfish 老甘家小龙虾", sub:"Dinner · garlic crayfish institution",  lat:29.5543,   lng:106.5479,   color:"#C0202A" },
+      { num:5, name:"Bayi Food Street 八一好吃街",       sub:"Evening · ice jelly + snacks",         lat:29.5618,   lng:106.5631,   color:"#1D7070" }
+    ]
+  },
+  'day9-map': {
+    center: { lat: 29.548, lng: 106.573 },
+    locs: [
+      { num:1, name:"Eighteen Stairs 十八梯",            sub:"Morning · historic stilt houses",      lat:29.5540,   lng:106.5759,   color:"#1D7070" },
+      { num:2, name:"Nanshan 南山",                      sub:"Afternoon · best city panorama",       lat:29.5199,   lng:106.5705,   color:"#1D7070" },
+      { num:3, name:"Dayu Hot Pot 大渝火锅",             sub:"Dinner · farewell Chongqing hotpot",   lat:29.5638,   lng:106.5812,   color:"#C0202A" },
+      { num:4, name:"Jiangbeizui Rooftop Bar",           sub:"Evening · cocktails + river views",    lat:29.5754,   lng:106.5877,   color:"#1D7070" }
+    ]
+  },
+  'day10-map': {
+    center: { lat: 29.345, lng: 110.509 },
+    locs: [
+      { num:1, name:"Chongqing East Station → depart",  sub:"Morning · HSR to Zhangjiajie",         lat:29.5368,   lng:106.6435,   color:"#6D4C41" },
+      { num:2, name:"Zhangjiajie West Station",          sub:"~noon · arrive",                       lat:29.3732,   lng:110.4787,   color:"#2E7A32" },
+      { num:3, name:"Jinpu Ju Hotel",                    sub:"Check in · near Wulingyuan East Gate", lat:29.3458,   lng:110.5366,   color:"#2E7A32" },
+      { num:4, name:"Wulingyuan East Gate",              sub:"Scope layout + buy supplies",          lat:29.3453,   lng:110.5388,   color:"#2E7A32" }
+    ]
+  },
+  'day11-map': {
+    center: { lat: 29.338, lng: 110.432 },
+    locs: [
+      { num:1, name:"Wulingyuan East Gate entry",        sub:"7:30 AM · timed slot",                 lat:29.3453,   lng:110.5388,   color:"#2E7A32" },
+      { num:2, name:"Bailong Elevator 百龙天梯",         sub:"8 AM · world's tallest outdoor lift",   lat:29.3272,   lng:110.4347,   color:"#2E7A32" },
+      { num:3, name:"Yuanjiajie 袁家界 — Avatar Mtns",  sub:"8:30 AM · Hallelujah Mountains",       lat:29.3417,   lng:110.4261,   color:"#2E7A32" },
+      { num:4, name:"Tianzi Mountain 天子山",            sub:"11:30 AM · King of Peak Forest",       lat:29.3697,   lng:110.4088,   color:"#2E7A32" }
+    ]
+  },
+  'day12-map': {
+    center: { lat: 29.335, lng: 110.460 },
+    locs: [
+      { num:1, name:"Golden Whip Stream 金鞭溪",         sub:"7:30 AM · 5.7km valley hike",          lat:29.3321,   lng:110.4554,   color:"#2E7A32" },
+      { num:2, name:"Wulingyuan town lunch",             sub:"Exit park · Hunan food near East Gate", lat:29.3453,   lng:110.5388,   color:"#2E7A32" },
+      { num:3, name:"Huangshizhai 黄石寨",               sub:"Afternoon · largest viewing platform",  lat:29.3172,   lng:110.4478,   color:"#2E7A32" }
+    ]
+  },
+  'day13-map': {
+    center: { lat: 30.580, lng: 104.080 },
+    locs: [
+      { num:1, name:"Zhangjiajie Station → Chengdu",    sub:"Morning · HSR ~4-5 hrs",               lat:29.3732,   lng:110.4787,   color:"#6D4C41" },
+      { num:2, name:"The Temple House 博舍",             sub:"Check in · next to Taikoo Li",         lat:30.6562,   lng:104.0818,   color:"#C0202A" },
+      { num:3, name:"Skewer Hotpot · Kuixinglou St",    sub:"Evening dinner",                       lat:30.6638,   lng:104.0538,   color:"#C0202A" },
+      { num:4, name:"Yulin Road Bar Strip 玉林路",       sub:"Late evening · local neighbourhood bars",lat:30.6417,  lng:104.0684,   color:"#C0202A" }
+    ]
+  },
+  'day14-map': {
+    center: { lat: 30.627, lng: 104.053 },
+    locs: [
+      { num:1, name:"Jinsha Site Museum 金沙遗址博物馆", sub:"Morning option · Bronze Age site",     lat:30.6823,   lng:104.0233,   color:"#C0202A" },
+      { num:2, name:"Shuangliu Rabbit Head 双流老妈兔头",sub:"Lunch · iconic Chengdu snack",        lat:30.6570,   lng:104.0797,   color:"#C0202A" },
+      { num:3, name:"Taikoo Li + Wangping St 太古里",   sub:"Afternoon · final stroll + shopping",  lat:30.6562,   lng:104.0818,   color:"#C0202A" },
+      { num:4, name:"Tianfu Airport TFU",                sub:"11 PM · Metro L18 ~50 min",            lat:30.3061,   lng:103.9491,   color:"#6D4C41" }
+    ]
+  }
+};
+
+function buildMap(mapId) {
+  if (mapInitialised[mapId]) return;
+  var el = document.getElementById(mapId);
+  if (!el) return;
+  mapInitialised[mapId] = true;
+
+  var dayData = ALL_DAY_LOCATIONS[mapId];
+  if (!dayData) return;
+
+  var map = new google.maps.Map(el, {
+    zoom: 13,
+    center: dayData.center,
+    mapTypeControl: false,
+    streetViewControl: false,
+    fullscreenControl: false,
+    styles: GMAPS_STYLE
+  });
+
+  var infoWindow = new google.maps.InfoWindow();
+  var bounds = new google.maps.LatLngBounds();
+
+  dayData.locs.forEach(function(loc) {
+    var position = { lat: loc.lat, lng: loc.lng };
+    bounds.extend(position);
+
+    var marker = new google.maps.Marker({
+      position: position,
+      map: map,
+      label: { text: String(loc.num), color: '#ffffff', fontFamily: 'DM Sans, sans-serif', fontSize: '11px', fontWeight: '700' },
+      icon: { path: google.maps.SymbolPath.CIRCLE, fillColor: loc.color, fillOpacity: 1, strokeColor: '#ffffff', strokeWeight: 2, scale: 14 },
+      title: loc.name
+    });
+
+    marker.addListener('click', function() {
+      infoWindow.setContent(
+        '<div style="font-family:DM Sans,sans-serif;padding:4px 2px;min-width:160px">' +
+        '<div style="font-weight:600;font-size:13px;color:#18100A;margin-bottom:2px">' + loc.name + '</div>' +
+        '<div style="font-size:11px;color:#7a6555">' + loc.sub + '</div>' +
+        '</div>'
+      );
+      infoWindow.open(map, marker);
+    });
+  });
+
+  map.fitBounds(bounds, { top: 40, bottom: 40, left: 40, right: 40 });
+}
+
+var _origToggleDay = window.toggleDay;
+window.toggleDay = function(el) {
+  _origToggleDay(el);
+  if (el.querySelector('.day-body.open')) {
+    Object.keys(ALL_DAY_LOCATIONS).forEach(function(mapId) {
+      if (el.querySelector('#' + mapId)) {
+        setTimeout(function() { buildMap(mapId); }, 100);
+      }
+    });
+  }
+};
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJFoa4mPGeAdW3QjzSiIMK3OIIVptX-vI&callback=Function.prototype" async defer></script>
 </body>
 </html>
