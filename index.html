@@ -417,10 +417,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
       <div class="nav-dot" style="background:var(--cdu);"></div>
       <div><span class="nav-label">Chengdu</span><span class="nav-dates">12–16 May · 4 nights</span></div>
     </div>
-    <div class="nav-item" onclick="showPanel('dujiangyan',this)">
-      <div class="nav-dot" style="background:var(--djy);"></div>
-      <div><span class="nav-label">Dujiangyan</span><span class="nav-dates">14 May · day trip</span></div>
-    </div>
     <div class="nav-item" onclick="showPanel('chongqing',this)">
       <div class="nav-dot" style="background:var(--cqg);"></div>
       <div><span class="nav-label">Chongqing</span><span class="nav-dates">16–20 May · 3 nights</span></div>
@@ -890,37 +886,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
       </div>
     </div>
 
-    <!-- ═══ DUJIANGYAN ═══ -->
-    <div class="panel" id="panel-dujiangyan">
       <div class="section-header sh-dujiangyan">
-        <div class="section-eyebrow">China · Day 4 · Day Trip from Chengdu</div>
-        <div class="section-title"><em>Dujiangyan</em></div>
-        <div class="section-zh"><ruby>都<rt>dōu</rt></ruby><ruby>江<rt>jiāng</rt></ruby><ruby>堰<rt>yàn</rt></ruby> · <ruby>世<rt>shì</rt></ruby><ruby>界<rt>jiè</rt></ruby><ruby>遗<rt>yí</rt></ruby><ruby>产<rt>chǎn</rt></ruby></div>
-        <div class="section-subtitle">Thursday 14 May · Return day trip · 1h 20min from Chengdu by metro + HSR</div>
-        <div class="section-tags">
-          <span class="tag tag-culture">UNESCO World Heritage</span>
-          <span class="tag tag-culture">Zhongshuge Bookstore</span>
-          <span class="tag tag-food">Wenmiao Street · Yuamyuan Noodles · Zhongyazi Duck</span>
-        </div>
-      </div>
-      <div class="days-container">
-        <div class="tip-box purple"><strong>Getting there:</strong> Tianfu Square Stn → Metro Line 2 → Xipu (~50 min, ¥5) → cross platform → high-speed rail → Lidui Park Station (~20 min, ¥15). <strong>Book the train on Trip.com or 12306 the night before</strong> — you can't use cash at HSR gates as a foreigner. Last train back is ~8pm — check the return schedule before you leave Chengdu.</div>
-        <div class="day-block" onclick="toggleDay(this)">
-          <div class="day-header"><div class="day-number">4</div><div class="day-info"><div class="day-date-str">Thursday 14 May</div><div class="day-title-str">Zhongshuge Bookstore, Wenmiao Street, Dujiangyan Scenic Area, Blue-tear River Walk</div></div><div class="day-toggle">›</div></div>
-          <div class="day-body"><div class="timeline">
-            <div class="tl-item"><div class="tl-time">8:00 AM</div><div class="tl-dot" style="background:var(--djy)"></div><div class="tl-content"><div class="tl-act-title">Metro + HSR to Dujiangyan <span class="nav-badge">Pre-book on Trip.com or 12306 the night before</span></div><div class="tl-act-desc">Tianfu Square Station → Metro Line 2 → Xipu (~50 min) → cross platform → high-speed rail → Dujiangyan Station (~20 min). Total ~1h 10min. Book digitally — no cash at HSR gates as a foreigner.</div></div></div>
-            <div class="tl-item"><div class="tl-time">~9:30 AM</div><div class="tl-dot" style="background:var(--djy)"></div><div class="tl-content"><div class="tl-act-title"><ruby>钟<rt>zhōng</rt></ruby><ruby>书<rt>shū</rt></ruby><ruby>阁<rt>gé</rt></ruby> Zhongshuge Bookstore ⭐ <span class="cost-badge">Free · Inside Rongchuang Mao (Sunac) Mall, 2F</span></div><div class="tl-act-desc">One of the world's 10 most beautiful bookstores (2025, 1000 Libraries ranking, 200,000+ votes). Designed by X+Living — C-shaped walnut shelves, mirrored infinity ceilings, black tile floors that make the book tables look like boats on a lake. Free entry. Small café inside. Bring a wide-angle lens.</div></div></div>
-            <div class="tl-item"><div class="tl-time">~10:30 AM</div><div class="tl-dot" style="background:var(--djy)"></div><div class="tl-content"><div class="tl-act-title">Didi to <ruby>仰<rt>yǎng</rt></ruby><ruby>天<rt>tiān</rt></ruby><ruby>窝<rt>wō</rt></ruby><ruby>广<rt>guǎng</rt></ruby><ruby>场<rt>chǎng</rt></ruby> Yangtianwo Square → <ruby>文<rt>wén</rt></ruby><ruby>庙<rt>miào</rt></ruby><ruby>山<rt>shān</rt></ruby><ruby>街<rt>jiē</rt></ruby> Wenmiao Mountain Street</div><div class="tl-act-desc">5 min walk from the square brings you to Wenmiao Mountain Street (<ruby>文<rt>wén</rt></ruby><ruby>庙<rt>miào</rt></ruby><ruby>山<rt>shān</rt></ruby><ruby>街<rt>jiē</rt></ruby>) — a historic lane lined with teahouses where you can stop for tea, plus street vendors and unhurried local life.</div></div></div>
-            <div class="tl-item"><div class="tl-time">Lunch</div><div class="tl-dot" style="background:var(--djy)"></div><div class="tl-content"><div class="tl-act-title"><ruby>文<rt>wén</rt></ruby><ruby>买<rt>mǎi</rt></ruby><ruby>街<rt>jiē</rt></ruby> Wenmai Street — <ruby>园<rt>yuán</rt></ruby><ruby>买<rt>mǎi</rt></ruby><ruby>园<rt>yuán</rt></ruby> Yuamyuan Noodle Restaurant</div><div class="tl-act-desc">Eat on Wenmai Street before heading into the scenic area. Yuamyuan is the recommended noodle spot here.</div></div></div>
-            <div class="tl-item"><div class="tl-time">Afternoon</div><div class="tl-dot" style="background:var(--djy)"></div><div class="tl-content"><div class="tl-act-title"><ruby>都<rt>dōu</rt></ruby><ruby>江<rt>jiāng</rt></ruby><ruby>堰<rt>yàn</rt></ruby><ruby>景<rt>jǐng</rt></ruby><ruby>区<rt>qū</rt></ruby> Dujiangyan Scenic Area <span class="cost-badge">¥80pp · 3–4 hrs</span></div><div class="tl-act-desc"><strong>Main route:</strong> Lidui Gate Entrance → Qingxi Garden → Fulong Temple (Bottle-Neck Channel) → Flying Sand Weir → Fish Mouth Levee → Anlan Suspension Bridge → Two Kings Temple → Yulei Mountain Square → Guanxian Ancient City. Wander West Street (Xijie) and Yangliu River Street.<br><br><strong>Alt route:</strong> Enter Gate 6 (Qinyan Tower <ruby>秦<rt>qín</rt></ruby><ruby>堰<rt>yàn</rt></ruby><ruby>楼<rt>lóu</rt></ruby>) → Erwang Temple → Anlan Suspension Bridge → Yuzui Fish Mouth → Feishang Spillway → Baopingkou → Fulong Temple → exit South Gate.</div></div></div>
-            <div class="tl-item"><div class="tl-time">Dinner</div><div class="tl-dot" style="background:var(--djy)"></div><div class="tl-content"><div class="tl-act-title"><ruby>钟<rt>zhōng</rt></ruby><ruby>鸭<rt>yā</rt></ruby><ruby>子<rt>zi</rt></ruby> Zhongyazi <span class="cost-badge">~¥50–80pp</span> or Night Market @Yangliu Street</div><div class="tl-act-desc">Zhongyazi is a Non-Material Cultural Heritage duck specialist — slow-braised duck with Sichuan aromatics. Or graze the Night Market stalls on Yangliu Street in Dujiangyan Old Town instead.</div></div></div>
-            <div class="tl-item"><div class="tl-time">After dinner</div><div class="tl-dot" style="background:var(--djy)"></div><div class="tl-content"><div class="tl-act-title">Blue-tear river walk 💧</div><div class="tl-act-desc">Walk along the Neijiang river from Nanqiao bridge upstream, passing the Tianfuyuan bridge, ending at Guanxian Xuanhua Gate. Beautiful in the evening.</div></div></div>
-            <div class="tl-item"><div class="tl-time">~8:00 PM</div><div class="tl-dot" style="background:var(--trv)"></div><div class="tl-content"><div class="tl-act-title">Return HSR to Chengdu <span class="nav-badge">Last train ~8pm — check schedule</span></div><div class="tl-act-desc">Didi to Dujiangyan Railway Station → HSR ~20 min to Xipu → cross-platform to Metro Line 2 → ~50 min back to city. Back in Chengdu by ~9:30pm.</div></div></div>
-          </div></div>
-        </div>
-      </div>
-    </div>
-
     <!-- ═══ CHONGQING ═══ -->
     <div class="panel" id="panel-chongqing">
       <div class="section-header sh-chongqing">
