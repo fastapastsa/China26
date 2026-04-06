@@ -1040,6 +1040,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
           <div class="day-body"><div class="timeline">
             <div class="tl-item"><div class="tl-time">Morning</div><div class="tl-dot" style="background:var(--trv)"></div><div class="tl-content"><div class="tl-act-title">Hotel checkout → Didi to station → HSR to Chengdu <span class="cost-badge">¥200–280pp · ~4–5 hrs</span></div><div class="tl-act-desc">Didi from Wulingyuan to Zhangjiajie station: ~45 min, ¥60–80. Depart by 9 AM → arrive Chengdu East ~2 PM. Check in to The Temple House (<ruby>博<rt>bó</rt></ruby><ruby>舍<rt>shě</rt></ruby>) — right next to Taikoo Li. Rest, shower, recover.</div></div></div>
             <div class="tl-item"><div class="tl-time">Evening</div><div class="tl-dot" style="background:var(--cdu)"></div><div class="tl-content"><div class="tl-act-title"><ruby>冒<rt>mào</rt></ruby><ruby>椒<rt>jiāo</rt></ruby><ruby>火<rt>huǒ</rt></ruby><ruby>辣<rt>là</rt></ruby> <ruby>串<rt>chuàn</rt></ruby><ruby>串<rt>chuàn</rt></ruby><ruby>香<rt>xiāng</rt></ruby> skewer hotpot dinner <span class="cost-badge">~¥80–100pp</span></div><div class="tl-act-desc">Chengdu's version of hotpot — skewers rather than a communal pot. Choose ingredients from a display fridge, cook at your table. Completely different from Chongqing hotpot.</div><div class="nav-badge">📍 Kuixinglou Street, Qingyang District · Metro Line 4, Kuixinglou Stn</div></div></div>
+            <div class="tl-item"><div class="tl-time">~6:00 PM</div><div class="tl-dot" style="background:var(--cdu)"></div><div class="tl-content"><div class="tl-act-title">SKP Chengdu Bamboo Fountain (Tower of Life) 🎋💦</div><div class="tl-act-desc">Futuristic shopping complex with iconic illuminated bamboo fountains. Free entry to outdoor area. Watch the water displays and light shows cycle through the evening. Most stunning after dark with full lighting effects. Perfect for photos and relaxing after travel.</div><div class="nav-badge">📍 SKP Chengdu complex · Open 10:00 AM – 10:00 PM daily · Fountain lights best viewed 6:00 PM – 10:30 PM</div></div></div>
             <div class="tl-item"><div class="tl-time">Late evening</div><div class="tl-dot" style="background:var(--cdu)"></div><div class="tl-content"><div class="tl-act-title"><ruby>玉<rt>yù</rt></ruby><ruby>林<rt>lín</rt></ruby><ruby>路<rt>lù</rt></ruby> Yulin Road — Chengdu's best local bar strip</div><div class="tl-act-desc">Cocktail or craft beer at a neighbourhood bar. More local than Jiuyanqiao — feels like a Chengdu neighbourhood rather than a tourist strip. Easy first night back in the city.</div></div></div>
           </div>
           <div class="day-map-wrap" onclick="event.stopPropagation()">
@@ -1367,8 +1368,8 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
     <div class="panel" id="panel-metro">
       <div class="section-header" style="background:linear-gradient(90deg,#1a3a6b,#1d5aa0)">
         <div class="section-eyebrow">Transit reference</div>
-        <div class="section-title">Metro <em>Maps</em></div>
-        <div class="section-subtitle">Chengdu &amp; Chongqing subway networks</div>
+        <div class="section-title">Transit &amp; Regional <em>Maps</em></div>
+        <div class="section-subtitle">City metros, scenic routes, and navigation guides</div>
       </div>
       <div style="padding:28px 32px;max-width:1100px">
 
@@ -1382,13 +1383,23 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
           />
         </div>
 
-        <div>
+        <div style="margin-bottom:40px">
           <div style="font-size:18px;font-weight:600;color:var(--ink);margin-bottom:6px">🚇 Chongqing Metro</div>
           <div style="font-size:13px;color:var(--ink-mid);margin-bottom:16px">Line 2 passes through the Liziba residential building — a must-ride. Line 1 and 6 link the main tourist areas.</div>
           <img
             src="https://www.travelchinaguide.com/images/map/chongqing/subway.jpg"
             alt="Chongqing Metro Map"
             style="width:100%;border-radius:10px;border:1px solid var(--paper-mid);display:block"
+          />
+        </div>
+
+        <div>
+          <div style="font-size:18px;font-weight:600;color:var(--ink);margin-bottom:6px">🏔️ Tianmen Mountain Route (Zhangjiajie Day Trip)</div>
+          <div style="font-size:13px;color:var(--ink-mid);margin-bottom:16px">Scenic route map for Tianmen Mountain on arrival day — cable car options, viewing platforms, and trail routes. Essential reference for navigation in Zhangjiajie on Day 10.</div>
+          <img
+            src="tianmen-mountain-map.png"
+            alt="Tianmen Mountain Route Map"
+            style="width:100%;border:1px solid var(--paper-mid);border-radius:10px;display:block"
           />
         </div>
 
@@ -1615,7 +1626,8 @@ var ALL_DAY_LOCATIONS = {
       { num:1, name:"Zhangjiajie Station → Chengdu",    sub:"Morning · HSR ~4-5 hrs",               lat:29.3732,   lng:110.4787,   color:"#6D4C41" },
       { num:2, name:"The Temple House 博舍",             sub:"Check in · next to Taikoo Li",         lat:30.6562,   lng:104.0818,   color:"#C0202A" },
       { num:3, name:"Skewer Hotpot · Kuixinglou St",    sub:"Evening dinner",                       lat:30.6638,   lng:104.0538,   color:"#C0202A" },
-      { num:4, name:"Yulin Road Bar Strip 玉林路",       sub:"Late evening · local neighbourhood bars",lat:30.6417,  lng:104.0684,   color:"#C0202A" }
+      { num:4, name:"SKP Chengdu Bamboo Fountain",      sub:"6:00 PM–10:30 PM · illuminated display", lat:30.6724,   lng:104.0688,   color:"#C0202A" },
+      { num:5, name:"Yulin Road Bar Strip 玉林路",       sub:"Late evening · local neighbourhood bars",lat:30.6417,  lng:104.0684,   color:"#C0202A" }
     ]
   },
   'day14-map': {
