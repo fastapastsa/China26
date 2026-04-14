@@ -88,7 +88,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
 .nav-tile-sub{font-size:10px;color:rgba(253,246,236,.38);display:block;margin-top:1px}
 
 /* CONTENT */
-.content{overflow:hidden}
+.content{overflow-y:auto}
 .panel{display:none}
 .panel.active{display:block}
 
@@ -209,7 +209,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
 .day-body.open{display:block}
 
 /* TIMELINE */
-.timeline{padding-top:18px}
+.timeline{padding-top:18px;display:flex;flex-direction:column}
 .tl-item{display:flex;gap:14px;margin-bottom:18px;position:relative}
 .tl-item:not(:last-child)::before{content:'';position:absolute;left:37px;top:26px;bottom:-6px;width:1px;background:var(--paper-mid)}
 .tl-time{font-size:11px;color:var(--ink-light);min-width:52px;padding-top:3px;text-align:right;flex-shrink:0}
@@ -485,7 +485,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
           <div class="ov-cell"><div class="ov-cell-label">Trip style</div><div class="ov-cell-value">Food-first</div><div class="ov-cell-sub">Mid-range hotels, local-first dining, key attractions without tourist traps</div></div>
         </div>
         <div class="route-timeline" style="margin-bottom:36px">
-          <div class="rt-item"><div class="rt-left"><div class="rt-dot" style="background:var(--cdu)"></div><div class="rt-line"></div></div><div class="rt-right"><div class="rt-city-row"><div class="rt-city-name">Chengdu <span style="font-weight:300;color:var(--ink-light)">+ Dujiangyan day trip</span></div><div class="rt-city-dates">12–16 May · 4 nights</div></div><div class="rt-city-desc">Base at The Hidden House (Chunxi Road). Giant Panda Base, Wuhou Shrine, Jinli, Kuanzhai Alley, Sichuan Opera, Shuyanfu imperial banquet. Day trip to Dujiangyan irrigation system (UNESCO) and Zhongshuge bookstore.</div></div></div>
+          <div class="rt-item"><div class="rt-left"><div class="rt-dot" style="background:var(--cdu)"></div><div class="rt-line"></div></div><div class="rt-right"><div class="rt-city-row"><div class="rt-city-name">Chengdu <span style="font-weight:300;color:var(--ink-light)">+ Dujiangyan day trip</span></div><div class="rt-city-dates">12–16 May · 4 nights</div></div><div class="rt-city-desc">Base at Licheng Hotel (Chengdu Century City Global Center). Giant Panda Base, Wuhou Shrine, Jinli, Kuanzhai Alley, Sichuan Opera, Shuyanfu imperial banquet. Day trip to Dujiangyan irrigation system (UNESCO) and Zhongshuge bookstore.</div></div></div>
           <div class="rt-transport"><div class="rt-transport-line"></div>🚆 Bullet train Chengdu East → Chongqing North · 1h 30min · ¥160–200pp</div>
           <div class="rt-item"><div class="rt-left"><div class="rt-dot" style="background:var(--cqg)"></div><div class="rt-line"></div></div><div class="rt-right"><div class="rt-city-row"><div class="rt-city-name">Chongqing</div><div class="rt-city-dates">16–20 May · 3 nights</div></div><div class="rt-city-desc">Sense Scene Hotel at Hongya Cave. Shancheng Walkway, Ciqikou, Liziba Station through-building, Three Gorges Museum, iconic hotpot, crayfish, Bayi Food Street. Night views over the Yangtze.</div></div></div>
           <div class="rt-transport"><div class="rt-transport-line"></div>🚆 HSR Chongqing → Zhangjiajie · ~4–5 hrs · ¥200–280pp</div>
@@ -493,7 +493,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
           <div class="rt-transport"><div class="rt-transport-line"></div>🚆 HSR Zhangjiajie → Chengdu East · ~4–5 hrs · ¥200–280pp</div>
           <div class="rt-item"><div class="rt-left"><div class="rt-dot" style="background:var(--cdu)"></div></div><div class="rt-right"><div class="rt-city-row"><div class="rt-city-name">Chengdu <span style="font-weight:300;color:var(--ink-light)">return</span></div><div class="rt-city-dates">23–25 May · 1 night</div></div><div class="rt-city-desc">The Temple House (next to Taikoo Li). Final meals, last museum, Xiaolong Kan hotpot farewell dinner. Depart Tianfu Airport 1:40 AM 25 May, arrive Melbourne 2:20 PM.</div></div></div>
         </div>
-        <div class="tip-box"><strong>Accommodation summary:</strong> Chengdu (4 nights): The Hidden House, Chunxi Road. Chongqing (3 nights): Sense Scene Hotel, Hongya Cave. Zhangjiajie (2 nights): Jinpu Ju Hotel, near Wulingyuan park entrance. Chengdu return (1 night): The Temple House, next to Taikoo Li — boutique luxury, courtyard, Small Luxury Hotels of the World. Book all hotels via Booking.com or Trip.com now; May is peak season for domestic Chinese travellers.</div>
+        <div class="tip-box"><strong>Accommodation summary:</strong> Chengdu (4 nights): Licheng Hotel, Century City Global Center. Chongqing (3 nights): Sense Scene Hotel, Hongya Cave. Zhangjiajie (2 nights): Jinpu Ju Hotel, near Wulingyuan park entrance. Chengdu return (1 night): The Temple House, next to Taikoo Li — boutique luxury, courtyard, Small Luxury Hotels of the World. Book all hotels via Booking.com or Trip.com now; May is peak season for domestic Chinese travellers.</div>
       </div>
     </div>
 
@@ -569,7 +569,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
           <tr class="iti-arow">
             <td class="iti-rl" style="background:#F5EDE0"><span class="ri">🏨</span><span style="font-family:'Noto Serif SC',serif;font-size:9px"><ruby>住<rt>zhù</rt></ruby><ruby>宿<rt>sù</rt></ruby></span></td>
             <td><div class="iti-abar emp"><ruby>飞<rt>fēi</rt></ruby><ruby>行<rt>xíng</rt></ruby><ruby>中<rt>zhōng</rt></ruby></div></td>
-            <td colspan="4"><div class="iti-abar cdu"><ruby>隐<rt>yǐn</rt></ruby><ruby>栖<rt>qī</rt></ruby><ruby>堂<rt>táng</rt></ruby><ruby>精<rt>jīng</rt></ruby><ruby>品<rt>pǐn</rt></ruby><ruby>酒<rt>jiǔ</rt></ruby><ruby>店<rt>diàn</rt></ruby> — The Hidden House, Chunxi Road / Tianfu Square Branch</div></td>
+            <td colspan="4"><div class="iti-abar cdu">Licheng Hotel — Chengdu Century City Global Center</div></td>
             <td><div class="iti-abar emp">Check out → travel</div></td>
             <td colspan="3"><div class="iti-abar cqg">SENSE SCENE HOTEL — <ruby>感<rt>gǎn</rt></ruby><ruby>觉<rt>jué</rt></ruby><ruby>场<rt>chǎng</rt></ruby><ruby>景<rt>jǐng</rt></ruby><ruby>酒<rt>jiǔ</rt></ruby><ruby>店<rt>diàn</rt></ruby> (Hongya Cave <ruby>洪<rt>hóng</rt></ruby><ruby>崖<rt>yá</rt></ruby><ruby>洞<rt>dòng</rt></ruby>)</div></td>
             <td><div class="iti-abar emp">Travel day</div></td>
@@ -624,7 +624,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
             </td>
             <td class="iti-cell mrn">
               <div class="iti-ct"><div class="dot"></div>Chengdu → Chongqing</div>
-              <div class="iti-cb">Check out Hidden House. Bullet train.<div class="iti-nav">🚆 CDU East → CQ North: 1h 30min, ¥160–200pp. Every 30 min.</div>Arrive, check in Sense Scene Hotel.</div>
+              <div class="iti-cb">Check out Licheng Hotel. Bullet train.<div class="iti-nav">🚆 CDU East → CQ North: 1h 30min, ¥160–200pp. Every 30 min.</div>Arrive, check in Sense Scene Hotel.</div>
             </td>
             <td class="iti-cell mrn">
               <div class="iti-ct"><div class="dot"></div><ruby>奎<rt>kuí</rt></ruby><ruby>星<rt>xīng</rt></ruby><ruby>楼<rt>lóu</rt></ruby><ruby>广<rt>guǎng</rt></ruby><ruby>场<rt>chǎng</rt></ruby> Kuixing Tower → <ruby>观<rt>guān</rt></ruby><ruby>音<rt>yīn</rt></ruby><ruby>桥<rt>qiáo</rt></ruby></div>
@@ -795,7 +795,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
         </div>
       </div>
       <div class="days-container">
-        <div class="tip-box blue"><strong>Hotel:</strong> <ruby>隐<rt>yǐn</rt></ruby><ruby>栖<rt>qī</rt></ruby><ruby>堂<rt>táng</rt></ruby><ruby>精<rt>jīng</rt></ruby><ruby>品<rt>pǐn</rt></ruby><ruby>酒<rt>jiǔ</rt></ruby><ruby>店<rt>diàn</rt></ruby> The Hidden House (Chunxi Road / Tianfu Square Branch). Central location — walking distance to IFS, Taikoo Li, and the metro. <strong>Getting from CTU airport:</strong> Metro Line 18 → South Railway Station, change to Line 1 → ~50 min, ¥10. Or taxi ~¥80–100, 45 min. Hotel won't have your room ready until ~2pm on arrival day — drop bags at the lobby and explore immediately.</div>
+        <div class="tip-box blue"><strong>Hotel:</strong> Licheng Hotel at Chengdu Century City Global Center. Located in the Century City complex — modern, central location with excellent shopping and dining nearby. <strong>Getting from CTU airport:</strong> Metro Line 18 → South Railway Station, change to Line 1 → ~50 min, ¥10. Or taxi ~¥80–100, 45 min. Hotel won't have your room ready until ~2pm on arrival day — drop bags at the lobby and explore immediately.</div>
 
         <!-- Day 2: Arrive -->
         <div class="day-block" onclick="toggleDay(this)">
@@ -888,7 +888,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
         <div class="day-block" onclick="toggleDay(this)">
           <div class="day-header"><div class="day-number">6</div><div class="day-info"><div class="day-date-str">Saturday 16 May</div><div class="day-title-str">Check out, train to Chongqing, Jiefangbei, Luohan Temple, hotpot night</div></div><div class="day-toggle">›</div></div>
           <div class="day-body"><div class="timeline">
-            <div class="tl-item"><div class="tl-time">Morning</div><div class="tl-dot" style="background:var(--cdu)"></div><div class="tl-content"><div class="tl-act-title">Check out of The Hidden House — breakfast + last Chengdu bowl before train</div><div class="tl-act-desc">Grab a quick bite near hotel, then: <strong><ruby>花<rt>huā</rt></ruby><ruby>市<rt>shì</rt></ruby><ruby>豌<rt>wān</rt></ruby><ruby>杂<rt>zá</rt></ruby><ruby>面<rt>miàn</rt></ruby> Huashi Wanza Mian</strong> (花市总店) — order 干溜 dry style, add red oil wontons + fried egg. Your last Chengdu bowl before switching cities. Then luggage straight to Chengdu East Station.</div></div></div>
+            <div class="tl-item"><div class="tl-time">Morning</div><div class="tl-dot" style="background:var(--cdu)"></div><div class="tl-content"><div class="tl-act-title">Check out of Licheng Hotel — breakfast + last Chengdu bowl before train</div><div class="tl-act-desc">Grab a quick bite near hotel, then: <strong><ruby>花<rt>huā</rt></ruby><ruby>市<rt>shì</rt></ruby><ruby>豌<rt>wān</rt></ruby><ruby>杂<rt>zá</rt></ruby><ruby>面<rt>miàn</rt></ruby> Huashi Wanza Mian</strong> (花市总店) — order 干溜 dry style, add red oil wontons + fried egg. Your last Chengdu bowl before switching cities. Then luggage straight to Chengdu East Station.</div></div></div>
             <div class="tl-item"><div class="tl-time">~10 AM</div><div class="tl-dot" style="background:var(--trv)"></div><div class="tl-content"><div class="tl-act-title">Bullet train Chengdu East → Chongqing <span class="cost-badge">¥160–200pp · 1h–1h 17min</span></div><div class="tl-act-desc">Options: 9:25→10:27 or 10:40→11:42 (both ~1h 2m to Shapingba) · or 11:18→12:35 to Chongqing North (1h 17m). Book on Trip.com or 12306. Didi from station to Sense Scene Hotel. Check in / drop luggage.</div></div></div>
             <div class="tl-item"><div class="tl-time">~12:30 PM</div><div class="tl-dot" style="background:var(--cqg)"></div><div class="tl-content"><div class="tl-act-title">Arrive Chongqing — check in Sense Scene Hotel + afternoon snacks at <ruby>观<rt>guān</rt></ruby><ruby>音<rt>yīn</rt></ruby><ruby>桥<rt>qiáo</rt></ruby> Guanyinqiao</div><div class="tl-act-desc">Arrive ~11:42am or ~12:35pm depending on train. Check in / drop luggage at Sense Scene Hotel. Head to Guanyinqiao for afternoon exploration — roubing (jia rou jia dan), crispy mochi sesame and CQ street bites as first Chongqing tastes.</div></div></div>
             <div class="tl-item"><div class="tl-time">Afternoon</div><div class="tl-dot" style="background:var(--cqg)"></div><div class="tl-content"><div class="tl-act-title"><ruby>解<rt>jiě</rt></ruby><ruby>放<rt>fàng</rt></ruby><ruby>碑<rt>bēi</rt></ruby> Jiefangbei Walk + <ruby>罗<rt>luó</rt></ruby><ruby>汉<rt>hàn</rt></ruby><ruby>寺<rt>sì</rt></ruby> Luohan Temple + <ruby>瓦<rt>wǎ</rt></ruby><ruby>顶<rt>dǐng</rt></ruby><ruby>顶<rt>dǐng</rt></ruby> WaDingDing café</div><div class="tl-act-desc">Walk the Liberation Monument precinct. Snack: Maidashu Yuanyang Steamed Buns nearby. Visit Luohan Temple — a Buddhist temple wedged between skyscrapers, 500 arhat statues, incense smoke, genuinely moving. Then coffee at WaDingDing café directly opposite the temple.</div></div></div>
@@ -1201,7 +1201,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
         </div>
         <div class="priority-section-label ps-soon">🟡 Book soon — 2–4 weeks before departure</div>
         <div class="book-list">
-          <div class="book-item"><div class="book-priority p-soon">6</div><div><div class="book-title">All hotels — book now, cancel-friendly rates</div><div class="book-desc">The Hidden House (Chunxi Rd) · Sense Scene Hotel (Hongya Cave) · Jinpu Ju Hotel (Wulingyuan) · The Temple House (Taikoo Li). All bookable via Booking.com or Trip.com. May is peak domestic travel season in China — rooms go quickly. Book refundable rates where possible.</div></div></div>
+          <div class="book-item"><div class="book-priority p-soon">6</div><div><div class="book-title">All hotels — book now, cancel-friendly rates</div><div class="book-desc">Licheng Hotel (Century City) · Sense Scene Hotel (Hongya Cave) · Jinpu Ju Hotel (Wulingyuan) · The Temple House (Taikoo Li). All bookable via Booking.com or Trip.com. May is peak domestic travel season in China — rooms go quickly. Book refundable rates where possible.</div></div></div>
           <div class="book-item"><div class="book-priority p-soon">7</div><div><div class="book-title">Dujiangyan HSR — Xipu → DJY (Thu 14 May)</div><div class="book-desc">Book on Trip.com or 12306 the night before you go. Trains run every 30 min from ~7am. ¥15pp each way. You must pay digitally (no cash at HSR gates as a foreigner). WeChat Pay or Trip.com booking works. Allow time to cross-platform at Xipu.</div></div></div>
           <div class="book-item"><div class="book-priority p-soon">8</div><div><div class="book-title">WeChat Pay + Alipay setup — essential for China</div><div class="book-desc">WeChat Pay now accepts international Visa/Mastercard linked to a foreign bank account. Set up in Australia before departure. Alipay international version also works. Without mobile payment, you will struggle at local restaurants, stalls, and attractions.</div></div></div>
         </div>
@@ -1307,7 +1307,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
         <div class="prep-month">
           <div class="prep-month-label"><div class="prep-month-name">Now</div><div class="prep-month-sub">Immediately</div></div>
           <div class="prep-month-body">
-            <div class="prep-task"><input type="checkbox" id="pt1"><label for="pt1"><strong>Book all hotels</strong> — The Hidden House · Sense Scene Hotel · Jinpu Ju Hotel · The Temple House<small>May is peak domestic travel season. These fill up. Book refundable rates where possible.</small></label></div>
+            <div class="prep-task"><input type="checkbox" id="pt1"><label for="pt1"><strong>Book all hotels</strong> — Licheng Hotel · Sense Scene Hotel · Jinpu Ju Hotel · The Temple House<small>May is peak domestic travel season. These fill up. Book refundable rates where possible.</small></label></div>
             <div class="prep-task"><input type="checkbox" id="pt2"><label for="pt2"><strong>Book all three internal trains</strong> — CDU→CQ (16 May), CQ→ZJJ (20 May), ZJJ→CDU (23 May)<small>Use Trip.com (English interface) or 12306. Foreign cards accepted on both. Trains sell out.</small></label></div>
             <div class="prep-task"><input type="checkbox" id="pt3"><label for="pt3"><strong>Confirm visa-free entry status for Australia → China</strong><small>Check smartraveller.gov.au — 30-day visa-free policy, verify it's still in effect. Passport must be valid 6 months beyond China departure date.</small></label></div>
           </div>
@@ -1626,7 +1626,7 @@ var ALL_DAY_LOCATIONS = {
   'day2-map': {
     center: { lat: 30.655, lng: 104.060 },
     locs: [
-      { num:1, name:"The Hidden House Hotel",         sub:"Drop bags · No.1 Gulou South St",       lat:30.660407, lng:104.072307, color:"#C0202A" },
+      { num:1, name:"Licheng Hotel (Chengdu Century City Global Center)", sub:"Drop bags · Century City",    lat:30.656411, lng:104.062219, color:"#C0202A" },
       { num:2, name:"People's Park 人民公园",           sub:"Breakfast + morning tea · rowboat",     lat:30.6571,   lng:104.0572,   color:"#C0202A" },
       { num:3, name:"Xiaomingtang Dandan 小明堂担担",   sub:"Lunch · walk from People's Park",      lat:30.6605,   lng:104.0601,   color:"#C0202A" },
       { num:4, name:"Wuhou Shrine + Jinli 武侯祠",    sub:"Afternoon · 231 Wuhou Shrine St",       lat:30.6485,   lng:104.0436,   color:"#C0202A" },
@@ -1712,7 +1712,7 @@ var ALL_DAY_LOCATIONS = {
     center: { lat: 29.250, lng: 110.500 },
     locs: [
       { num:1, name:"Zhangjiajie West Station",          sub:"~noon · arrive",                       lat:29.3732,   lng:110.4787,   color:"#2E7A32" },
-      { num:2, name:"Tianmen Mountain 天门山",            sub:"Route B · cable car + scenic road",   lat:29.1015,   lng:110.3200,   color:"#2E7A32" },
+      { num:2, name:"Tianmen Mountain 天门山",            sub:"Route B · cable car + scenic road",   lat:29.111426, lng:110.483328, color:"#2E7A32" },
       { num:3, name:"Jinpu Ju Hotel",                    sub:"Check in · near Wulingyuan East Gate", lat:29.3458,   lng:110.5366,   color:"#2E7A32" },
       { num:4, name:"Wulingyuan East Gate",              sub:"Scope layout + buy supplies",          lat:29.3453,   lng:110.5388,   color:"#2E7A32" }
     ]
@@ -1752,7 +1752,7 @@ var ALL_DAY_LOCATIONS = {
       { num:2, name:"Wangping Street 望平街",            sub:"Morning · snacks + souvenir shopping",  lat:30.6580,   lng:104.0680,   color:"#C0202A" },
       { num:3, name:"Du Fu Thatched Cottage 杜甫草堂",   sub:"Morning · Tang Dynasty poet's garden",  lat:30.6657,   lng:104.0371,   color:"#C0202A" },
       { num:4, name:"FuFu Spa",                          sub:"Afternoon · traditional massage",       lat:30.6562,   lng:104.0818,   color:"#7B4EA0" },
-      { num:5, name:"Tianfu Airport TFU",                sub:"11 PM · Metro L18 ~50 min",             lat:30.3061,   lng:103.9491,   color:"#6D4C41" }
+      { num:5, name:"Tianfu Airport TFU",                sub:"11 PM · Metro L18 ~50 min",             lat:30.314336, lng:104.441520, color:"#6D4C41" }
     ]
   }
 };
