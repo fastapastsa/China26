@@ -88,7 +88,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
 .nav-tile-sub{font-size:10px;color:rgba(253,246,236,.38);display:block;margin-top:1px}
 
 /* CONTENT */
-.content{display:block;overflow-y:auto;align-self:stretch;min-height:calc(100vh - 260px)}
+.content{display:block}
 .panel{display:none}
 .panel.active{display:block}
 
@@ -1509,6 +1509,7 @@ function showPanel(id, el) {
   if (panel) panel.classList.add('active');
   if (el) el.classList.add('active');
   if (id === 'tracker') renderTracker();
+  window.scrollTo(0, 0);
 }
 function toggleDay(el) {
   const body = el.querySelector('.day-body');
