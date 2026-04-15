@@ -88,7 +88,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
 .nav-tile-sub{font-size:10px;color:rgba(253,246,236,.38);display:block;margin-top:1px}
 
 /* CONTENT */
-.content{overflow-y:auto}
+.content{overflow-y:auto;height:calc(100vh - 260px)}
 .panel{display:none}
 .panel.active{display:block}
 
@@ -586,7 +586,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
             <td class="iti-cell bkf"><div class="iti-cb"><div class="t">5:20am <ruby>抵<rt>dǐ</rt></ruby><ruby>达<rt>dá</rt></ruby></div>Drop bags at hotel lobby. Then: teahouse near People's Park or <ruby>钟<rt>zhōng</rt></ruby><ruby>水<rt>shuǐ</rt></ruby><ruby>饺<rt>jiǎo</rt></ruby> red oil wontons. Pick up <ruby>广<rt>guǎng</rt></ruby><ruby>太<rt>tài</rt></ruby><ruby>门<rt>mén</rt></ruby><ruby>饼<rt>bǐng</rt></ruby> Guangtaimen cake nearby.<div class="iti-cost">¥10–20pp</div></div></td>
             <td class="iti-cell bkf"><div class="iti-cb">Leave by 7am for panda base. Grab <strong><ruby>煎<rt>jiān</rt></ruby><ruby>饼<rt>bǐng</rt></ruby><ruby>道<rt>dào</rt></ruby> Jianbing Dao</strong> — egg with pork floss and bacon en route.<div class="iti-cost">¥10–15pp</div></div></td>
             <td class="iti-cell bkf"><div class="iti-cb"><div class="t">7:15am — leave hotel</div>Street stall near hotel: dan dan mian · Zhong dumplings · sanxian wonton · Laobaigan congee stall. Quick bite before the 8am metro.<div class="iti-warn">Leave by 7:30am — train timing is tight.</div></div></td>
-            <td class="iti-cell bkf"><div class="iti-cb"><ruby>广<rt>guǎng</rt></ruby><ruby>太<rt>tài</rt></ruby><ruby>门<rt>mén</rt></ruby><ruby>饼<rt>bǐng</rt></ruby> Guangtaimen Cake — pick up near People's Park (the ones from Day 2).<div class="iti-cost">¥5–10pp</div></div></td>
+            <td class="iti-cell bkf"><div class="iti-cb"><ruby>广<rt>guǎng</rt></ruby><ruby>太<rt>tài</rt></ruby><ruby>门<rt>mén</rt></ruby><ruby>饼<rt>bǐng</rt></ruby> Guangtaimen Cake near Chunxi Rd.<div class="iti-cost">¥20–40pp</div></div></td>
             <td class="iti-cell bkf"><div class="iti-cb">Quick travel breakfast near hotel or Chengdu East Station — McDonald's is fine on a travel morning.<div class="iti-cost">¥15–30pp</div></div></td>
             <td class="iti-cell bkf"><div class="iti-cb"><strong><ruby>小<rt>xiǎo</rt></ruby><ruby>面<rt>miàn</rt></ruby> Xiaomian</strong> near hotel / Kuixing — sidewalk noodle stall, spicy CQ broth.<div class="iti-cost">¥6–10 a bowl</div></div></td>
             <td class="iti-cell bkf"><div class="iti-cb"><ruby>豆<rt>dòu</rt></ruby><ruby>花<rt>huā</rt></ruby> Douhua · <ruby>油<rt>yóu</rt></ruby><ruby>茶<rt>chá</rt></ruby> Youcha · <ruby>糯<rt>nuò</rt></ruby><ruby>米<rt>mǐ</rt></ruby><ruby>糍<rt>cí</rt></ruby><ruby>饭<rt>fàn</rt></ruby> sticky rice roll. CQ breakfast trio — street stall near hotel.<div class="iti-cost">¥8–15pp</div></div></td>
@@ -730,7 +730,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
             </td>
             <td class="iti-cell eve">
               <div class="iti-ct"><div class="dot"></div>SKP Chengdu — light shows 🎆</div>
-              <div class="iti-cb">Light shows every 30 min from <strong>7:30 PM</strong>, ending 10 PM. Illuminated bamboo fountain displays. B&amp;C nearby for dessert.<div class="iti-nav">📍 SKP Chengdu complex</div></div>
+              <div class="iti-cb">Light shows every 30 min from <strong>7:30 PM</strong>, ending 10 PM. Illuminated bamboo fountain displays. <strong>B&amp;C dessert shop</strong> (located inside SKP mall) — perfect after the light show.<div class="iti-nav">📍 SKP Chengdu complex</div></div>
             </td>
             <td class="iti-cell eve">
               <div class="iti-cb"><ul><li><ruby>九<rt>jiǔ</rt></ruby><ruby>眼<rt>yǎn</rt></ruby><ruby>桥<rt>qiáo</rt></ruby> Nine Eyes Bridge — lit-up riverside</li><li>Jiuyan Qiao bar strip — ¥30–50 a drink</li></ul><div class="iti-tip">Pick a riverside bar and stay a while</div></div>
@@ -1631,17 +1631,18 @@ var ALL_DAY_LOCATIONS = {
       { num:3, name:"Xiaomingtang Dandan 小明堂担担",   sub:"Lunch · walk from People's Park",      lat:30.6605,   lng:104.0601,   color:"#C0202A" },
       { num:4, name:"Wuhou Shrine + Jinli 武侯祠",    sub:"Afternoon · 231 Wuhou Shrine St",       lat:30.6485,   lng:104.0436,   color:"#C0202A" },
       { num:5, name:"Chen Mapo Tofu 陈麻婆豆腐",      sub:"Dinner · 51 Donghuamen St",             lat:30.664511, lng:104.068844, color:"#C0202A" },
-      { num:6, name:"SKP Chengdu 成都SKP",            sub:"Evening · light shows 7:30–10 PM",      lat:30.6724,   lng:104.0688,   color:"#C8922A" }
+      { num:6, name:"SKP Chengdu 成都SKP",            sub:"Evening · light shows 7:30–10 PM · B&C dessert", lat:30.5690,   lng:104.0700,   color:"#C8922A" }
     ]
   },
   'day3-map': {
     center: { lat: 30.690, lng: 104.098 },
     locs: [
-      { num:1, name:"Giant Panda Base 大熊猫繁育研究基地", sub:"7:30 AM · arrive early for feeding",  lat:30.7379,   lng:104.1399,   color:"#2E7A32" },
-      { num:2, name:"Chun Yang Guan Noodles 纯阳馆",    sub:"Lunch · wontons + dandan mian",        lat:30.6705,   lng:104.0563,   color:"#C0202A" },
-      { num:3, name:"Kuanzhai Alley 宽窄巷子",           sub:"Afternoon · Qing Dynasty lanes",       lat:30.6712,   lng:104.0551,   color:"#C0202A" },
-      { num:4, name:"Fuqin Night Market 琴台路夜市",     sub:"Dinner · local street food",           lat:30.676683, lng:104.040685, color:"#C0202A" },
-      { num:5, name:"Jiuyan Qiao Bar Strip 九眼桥",      sub:"Evening · riverside bars",             lat:30.6469,   lng:104.0828,   color:"#3a3a8a" }
+      { num:1, name:"Jianbing Dao 煎饼道",             sub:"Breakfast before panda base",            lat:30.6576,   lng:104.0808,   color:"#C0202A" },
+      { num:2, name:"Giant Panda Base 大熊猫繁育研究基地", sub:"7:30 AM · arrive early for feeding",  lat:30.7379,   lng:104.1399,   color:"#2E7A32" },
+      { num:3, name:"Chun Yang Guan Noodles 纯阳馆",    sub:"Lunch · wontons + dandan mian",        lat:30.6705,   lng:104.0563,   color:"#C0202A" },
+      { num:4, name:"Kuanzhai Alley 宽窄巷子",           sub:"Afternoon · Qing Dynasty lanes",       lat:30.6712,   lng:104.0551,   color:"#C0202A" },
+      { num:5, name:"Fuqin Night Market 琴台路夜市",     sub:"Dinner · local street food",           lat:30.676683, lng:104.040685, color:"#C0202A" },
+      { num:6, name:"Jiuyan Qiao Bar Strip 九眼桥",      sub:"Evening · riverside bars",             lat:30.6469,   lng:104.0828,   color:"#3a3a8a" }
     ]
   },
   'day4-map': {
