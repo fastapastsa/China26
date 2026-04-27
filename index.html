@@ -1538,7 +1538,48 @@ function showPanel(id, el) {
   if (panel) panel.classList.add('active');
   if (el) el.classList.add('active');
   if (id === 'tracker') renderTracker();
+  syncMobileNav(id);
   window.scrollTo(0, 0);
+}
+function mobileNavTargetForPanel(id) {
+  if (id === 'overview') return 'overview';
+  if (id === 'metro') return 'metro';
+  if (['chengdu', 'chongqing', 'zhangjiajie', 'chengdu2', 'table'].includes(id)) return 'chengdu';
+  return 'tools';
+}
+function syncMobileNav(id) {
+  const target = mobileNavTargetForPanel(id);
+  document.querySelectorAll('.mobile-bottom-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.mobileTarget === target);
+  });
+}
+function getActivePanelId() {
+  const panel = document.querySelector('.panel.active');
+  return panel ? panel.id.replace(/^panel-/, '') : 'overview';
+}
+function openToolsSheet() {
+  const overlay = document.getElementById('mobile-tools-overlay');
+  const sheet = document.getElementById('mobile-tools-sheet');
+  if (overlay) overlay.classList.add('open');
+  if (sheet) sheet.classList.add('open');
+  document.querySelectorAll('.mobile-bottom-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.mobileTarget === 'tools');
+  });
+}
+function closeToolsSheet() {
+  const overlay = document.getElementById('mobile-tools-overlay');
+  const sheet = document.getElementById('mobile-tools-sheet');
+  if (overlay) overlay.classList.remove('open');
+  if (sheet) sheet.classList.remove('open');
+  syncMobileNav(getActivePanelId());
+}
+function mobileGo(id) {
+  if (id === 'tools') {
+    openToolsSheet();
+    return;
+  }
+  closeToolsSheet();
+  showPanel(id);
 }
 function toggleDay(el) {
   const body = el.querySelector('.day-body');
@@ -1551,6 +1592,15 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('.day-body').forEach(function(body) {
     body.addEventListener('click', function(e) { e.stopPropagation(); });
   });
+  document.querySelectorAll('.mobile-bottom-btn').forEach(function(btn) {
+    btn.addEventListener('touchend', function(e) {
+      e.preventDefault();
+      const target = btn.dataset.mobileTarget;
+      if (target === 'tools') openToolsSheet();
+      else mobileGo(target);
+    }, { passive: false });
+  });
+  syncMobileNav(getActivePanelId());
 });
 
 // Checkbox persistence
