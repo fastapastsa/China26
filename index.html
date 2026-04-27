@@ -22,21 +22,18 @@
 body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);font-size:14px;line-height:1.6}
 
 /* COVER */
-.cover{background:var(--red-dark);color:#FDF6EC;padding:64px 60px 52px;position:relative;overflow:hidden}
-.cover::before{content:'<ruby>福<rt>fú</rt></ruby>';position:absolute;top:-20px;right:40px;font-family:'Noto Serif SC',serif;font-size:320px;font-weight:600;color:rgba(255,255,255,.04);line-height:1;pointer-events:none;letter-spacing:0}
-.cover::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(135deg,transparent,transparent 60px,rgba(255,255,255,.02) 60px,rgba(255,255,255,.02) 120px);pointer-events:none}
-.cover-eyebrow{font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--lantern);margin-bottom:18px;position:relative;z-index:1}
-.cover-title{font-family:'Cormorant Garamond',serif;font-size:68px;font-weight:300;line-height:1.0;letter-spacing:-.02em;margin-bottom:6px;position:relative;z-index:1}
-.cover-title em{font-style:italic;color:var(--gold-light)}
-.cover-subtitle{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;font-style:italic;color:rgba(253,246,236,.5);margin-bottom:40px;position:relative;z-index:1}
-.cover-zh{font-family:'Noto Serif SC',serif;font-size:28px;font-weight:400;color:rgba(253,246,236,.2);letter-spacing:.3em;margin-bottom:20px;position:relative;z-index:1}
-.cover-divider{width:48px;height:1px;background:var(--lantern);margin:32px 0;position:relative;z-index:1}
-.cover-meta{display:flex;gap:36px;flex-wrap:wrap;position:relative;z-index:1}
+.cover{background:var(--paper);color:var(--ink);padding:24px 60px 20px;position:relative;border-bottom:1px solid var(--paper-mid)}
+.cover::before,.cover::after{display:none}
+.cover-eyebrow{font-size:10px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-light);margin-bottom:4px;position:relative;z-index:1}
+.cover-title{font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:300;line-height:1.0;letter-spacing:-.01em;margin-bottom:6px;position:relative;z-index:1}
+.cover-title em{font-style:italic;color:var(--gold)}
+.cover-subtitle{font-size:13px;font-weight:400;color:var(--ink-light);margin-bottom:0;position:relative;z-index:1}
+.cover-zh,.cover-divider,.cover-meta{display:none}
 .cover-meta-label{font-size:9px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:rgba(253,246,236,.45);margin-bottom:4px}
 .cover-meta-value{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:400;color:#FDF6EC}
 
 /* FLIGHTS BANNER */
-.flights-banner{background:#1A0808;border-top:2px solid #3A0A0A;padding:0 60px}
+.flights-banner{display:none;background:#1A0808;border-top:2px solid #3A0A0A;padding:0 60px}
 .flights-inner{display:grid;grid-template-columns:1fr 1fr;gap:0}
 .flight-col{padding:20px 0;border-right:1px solid #2a0a0a;padding-right:32px;margin-right:32px}
 .flight-col:last-child{border-right:none;padding-right:0;margin-right:0}
@@ -50,11 +47,13 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
 .flight-num{font-size:10px;color:#553333;margin-left:68px}
 
 /* ROUTE STRIP */
-.route-strip{background:var(--red-dark);border-bottom:2px solid #6A0A0A;padding:0 60px;display:flex;align-items:center;overflow-x:auto;font-size:11px}
-.route-city{padding:12px 12px;display:flex;flex-direction:column;align-items:center;gap:2px;flex-shrink:0}
-.route-city span:first-child{font-size:13px;font-weight:500;color:#FDF6EC}
-.route-city span:last-child{font-size:10px;color:rgba(253,246,236,.5)}
-.route-arrow{color:rgba(245,166,35,.5);font-size:13px;padding:0 2px;flex-shrink:0}
+.route-strip{background:var(--paper-warm);border-bottom:1px solid var(--paper-mid);padding:0 60px;display:flex;align-items:center;overflow-x:auto;font-size:11px}
+.route-city{padding:12px 12px;display:flex;flex-direction:column;align-items:center;gap:2px;flex-shrink:0;border:0;background:transparent;font-family:'DM Sans',sans-serif;text-align:center;cursor:pointer}
+.route-city span:first-child{font-size:13px;font-weight:500;color:var(--ink)}
+.route-city span:last-child{font-size:10px;color:var(--ink-light)}
+.route-city:hover,.route-city.active{background:rgba(192,32,42,.08)}
+.route-city:focus-visible{outline:2px solid var(--gold);outline-offset:-2px}
+.route-arrow{color:rgba(200,146,42,.65);font-size:13px;padding:0 2px;flex-shrink:0}
 
 /* MAIN LAYOUT */
 .main{display:grid;grid-template-columns:224px 1fr;min-height:calc(100vh - 260px)}
@@ -196,7 +195,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
 
 /* DAYS */
 .days-container{padding:28px 56px 48px}
-.day-block{margin-bottom:20px;border:1px solid var(--paper-mid);border-radius:12px;overflow:hidden;transition:box-shadow .2s}
+.day-block{margin-bottom:20px;border:1px solid var(--paper-mid);border-radius:12px;overflow:hidden;transition:box-shadow .2s;scroll-margin-top:18px}
 .day-block:hover{box-shadow:0 3px 20px rgba(192,32,42,.08)}
 .day-header{display:flex;align-items:center;gap:14px;padding:14px 18px;cursor:pointer;background:var(--paper-warm);user-select:none}
 .day-number{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;color:rgba(192,32,42,.3);min-width:34px;line-height:1}
@@ -357,12 +356,13 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
 @media (max-width: 768px){
   html{scroll-behavior:smooth} body{font-size:14px;padding-bottom:78px;background:var(--paper)}
   .mobile-topbar{display:block;position:sticky;top:0;z-index:1000;background:#1A0808;color:#FDF6EC;border-bottom:1px solid rgba(245,166,35,.28);box-shadow:0 4px 18px rgba(0,0,0,.18)}
-  .mobile-topbar-main{display:flex;align-items:center;justify-content:space-between;padding:12px 14px 8px;gap:12px}.mobile-brand{min-width:0}.mobile-brand-title{font-family:'Cormorant Garamond',serif;font-size:22px;line-height:1;font-weight:400;letter-spacing:-.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.mobile-brand-sub{font-size:10px;color:rgba(253,246,236,.58);margin-top:3px;letter-spacing:.04em}.mobile-menu-btn{border:1px solid rgba(245,166,35,.45);background:rgba(192,32,42,.22);color:#FDF6EC;border-radius:999px;padding:8px 12px;font-size:13px;font-weight:600;cursor:pointer}.mobile-route-mini{display:flex;gap:8px;overflow-x:auto;padding:0 14px 10px;-webkit-overflow-scrolling:touch;scrollbar-width:none}.mobile-route-mini::-webkit-scrollbar{display:none}.mobile-route-chip{flex:0 0 auto;border:1px solid rgba(253,246,236,.14);background:rgba(253,246,236,.07);border-radius:999px;padding:5px 10px;font-size:11px;color:rgba(253,246,236,.88)}.mobile-route-chip strong{color:#fff;font-weight:600}
+  .mobile-topbar-main{display:flex;align-items:center;justify-content:space-between;padding:12px 14px 8px;gap:12px}.mobile-brand{min-width:0}.mobile-brand-title{font-family:'Cormorant Garamond',serif;font-size:22px;line-height:1;font-weight:400;letter-spacing:-.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.mobile-brand-sub{font-size:10px;color:rgba(253,246,236,.58);margin-top:3px;letter-spacing:.04em}.mobile-route-mini{display:flex;gap:8px;overflow-x:auto;padding:0 14px 10px;-webkit-overflow-scrolling:touch;scrollbar-width:none}.mobile-route-mini::-webkit-scrollbar{display:none}.mobile-route-chip{flex:0 0 auto;border:1px solid rgba(253,246,236,.14);background:rgba(253,246,236,.07);border-radius:999px;padding:5px 10px;font-size:11px;color:rgba(253,246,236,.88)}.mobile-route-chip strong{color:#fff;font-weight:600}
+  .mobile-topbar-main{justify-content:flex-start;padding:10px 14px 6px}.mobile-route-chip{font-family:'DM Sans',sans-serif;cursor:pointer;text-align:left}.mobile-route-chip.active{background:rgba(192,32,42,.32);border-color:rgba(245,166,35,.38);color:#fff}.cover,.flights-banner,.route-strip{display:none!important}
   .mobile-bottom-nav{display:grid;grid-template-columns:repeat(4,1fr);position:fixed;left:0;right:0;bottom:0;z-index:1100;background:#1A0808;border-top:1px solid rgba(245,166,35,.28);box-shadow:0 -4px 22px rgba(0,0,0,.22);padding:6px 6px calc(6px + env(safe-area-inset-bottom))}.mobile-bottom-btn{appearance:none;border:0;background:transparent;color:rgba(253,246,236,.62);border-radius:12px;padding:7px 2px 6px;font-family:'DM Sans',sans-serif;font-size:10px;font-weight:600;display:flex;flex-direction:column;align-items:center;gap:2px;cursor:pointer}.mobile-bottom-btn .ico{font-size:17px;line-height:1}.mobile-bottom-btn.active{background:rgba(192,32,42,.28);color:#fff}
   .mobile-tools-overlay{position:fixed;inset:0;background:rgba(0,0,0,.38);z-index:1190;opacity:0;pointer-events:none;transition:opacity .2s ease;display:block}.mobile-tools-overlay.open{opacity:1;pointer-events:auto}.mobile-tools-sheet{display:block;position:fixed;left:0;right:0;bottom:0;z-index:1200;background:var(--paper);border-radius:22px 22px 0 0;border-top:1px solid var(--paper-mid);box-shadow:0 -12px 40px rgba(0,0,0,.28);padding:12px 16px calc(18px + env(safe-area-inset-bottom));transform:translateY(110%);transition:transform .22s ease;max-height:78vh;overflow:auto}.mobile-tools-sheet.open{transform:translateY(0)}.mobile-sheet-handle{width:42px;height:4px;background:var(--paper-mid);border-radius:4px;margin:0 auto 12px}.mobile-sheet-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:12px}.mobile-sheet-title{font-family:'Cormorant Garamond',serif;font-size:30px;line-height:1;font-weight:300}.mobile-sheet-sub{font-size:12px;color:var(--ink-light);margin-top:4px}.mobile-sheet-close{border:1px solid var(--paper-mid);background:var(--paper-warm);border-radius:999px;width:34px;height:34px;font-size:18px;color:var(--ink-mid);cursor:pointer}.mobile-tools-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.mobile-tool-card{border:1px solid var(--paper-mid);background:#fff8ee;border-radius:14px;padding:13px 12px;text-align:left;cursor:pointer;font-family:'DM Sans',sans-serif;color:var(--ink);box-shadow:0 1px 0 rgba(0,0,0,.02)}.mobile-tool-card .icon{font-size:21px;margin-bottom:4px}.mobile-tool-card .name{font-size:13px;font-weight:700;line-height:1.2}.mobile-tool-card .sub{font-size:10px;color:var(--ink-light);line-height:1.35;margin-top:3px}
   .sidebar{display:none!important}.main{display:block;min-height:auto}.content{width:100%}.cover{padding:28px 18px 24px;margin-top:0}.cover::before{font-size:160px;right:-14px;top:-16px}.cover-eyebrow{font-size:9px;margin-bottom:10px}.cover-title{font-size:42px;margin-bottom:6px}.cover-subtitle{font-size:18px;margin-bottom:18px}.cover-zh{font-size:18px;margin-bottom:12px;letter-spacing:.18em}.cover-divider{margin:18px 0;width:36px}.cover-meta{display:grid;grid-template-columns:1fr 1fr;gap:13px 16px}.cover-meta-value{font-size:16px}.flights-banner{padding:0 16px}.flights-inner{grid-template-columns:1fr}.flight-col{border-right:0;border-bottom:1px solid #2a0a0a;margin-right:0;padding:15px 0}.flight-col:last-child{border-bottom:0}.flight-row{align-items:flex-start;font-size:12px}.flight-time{min-width:58px}.flight-via,.flight-num{margin-left:66px}.route-strip{position:sticky;top:78px;z-index:900;padding:0 10px;border-top:1px solid rgba(255,255,255,.08);box-shadow:0 3px 14px rgba(0,0,0,.14)}.route-city{padding:9px 10px;align-items:flex-start}.route-city span:first-child{font-size:12px}.route-city span:last-child{font-size:9px;white-space:nowrap}
   .section-header{padding:30px 18px 20px}.section-title{font-size:36px}.section-subtitle{font-size:12px}.section-tags{gap:6px}.tag{font-size:10px;padding:3px 8px}.overview-content,.days-container{padding:18px 14px 26px}.overview-grid{grid-template-columns:1fr;border-radius:14px;margin-bottom:18px}.ov-cell{padding:16px 16px}.ov-cell-value{font-size:24px}.mobile-quick-tools{display:block;background:var(--paper-warm);border:1px solid var(--paper-mid);border-radius:16px;padding:14px;margin:0 14px 18px}.mobile-quick-title{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-light);margin-bottom:10px}.mobile-quick-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}.mobile-quick-grid button{border:1px solid var(--paper-mid);background:var(--paper);border-radius:12px;padding:9px 6px;font-family:'DM Sans',sans-serif;font-size:11px;color:var(--ink-mid);cursor:pointer}
-  .day-block{border-radius:16px;margin-bottom:14px;background:#fff8ee}.day-header{padding:14px 14px;background:var(--paper-warm)}.day-number{font-size:24px;min-width:30px}.day-title-str{font-size:13px;line-height:1.35}.day-body{padding:0 14px 14px}.tl-item{gap:10px;margin-bottom:16px}.tl-time{min-width:48px;font-size:10px}.tl-item:not(:last-child)::before{left:31px}.tl-act-title{font-size:13px;line-height:1.35}.tl-act-desc{font-size:12px}.cost-badge,.nav-badge{display:inline-block;margin:5px 4px 0 0;line-height:1.4}.tip-box{font-size:12px;margin:12px 0;border-radius:0 10px 10px 0}.food-card{border-radius:14px}.day-map-wrap{margin:16px 0 4px;border-radius:14px}.day-map-canvas{height:310px}.tbl-scroll{margin:0 -14px;padding:0 14px 18px;overflow-x:auto;-webkit-overflow-scrolling:touch}.tbl-scroll::before{content:'Swipe sideways to view the full table';display:block;position:sticky;left:0;margin:0 0 10px;padding:9px 12px;background:var(--paper-warm);border:1px solid var(--paper-mid);border-radius:999px;font-size:11px;color:var(--ink-light);width:max-content}.iti-table{font-size:11px;min-width:1500px}.iti-cell{min-width:130px;max-width:150px}.tracker-grid,.etiq-grid,.pack-grid{grid-template-columns:1fr}.phrase-row{grid-template-columns:1fr;gap:2px;padding:8px 0}.prep-month{display:block}.prep-month-label{width:auto;text-align:left;padding:14px 0 6px}.prep-month-body{border-left:0;border-top:2px solid var(--paper-mid);padding:12px 0 18px}.budget-table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}.budget-table th,.budget-table td{padding:9px 10px;font-size:12px}img{max-width:100%;height:auto}
+  .day-block{border-radius:16px;margin-bottom:14px;background:#fff8ee;scroll-margin-top:102px}.day-header{padding:14px 14px;background:var(--paper-warm)}.day-number{font-size:24px;min-width:30px}.day-title-str{font-size:13px;line-height:1.35}.day-body{padding:0 14px 14px}.tl-item{gap:10px;margin-bottom:16px}.tl-time{min-width:48px;font-size:10px}.tl-item:not(:last-child)::before{left:31px}.tl-act-title{font-size:13px;line-height:1.35}.tl-act-desc{font-size:12px}.cost-badge,.nav-badge{display:inline-block;margin:5px 4px 0 0;line-height:1.4}.tip-box{font-size:12px;margin:12px 0;border-radius:0 10px 10px 0}.food-card{border-radius:14px}.day-map-wrap{margin:16px 0 4px;border-radius:14px}.day-map-canvas{height:310px}.tbl-scroll{margin:0 -14px;padding:0 14px 18px;overflow-x:auto;-webkit-overflow-scrolling:touch}.tbl-scroll::before{content:'Swipe sideways to view the full table';display:block;position:sticky;left:0;margin:0 0 10px;padding:9px 12px;background:var(--paper-warm);border:1px solid var(--paper-mid);border-radius:999px;font-size:11px;color:var(--ink-light);width:max-content}.iti-table{font-size:11px;min-width:1500px}.iti-cell{min-width:130px;max-width:150px}.tracker-grid,.etiq-grid,.pack-grid{grid-template-columns:1fr}.phrase-row{grid-template-columns:1fr;gap:2px;padding:8px 0}.prep-month{display:block}.prep-month-label{width:auto;text-align:left;padding:14px 0 6px}.prep-month-body{border-left:0;border-top:2px solid var(--paper-mid);padding:12px 0 18px}.budget-table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}.budget-table th,.budget-table td{padding:9px 10px;font-size:12px}img{max-width:100%;height:auto}
 }
 @media (min-width: 769px){.mobile-only{display:none!important}}
 
@@ -372,24 +372,16 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
 <body>
 
 <!-- MOBILE APP NAVIGATION -->
-<div class="mobile-topbar" role="banner"><div class="mobile-topbar-main"><div class="mobile-brand"><div class="mobile-brand-title">China — May 2026</div><div class="mobile-brand-sub">11–25 May · 2 travellers · food-first</div></div><button class="mobile-menu-btn" type="button" onclick="openToolsSheet()">Tools</button></div><div class="mobile-route-mini" aria-label="Route overview"><div class="mobile-route-chip"><strong>Chengdu</strong> · 4n</div><div class="mobile-route-chip"><strong>Dujiangyan</strong> · day</div><div class="mobile-route-chip"><strong>Chongqing</strong> · 4n</div><div class="mobile-route-chip"><strong>ZJJ</strong> · 3n</div><div class="mobile-route-chip"><strong>Chengdu</strong> · 1n</div></div></div>
+<div class="mobile-topbar" role="banner"><div class="mobile-topbar-main"><div class="mobile-brand"><div class="mobile-brand-title">China — May 2026</div><div class="mobile-brand-sub">11–25 May 2026</div></div></div><div class="mobile-route-mini" aria-label="Route overview"><button class="mobile-route-chip" type="button" data-panel="chengdu" onclick="routeGo('chengdu')"><strong>Chengdu</strong> · 4n</button><button class="mobile-route-chip" type="button" data-panel="chengdu" data-day="day-dujiangyan" onclick="routeGo('chengdu','day-dujiangyan')"><strong>Dujiangyan</strong> · day</button><button class="mobile-route-chip" type="button" data-panel="chongqing" onclick="routeGo('chongqing')"><strong>Chongqing</strong> · 4n</button><button class="mobile-route-chip" type="button" data-panel="zhangjiajie" onclick="routeGo('zhangjiajie')"><strong>ZJJ</strong> · 3n</button><button class="mobile-route-chip" type="button" data-panel="chengdu2" onclick="routeGo('chengdu2')"><strong>Chengdu</strong> · 1n</button></div></div>
 <div class="mobile-tools-overlay" id="mobile-tools-overlay" onclick="closeToolsSheet()"></div><div class="mobile-tools-sheet" id="mobile-tools-sheet" role="dialog" aria-modal="true" aria-label="Planning tools"><div class="mobile-sheet-handle"></div><div class="mobile-sheet-head"><div><div class="mobile-sheet-title">Planning tools</div><div class="mobile-sheet-sub">Budget, bookings, spend, packing, etiquette and maps.</div></div><button class="mobile-sheet-close" type="button" onclick="closeToolsSheet()" aria-label="Close tools">×</button></div><div class="mobile-tools-grid"><button class="mobile-tool-card" type="button" onclick="mobileGo('budget')"><div class="icon">💴</div><div class="name">Budget</div><div class="sub">Cost breakdown</div></button><button class="mobile-tool-card" type="button" onclick="mobileGo('book')"><div class="icon">📋</div><div class="name">Bookings</div><div class="sub">What to book</div></button><button class="mobile-tool-card" type="button" onclick="mobileGo('tracker')"><div class="icon">💸</div><div class="name">Spend</div><div class="sub">Log actuals</div></button><button class="mobile-tool-card" type="button" onclick="mobileGo('etiquette')"><div class="icon">🏮</div><div class="name">Etiquette</div><div class="sub">Do's & don'ts</div></button><button class="mobile-tool-card" type="button" onclick="mobileGo('timeline')"><div class="icon">📅</div><div class="name">Timeline</div><div class="sub">Pre-trip tasks</div></button><button class="mobile-tool-card" type="button" onclick="mobileGo('pack')"><div class="icon">🎒</div><div class="name">Packing</div><div class="sub">Apps & gear</div></button><button class="mobile-tool-card" type="button" onclick="mobileGo('metro')"><div class="icon">🚇</div><div class="name">Maps & metro</div><div class="sub">Transit guides</div></button><button class="mobile-tool-card" type="button" onclick="mobileGo('table')"><div class="icon">🗓️</div><div class="name">Full table</div><div class="sub">15-day overview</div></button></div></div>
 <nav class="mobile-bottom-nav" aria-label="Primary mobile navigation"><button class="mobile-bottom-btn active" type="button" data-mobile-target="overview" onclick="mobileGo('overview')"><span class="ico">🏠</span><span>Overview</span></button><button class="mobile-bottom-btn" type="button" data-mobile-target="chengdu" onclick="mobileGo('chengdu')"><span class="ico">📅</span><span>Days</span></button><button class="mobile-bottom-btn" type="button" data-mobile-target="tools" onclick="openToolsSheet()"><span class="ico">⚡</span><span>Tools</span></button><button class="mobile-bottom-btn" type="button" data-mobile-target="metro" onclick="mobileGo('metro')"><span class="ico">🗺️</span><span>Map</span></button></nav>
 
 
 <!-- COVER -->
 <div class="cover">
-  <div class="cover-eyebrow">Travel Itinerary · 2 Travellers</div>
-  <div class="cover-title">China <em>—</em><br>May 2026</div>
-  <div class="cover-zh"><ruby>中<rt>zhōng</rt></ruby><ruby>国<rt>guó</rt></ruby><ruby>之<rt>zhī</rt></ruby><ruby>旅<rt>lǚ</rt></ruby> · <ruby>二<rt>èr</rt></ruby>〇<ruby>二<rt>èr</rt></ruby><ruby>六<rt>liù</rt></ruby><ruby>年<rt>nián</rt></ruby><ruby>五<rt>wǔ</rt></ruby><ruby>月<rt>yuè</rt></ruby></div>
-  <div class="cover-subtitle">Fifteen days across four cities</div>
-  <div class="cover-divider"></div>
-  <div class="cover-meta">
-    <div><div class="cover-meta-label">Departure</div><div class="cover-meta-value">11 May 2026</div></div>
-    <div><div class="cover-meta-label">Return</div><div class="cover-meta-value">25 May 2026</div></div>
-    <div><div class="cover-meta-label">Travellers</div><div class="cover-meta-value">2 people</div></div>
-    <div><div class="cover-meta-label">Style</div><div class="cover-meta-value">Optimised · Food-first</div></div>
-  </div>
+  <div class="cover-eyebrow">11–25 May 2026</div>
+  <div class="cover-title">China <em>—</em> May 2026</div>
+  <div class="cover-subtitle">Chengdu · Chongqing · Zhangjiajie</div>
 </div>
 
 <!-- FLIGHTS BANNER -->
@@ -419,11 +411,11 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
 
 <!-- ROUTE STRIP -->
 <div class="route-strip">
-  <div class="route-city"><span>Chengdu</span><span>12–16 May · 4 nights</span></div><div class="route-arrow">→</div>
-  <div class="route-city"><span>Dujiangyan</span><span>14 May · Dujiangyan Day Trip</span></div><div class="route-arrow">→</div>
-  <div class="route-city"><span>Chongqing</span><span>16–20 May · 4 nights</span></div><div class="route-arrow">→</div>
-  <div class="route-city"><span>Zhangjiajie</span><span>20–23 May · 3 nights</span></div><div class="route-arrow">→</div>
-  <div class="route-city"><span>Chengdu</span><span>23–25 May · 1 night</span></div>
+  <button class="route-city" type="button" data-panel="chengdu" onclick="routeGo('chengdu')"><span>Chengdu</span><span>12–16 May · 4 nights</span></button><div class="route-arrow">→</div>
+  <button class="route-city" type="button" data-panel="chengdu" data-day="day-dujiangyan" onclick="routeGo('chengdu','day-dujiangyan')"><span>Dujiangyan</span><span>14 May · Dujiangyan Day Trip</span></button><div class="route-arrow">→</div>
+  <button class="route-city" type="button" data-panel="chongqing" onclick="routeGo('chongqing')"><span>Chongqing</span><span>16–20 May · 4 nights</span></button><div class="route-arrow">→</div>
+  <button class="route-city" type="button" data-panel="zhangjiajie" onclick="routeGo('zhangjiajie')"><span>Zhangjiajie</span><span>20–23 May · 3 nights</span></button><div class="route-arrow">→</div>
+  <button class="route-city" type="button" data-panel="chengdu2" onclick="routeGo('chengdu2')"><span>Chengdu</span><span>23–25 May · 1 night</span></button>
 </div>
 
 <!-- MAIN -->
@@ -498,7 +490,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
       <div class="section-header sh-overview">
         <div class="section-eyebrow">Complete journey</div>
         <div class="section-title">Your <em>itinerary</em></div>
-        <div class="section-subtitle">15 days · 4 cities · Food-first, optimised pace · 2 travellers</div>
+        <div class="section-subtitle">15 days · Chengdu · Chongqing · Zhangjiajie</div>
       </div>
       <div class="overview-content">
         <div class="overview-grid">
@@ -805,10 +797,10 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
     <!-- ═══ CHENGDU ═══ -->
     <div class="panel" id="panel-chengdu">
       <div class="section-header sh-chengdu">
-        <div class="section-eyebrow">China · Days 2–6</div>
+        <div class="section-eyebrow">China · Days 1–6</div>
         <div class="section-title"><em>Chengdu</em></div>
         <div class="section-zh"><ruby>成<rt>chéng</rt></ruby><ruby>都<rt>dōu</rt></ruby> · <ruby>天<rt>tiān</rt></ruby><ruby>府<rt>fǔ</rt></ruby><ruby>之<rt>zhī</rt></ruby><ruby>国<rt>guó</rt></ruby></div>
-        <div class="section-subtitle">12–16 May · 4 nights · Arrive 5:20 AM Day 2 from overnight flight</div>
+        <div class="section-subtitle">11–16 May · overnight flight + 4 nights · Arrive 5:20 AM Day 2</div>
         <div class="section-tags">
           <span class="tag tag-nights">4 nights</span>
           <span class="tag tag-food">Mapo Tofu · Hotpot · Wontons · Imperial Banquet</span>
@@ -817,6 +809,14 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
         </div>
       </div>
       <div class="days-container">
+        <!-- Day 1: Departure flight -->
+        <div class="day-block" id="day-melbourne-flight" onclick="toggleDay(this)">
+          <div class="day-header"><div class="day-number">1</div><div class="day-info"><div class="day-date-str">Monday 11 May</div><div class="day-title-str">Depart Melbourne — Sichuan Airlines 3U3886 to Chengdu Tianfu</div></div><div class="day-toggle">›</div></div>
+          <div class="day-body"><div class="timeline">
+            <div class="tl-item"><div class="tl-time">8:20 PM</div><div class="tl-dot" style="background:var(--trv)"></div><div class="tl-content"><div class="tl-act-title">Sichuan Airlines 3U3886 departs — Melbourne (MEL) → Chengdu Tianfu (TFU) <span class="cost-badge">Arrive 5:20 AM Tue 12 May</span></div><div class="tl-act-desc">Airbus A330-200 · Economy · ~11 hrs. Overnight flight into Chengdu Tianfu International Airport (TFU), then transfer to Licheng Hotel and drop bags before exploring.</div></div></div>
+          </div></div>
+        </div>
+
         <div class="tip-box blue"><strong>Hotel:</strong> Licheng Hotel at Chengdu Century City Global Center. Located in the Century City complex — modern, central location with excellent shopping and dining nearby. <strong>Getting from TFU airport:</strong> Metro Line 18 → South Railway Station, change to Line 1 → ~50 min, ¥10. Or taxi ~¥80–100, 45 min. Hotel won't have your room ready until ~2pm on arrival day — drop bags at the lobby and explore immediately.</div>
 
         <!-- Day 2: Arrive -->
@@ -870,7 +870,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
         </div>
 
         <!-- Day 4: Day trip to Dujiangyan -->
-        <div class="day-block" onclick="toggleDay(this)">
+        <div class="day-block" id="day-dujiangyan" onclick="toggleDay(this)">
           <div class="day-header"><div class="day-number">4</div><div class="day-info"><div class="day-date-str">Thursday 14 May</div><div class="day-title-str">Dujiangyan Day Trip — Zhongshuge Bookstore, Wenmiao Street, Dujiangyan Scenic Area, Blue-tear River Walk</div></div><div class="day-toggle">›</div></div>
           <div class="day-body"><div class="timeline">
             <div class="tl-item"><div class="tl-time">Breakfast</div><div class="tl-dot" style="background:var(--cdu)"></div><div class="tl-content"><div class="tl-act-title"><ruby>煎<rt>jiān</rt></ruby><ruby>饼<rt>bǐng</rt></ruby><ruby>道<rt>dào</rt></ruby> Jianbing Dao <span class="cost-badge">¥10–15pp</span></div><div class="tl-act-desc">Egg with pork floss and bacon before the Dujiangyan metro/HSR transfer. Keep it quick: Tianfu Square → Line 2 → Xipu starts around 8 AM.</div></div></div>
@@ -1138,7 +1138,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
         <div class="day-block" onclick="toggleDay(this)">
           <div class="day-header"><div class="day-number">15</div><div class="day-info"><div class="day-date-str">Monday 25 May</div><div class="day-title-str">Departure — Chengdu Tianfu Airport, 1:40 AM Sichuan Airlines to Melbourne</div></div><div class="day-toggle">›</div></div>
           <div class="day-body"><div class="timeline">
-            <div class="tl-item"><div class="tl-time">1:40 AM</div><div class="tl-dot" style="background:var(--accent)"></div><div class="tl-content"><div class="tl-act-title">Sichuan Airlines 3U3885 departs — Chengdu → Melbourne <span class="cost-badge">Arrive Melbourne 2:20 PM Mon 25 May</span></div><div class="tl-act-desc">~11 hr flight. Welcome back.</div></div></div>
+            <div class="tl-item"><div class="tl-time">1:40 AM</div><div class="tl-dot" style="background:var(--accent)"></div><div class="tl-content"><div class="tl-act-title">Sichuan Airlines 3U3885 departs — Chengdu Tianfu (TFU) → Melbourne (MEL) <span class="cost-badge">Arrive Melbourne 2:20 PM Mon 25 May</span></div><div class="tl-act-desc">Airbus A330-200 · Economy · ~11 hrs. Late-night departure from Chengdu Tianfu International Airport; allow plenty of transfer time from the city.</div></div></div>
           </div></div>
         </div>
       </div>
@@ -1539,6 +1539,7 @@ function showPanel(id, el) {
   if (el) el.classList.add('active');
   if (id === 'tracker') renderTracker();
   syncMobileNav(id);
+  syncRouteNav(id);
   window.scrollTo(0, 0);
 }
 function mobileNavTargetForPanel(id) {
@@ -1551,6 +1552,13 @@ function syncMobileNav(id) {
   const target = mobileNavTargetForPanel(id);
   document.querySelectorAll('.mobile-bottom-btn').forEach(btn => {
     btn.classList.toggle('active', btn.dataset.mobileTarget === target);
+  });
+}
+function syncRouteNav(id, dayId) {
+  document.querySelectorAll('.route-city, .mobile-route-chip').forEach(btn => {
+    const isDayMatch = dayId && btn.dataset.day === dayId;
+    const isPanelMatch = !dayId && btn.dataset.panel === id && !btn.dataset.day;
+    btn.classList.toggle('active', Boolean(isDayMatch || isPanelMatch));
   });
 }
 function getActivePanelId() {
@@ -1581,6 +1589,22 @@ function mobileGo(id) {
   closeToolsSheet();
   showPanel(id);
 }
+function routeGo(id, dayId) {
+  closeToolsSheet();
+  showPanel(id);
+  syncRouteNav(id, dayId);
+  if (!dayId) return;
+  window.setTimeout(function() {
+    const target = document.getElementById(dayId);
+    if (!target) return;
+    const body = target.querySelector('.day-body');
+    if (body && !body.classList.contains('open')) {
+      body.classList.add('open');
+      target.classList.add('open');
+    }
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 0);
+}
 function toggleDay(el) {
   const body = el.querySelector('.day-body');
   const isOpen = body.classList.contains('open');
@@ -1600,7 +1624,25 @@ document.addEventListener('DOMContentLoaded', function() {
       else mobileGo(target);
     }, { passive: false });
   });
+  document.querySelectorAll('.mobile-route-chip, .route-city').forEach(function(btn) {
+    let touchStartX = 0;
+    let touchStartY = 0;
+    btn.addEventListener('touchstart', function(e) {
+      const touch = e.changedTouches[0];
+      touchStartX = touch.clientX;
+      touchStartY = touch.clientY;
+    }, { passive: true });
+    btn.addEventListener('touchend', function(e) {
+      const touch = e.changedTouches[0];
+      const moved = Math.abs(touch.clientX - touchStartX) > 10 || Math.abs(touch.clientY - touchStartY) > 10;
+      if (moved) return;
+      e.preventDefault();
+      const target = btn.dataset.panel;
+      if (target) routeGo(target, btn.dataset.day);
+    }, { passive: false });
+  });
   syncMobileNav(getActivePanelId());
+  syncRouteNav(getActivePanelId());
 });
 
 // Checkbox persistence
