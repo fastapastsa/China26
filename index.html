@@ -22,12 +22,12 @@
 body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);font-size:14px;line-height:1.6}
 
 /* COVER */
-.cover{background:var(--paper);color:var(--ink);padding:24px 60px 20px;position:relative;border-bottom:1px solid var(--paper-mid)}
+.cover{background:var(--accent);color:var(--paper);padding:24px 60px 20px;position:relative;border-bottom:1px solid var(--red-dark)}
 .cover::before,.cover::after{display:none}
-.cover-eyebrow{font-size:10px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-light);margin-bottom:4px;position:relative;z-index:1}
+.cover-eyebrow{font-size:10px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:rgba(253,246,236,.78);margin-bottom:4px;position:relative;z-index:1}
 .cover-title{font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:300;line-height:1.0;letter-spacing:-.01em;margin-bottom:6px;position:relative;z-index:1}
-.cover-title em{font-style:italic;color:var(--gold)}
-.cover-subtitle{font-size:13px;font-weight:400;color:var(--ink-light);margin-bottom:0;position:relative;z-index:1}
+.cover-title em{font-style:italic;color:var(--gold-light)}
+.cover-subtitle{font-size:13px;font-weight:400;color:rgba(253,246,236,.86);margin-bottom:0;position:relative;z-index:1}
 .cover-zh,.cover-divider,.cover-meta{display:none}
 .cover-meta-label{font-size:9px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:rgba(253,246,236,.45);margin-bottom:4px}
 .cover-meta-value{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:400;color:#FDF6EC}
@@ -496,7 +496,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
         <div class="overview-grid">
           <div class="ov-cell"><div class="ov-cell-label">Total nights</div><div class="ov-cell-value">14</div><div class="ov-cell-sub">11–25 May 2026</div></div>
           <div class="ov-cell"><div class="ov-cell-label">Cities</div><div class="ov-cell-value">4</div><div class="ov-cell-sub">Chengdu · Chongqing · Zhangjiajie + Dujiangyan day trip</div></div>
-          <div class="ov-cell"><div class="ov-cell-label">Total estimate</div><div class="ov-cell-value">A$6,502.84</div><div class="ov-cell-sub">For both travellers, including flights, hotels, trains, food, tickets and flexible spend.</div></div>
+          <div class="ov-cell"><div class="ov-cell-label">Total estimate</div><div class="ov-cell-value">A$6,413.84</div><div class="ov-cell-sub">For both travellers, including flights, hotels, trains, food, tickets and flexible spend.</div></div>
           <div class="ov-cell"><div class="ov-cell-label">Trip style</div><div class="ov-cell-value">Food-first</div><div class="ov-cell-sub">Mid-range hotels, local-first dining, key attractions without tourist traps</div></div>
         </div>
         <div class="route-timeline" style="margin-bottom:36px">
@@ -1157,14 +1157,14 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
           <thead><tr><th>Category</th><th>A$</th><th>Status</th></tr></thead>
           <tbody>
             <tr><td><div class="td-city">✈️ International flights</div><div class="td-sub">Sichuan Airlines 3U3886/3U3885 MEL↔TFU</div></td><td><strong>A$1,395</strong></td><td><span style="color:#2E7A32;font-weight:600">✓ Booked</span></td></tr>
-            <tr><td><div class="td-city">🏨 Accommodation</div><div class="td-sub">Licheng (CDU 4n) · Sense Scene (CQ 4n) · Jinpu Ju (ZJJ 3n) · Zenec (CDU 1n)</div></td><td><strong>A$923.24</strong></td><td><span style="color:#2E7A32;font-weight:600">✓ Booked</span></td></tr>
+            <tr><td><div class="td-city">🏨 Accommodation</div><div class="td-sub">Licheng (CDU 4n) · Sense Scene (CQ 4n) · Jinpu Ju (ZJJ 3n) · Zenec (CDU 1n)</div></td><td><strong>A$834.24</strong></td><td><span style="color:#2E7A32;font-weight:600">✓ Booked</span></td></tr>
             <tr><td><div class="td-city">🚆 Internal trains</div><div class="td-sub">CDU↔DJY (A$5) · CDU→CQ (A$68) · CQ→ZJJ (A$96) · ZJJ→CDU (A$170)</div></td><td><strong>A$339</strong></td><td><span style="color:#2E7A32;font-weight:600">✓ Actual cost</span></td></tr>
             <tr><td><div class="td-city">🎫 Tickets &amp; Attractions</div><div class="td-sub">Panda Base · DJY · Shufeng Yayun · Shuyanfu banquet · 1949 Show · FuFu Spa · Tianmen Mtn · ZJJ Grand Canyon combo · Bailong+Tianzishan · Charming Xiangxi</div></td><td><strong>A$950.60</strong></td><td><span style="color:#2E7A32;font-weight:600">✓ Actual cost</span></td></tr>
             <tr><td><div class="td-city">🍜 Food</div><div class="td-sub">A$75/day × 13 days (breakfasts, lunches, dinners)</div></td><td><strong>~A$975</strong></td><td>—</td></tr>
             <tr><td><div class="td-city">🛍️ Shopping</div></td><td><strong>A$1,000</strong></td><td>—</td></tr>
             <tr><td><div class="td-city">💳 Other spending</div><div class="td-sub">Entertainment (A$200) · Local transport/Didi (A$150) · Drinks (A$50) · eSIM (A$20) · Misc (A$500)</div></td><td><strong>A$920</strong></td><td>—</td></tr>
-            <tr class="tr-total"><td><strong>Total estimate</strong><div class="td-sub">For both · all inclusive · from Costs tab</div></td><td><strong>A$6,502.84</strong></td><td></td></tr>
-            <tr class="tr-total" style="background:rgba(192,32,42,.04)"><td><strong>Total actual / confirmed</strong><div class="td-sub">Rows marked Actual = Y in the Costs tab</div></td><td><strong>A$4,107.84</strong></td><td><span style="color:#2E7A32;font-weight:600">✓</span></td></tr>
+            <tr class="tr-total"><td><strong>Total estimate</strong><div class="td-sub">For both · all inclusive · from Costs tab</div></td><td><strong>A$6,413.84</strong></td><td></td></tr>
+            <tr class="tr-total" style="background:rgba(192,32,42,.04)"><td><strong>Total actual / confirmed</strong><div class="td-sub">Rows marked Actual = Y in the Costs tab</div></td><td><strong>A$4,018.84</strong></td><td><span style="color:#2E7A32;font-weight:600">✓</span></td></tr>
             <tr class="tr-total" style="background:rgba(46,122,50,.04)"><td><strong>Remaining estimate</strong><div class="td-sub">Unbooked / flexible spend remaining from Costs tab</div></td><td><strong>A$2,395</strong></td><td></td></tr>
           </tbody>
         </table>
@@ -1176,8 +1176,8 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
               Licheng Hotel (CDU, 4n) — <strong>A$324.24</strong><br>
               Sense Scene Hotel (CQ, 4n) — <strong>A$282</strong><br>
               Jinpu Ju Hotel (ZJJ, 3n) — <strong>A$157</strong><br>
-              Zenec International (CDU, 1n) — <strong>A$160</strong><br>
-              <span style="color:var(--ink-light)">Total (both): <strong>A$923.24</strong></span>
+              Zenec International (CDU, 1n) — <strong>A$71</strong><br>
+              <span style="color:var(--ink-light)">Total (both): <strong>A$834.24</strong></span>
             </div>
           </div>
           <div style="background:var(--paper-warm);border:1px solid var(--paper-mid);border-radius:10px;padding:16px">
@@ -1249,7 +1249,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
       <div class="section-header sh-tracker">
         <div class="section-eyebrow">Planning</div>
         <div class="section-title">Spend <em>tracker</em></div>
-        <div class="section-subtitle">Log actual spend vs budget — AUD · total estimated A$6,502.84</div>
+        <div class="section-subtitle">Log actual spend vs budget — AUD · total estimated A$6,413.84</div>
       </div>
       <div class="days-container">
         <div id="trackerGrid" class="tracker-grid"></div>
@@ -1683,7 +1683,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Spend Tracker
 const TRACKER_CITIES = [
   { id: 'flights',  label: '✈️ International flights',           budget: 1395, note: 'Sichuan Airlines RTN · confirmed' },
-  { id: 'accom',    label: '🏨 Accommodation (all hotels)',       budget: 923.24,  note: 'Licheng + Sense Scene + Jinpu Ju + Zenec · booked' },
+  { id: 'accom',    label: '🏨 Accommodation (all hotels)',       budget: 834.24,  note: 'Licheng + Sense Scene + Jinpu Ju + Zenec · booked' },
   { id: 'trains',   label: '🚆 Internal trains (all)',            budget: 339,  note: 'CDU↔DJY + CDU→CQ + CQ→ZJJ + ZJJ→CDU' },
   { id: 'tickets',  label: '🎫 Tickets & attractions',           budget: 950.6,  note: 'Pandas + DJY + Shufeng + Shuyanfu + 1949 + Spa + ZJJ parks' },
   { id: 'food',     label: '🍜 Food (all meals)',                 budget: 975,  note: 'A$75/day × 13 days' },
@@ -1728,7 +1728,7 @@ function updateTrackerSummary() {
   if (!body) return;
   let totalBudget = 0, totalSpent = 0;
   TRACKER_CITIES.forEach(c => { totalBudget += c.budget; totalSpent += tGet(c.id); });
-  // Total should be A$6,502.84 from the Costs tab.
+  // Total should be A$6,413.84 from the Costs tab.
   const pct = totalBudget > 0 ? Math.min(Math.round(totalSpent / totalBudget * 100), 100) : 0;
   const remaining = totalBudget - totalSpent;
   const over = totalSpent > totalBudget;
