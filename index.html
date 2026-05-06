@@ -263,23 +263,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
 .tr-total td{font-weight:500;background:var(--paper-warm);border-bottom:none;border-top:2px solid var(--paper-mid)}
 .tr-total td:not(:first-child){font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--ink)}
 
-/* BOOKING CHECKLIST */
-.book-list{margin-bottom:28px}
-.book-item{display:flex;gap:14px;padding:18px 0;border-bottom:1px solid var(--paper-mid)}
-.book-item:last-child{border-bottom:none}
-.book-check{width:15px;height:15px;margin-top:6px;flex-shrink:0;cursor:pointer;accent-color:var(--accent)}
-.book-priority{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:500;flex-shrink:0;margin-top:1px}
-.p-urgent{background:#fde8e0;color:var(--accent)}
-.p-soon{background:var(--gold-light);color:var(--gold)}
-.p-prep{background:var(--teal-light);color:var(--teal)}
-.book-title{font-size:14px;font-weight:500;color:var(--ink);margin-bottom:4px}
-.book-desc{font-size:12px;color:var(--ink-light);line-height:1.6}
-.book-item.done .book-title{text-decoration:line-through;color:var(--ink-faint)}
-.book-item.done .book-desc{color:var(--ink-faint)}
-.book-item.done .book-priority{opacity:.55}
-.priority-section-label{font-size:10px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;padding:22px 0 8px;border-bottom:1px solid var(--paper-mid);margin-bottom:0}
-.ps-urgent{color:var(--accent)}.ps-soon{color:var(--gold)}.ps-prep{color:var(--teal)}
-
 /* SPEND TRACKER */
 .tracker-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px}
 .tracker-city{border:1px solid var(--paper-mid);border-radius:10px;padding:14px 16px}
@@ -1191,30 +1174,62 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
       <div class="section-header sh-book">
         <div class="section-eyebrow">Planning</div>
         <div class="section-title">Booking <em>checklist</em></div>
-        <div class="section-subtitle">What to book, in priority order — several sell out weeks ahead</div>
+        <div class="section-subtitle">Pre-trip booking tasks before departure 11 May 2026</div>
       </div>
       <div class="days-container">
         <div class="tip-box"><strong>Source To Book tab:</strong> hotels are booked per your note. Remaining items marked not booked in the spreadsheet are eSIM, Panda Base, Dujiangyan HSR + scenic area, Chengdu→Chongqing train, Shuyanfu, optional Shufeng Yayun, Chongqing→Zhangjiajie train, 1949 Show, Zhangjiajie→Chengdu train, FuFu Spa, Tianmen Mountain Route B, Zhangjiajie National Park + Grand Canyon combo, Bailong Elevator + Tianzishan Cable Car, and Charming Xiangxi.</div>
-        <div class="priority-section-label ps-urgent">🔴 Book immediately — these fill up or require advance booking</div>
-        <div class="book-list">
-          <div class="book-item"><div class="book-priority p-urgent">1</div><div><div class="book-title"><ruby>蜀<rt>shǔ</rt></ruby><ruby>风<rt>fēng</rt></ruby><ruby>雅<rt>yǎ</rt></ruby><ruby>韵<rt>yùn</rt></ruby> Shufeng Yayun Sichuan Opera — Tue 12 May</div><div class="book-desc">Book via Trip.com or directly at shufengyayun.com. Liyuan House tickets ¥150–180pp, VIP Chinese Opera House ¥280–320pp. Show starts 8pm. Book at least 2–3 weeks ahead — popular with domestic tourists.</div></div></div>
-          <div class="book-item"><div class="book-priority p-urgent">2</div><div><div class="book-title"><ruby>蜀<rt>shǔ</rt></ruby><ruby>宴<rt>yàn</rt></ruby><ruby>赋<rt>fù</rt></ruby> Shuyanfu Imperial Banquet — Fri 15 May</div><div class="book-desc">Book via WeChat mini-program (search <ruby>蜀<rt>shǔ</rt></ruby><ruby>宴<rt>yàn</rt></ruby><ruby>赋<rt>fù</rt></ruby>). Opens for booking exactly 7 days before the session. ¥100pp deposit required via WeChat Pay. Tickets: ¥298 (standard), ¥398 (mid), ¥498 (VIP front row). Add hanfu costume + hair styling: ¥100–200pp extra. This sells out. Arrive 5pm for 1.5hr costume session before 6:30pm show.</div></div></div>
-          <div class="book-item"><div class="book-priority p-urgent">3</div><div><div class="book-title">Zhangjiajie National Forest Park — 4-day timed entry pass</div><div class="book-desc">Book on Klook or Trip.com with your passport number. Select East Gate, Day 1 = Thu 21 May. 4-day combo pass (entry + Bailong Elevator + Tianzishan Cable Car): ~¥376pp. Facial registration done on first entry. You MUST register Day 2 entry with park staff on Day 1 in person. Carry passport at all times in the park.</div></div></div>
-          <div class="book-item"><div class="book-priority p-urgent">4</div><div><div class="book-title">All three internal trains — book around May 8 as tickets go on sale 2 weeks before travel date</div><div class="book-desc"><strong>Chengdu East → Shapingba 10:40→11:42</strong> (Sat 16 May). <strong>Chongqing East → Zhangjiajie West 8:16→10:42</strong> (Wed 20 May). <strong>Zhangjiajie West → Chengdu East 9:55→14:20</strong> (Sat 23 May). Book on Trip.com (English interface) or 12306 (Chinese, harder but cheaper). Foreign cards now accepted on both platforms. Trains sell out on popular routes.</div></div></div>
-          <div class="book-item"><div class="book-priority p-urgent">5</div><div><div class="book-title">Giant Panda Base tickets — night before</div><div class="book-desc">Book via WeChat mini-program (<ruby>大<rt>dà</rt></ruby><ruby>熊<rt>xióng</rt></ruby><ruby>猫<rt>māo</rt></ruby><ruby>繁<rt>fán</rt></ruby><ruby>育<rt>yù</rt></ruby><ruby>研<rt>yán</rt></ruby><ruby>究<rt>jiū</rt></ruby><ruby>基<rt>jī</rt></ruby><ruby>地<rt>dì</rt></ruby>) or Trip.com. ¥55pp. Must book for specific date and time slot. They do sell out, especially on weekends. Book for 7:30–8:00 AM entry — essential for seeing active pandas.</div></div></div>
+        <div class="prep-month">
+          <div class="prep-month-label"><div class="prep-month-name">Now</div><div class="prep-month-sub">Immediately</div></div>
+          <div class="prep-month-body">
+            <div class="prep-task"><input type="checkbox" id="bc1" checked><label for="bc1"><strong>Hotels booked</strong> — Licheng Hotel (both Chengdu stays) · Sense Scene Hotel · Jinpu Ju Hotel<small>Keep screenshots or PDFs of every hotel confirmation available offline.</small></label></div>
+            <div class="prep-task"><input type="checkbox" id="bc2"><label for="bc2"><strong>Confirm visa-free entry status for Australia → China</strong><small>Check smartraveller.gov.au — 30-day visa-free policy, verify it's still in effect. Passport must be valid 6 months beyond China departure date.</small></label></div>
+          </div>
         </div>
-        <div class="priority-section-label ps-soon">🟡 Book soon — 2–4 weeks before departure</div>
-        <div class="book-list">
-          <div class="book-item"><div class="book-priority p-soon">✓</div><div><div class="book-title">All hotels — booked</div><div class="book-desc">Licheng Hotel (Century City, both Chengdu stays) · Sense Scene Hotel (Hongya Cave) · Jinpu Ju Hotel (Wulingyuan). Accommodation is confirmed; keep offline screenshots of confirmations for check-in.</div></div></div>
-          <div class="book-item"><div class="book-priority p-soon">7</div><div><div class="book-title">Dujiangyan HSR — Xipu → DJY (Thu 14 May)</div><div class="book-desc">Book on Trip.com or 12306 the night before you go. Trains run every 30 min from ~7am. ¥15pp each way. You must pay digitally (no cash at HSR gates as a foreigner). WeChat Pay or Trip.com booking works. Allow time to cross-platform at Xipu.</div></div></div>
-          <div class="book-item"><div class="book-priority p-soon">8</div><div><div class="book-title">WeChat Pay + Alipay setup — essential for China</div><div class="book-desc">WeChat Pay now accepts international Visa/Mastercard linked to a foreign bank account. Set up in Australia before departure. Alipay international version also works. Without mobile payment, you will struggle at local restaurants, stalls, and attractions.</div></div></div>
+        <div class="prep-month">
+          <div class="prep-month-label"><div class="prep-month-name">April</div><div class="prep-month-sub">4–6 weeks out</div></div>
+          <div class="prep-month-body">
+            <div class="prep-task"><input type="checkbox" id="bc3"><label for="bc3"><strong>Book Shufeng Yayun Sichuan Opera</strong> — Tue 12 May, 8pm show<small>Via Trip.com or directly at shufengyayun.com. Liyuan House ¥150–180pp, VIP ¥280–320pp.</small></label></div>
+            <div class="prep-task"><input type="checkbox" id="bc4"><label for="bc4"><strong>Book Zhangjiajie Forest Park timed entry pass</strong> — Thu 21 May (Day 1)<small>Klook or Trip.com. Passport number required. 4-day combo pass ~¥376pp. East Gate entry.</small></label></div>
+            <div class="prep-task"><input type="checkbox" id="bc5"><label for="bc5"><strong>Book Zhangjiajie Grand Canyon combo</strong><small>Book the glass bridge / canyon combo on Klook or Trip.com if keeping it in the Zhangjiajie plan.</small></label></div>
+            <div class="prep-task"><input type="checkbox" id="bc6"><label for="bc6"><strong>Book 1949 Show</strong><small>Chongqing evening show. Book ahead if you want fixed seats or a specific night.</small></label></div>
+            <div class="prep-task"><input type="checkbox" id="bc7"><label for="bc7"><strong>Book FuFu Spa</strong><small>Reserve your preferred time slot before the Chongqing evenings fill up.</small></label></div>
+            <div class="prep-task"><input type="checkbox" id="bc8"><label for="bc8"><strong>Install VPN on both phones and all devices</strong><small>ExpressVPN, Astrill, or NordVPN. Test before entering China. Google, WhatsApp, Instagram, and many Western apps are blocked.</small></label></div>
+            <div class="prep-task"><input type="checkbox" id="bc9"><label for="bc9"><strong>Set up WeChat Pay and/or Alipay with international card</strong><small>WeChat Pay accepts international Visa/Mastercard. Link in WeChat → Me → Pay → Add a card. Alipay International also accepts foreign cards. Test with a small transaction.</small></label></div>
+            <div class="prep-task"><input type="checkbox" id="bc10"><label for="bc10"><strong>Download Didi, Amap (<ruby>高<rt>gāo</rt></ruby><ruby>德<rt>dé</rt></ruby><ruby>地<rt>dì</rt></ruby><ruby>图<rt>tú</rt></ruby>), Dianping (<ruby>大<rt>dà</rt></ruby><ruby>众<rt>zhòng</rt></ruby><ruby>点<rt>diǎn</rt></ruby><ruby>评<rt>píng</rt></ruby>)</strong><small>Didi = ride-hailing. Amap = navigation. Dianping = restaurant reviews. Download before you travel.</small></label></div>
+            <div class="prep-task"><input type="checkbox" id="bc11"><label for="bc11"><strong>Get ubank card — no ATM fees overseas</strong><small>Apply online, activate the card, and load with travel budget. Withdraw in major cities at Bank of China or ICBC branches.</small></label></div>
+          </div>
         </div>
-        <div class="priority-section-label ps-prep">🟢 Prep — 2–6 weeks before departure</div>
-        <div class="book-list">
-          <div class="book-item"><div class="book-priority p-prep">✓</div><div><div class="book-title">China eSIM — buy 1 week before</div><div class="book-desc">Get a China eSIM covering the full trip. Recommended: MobiMatter (China 20–35GB, ~US$18–25) or Trip.com eSIM (flexible data, in-app activation). China blocks Google, Instagram, WhatsApp, etc. — you'll need a VPN. Install your VPN before entering China; you can't download it once inside. Recommended VPN: ExpressVPN or Astrill (set up on all devices at home).</div></div></div>
-          <div class="book-item"><div class="book-priority p-prep">✓</div><div><div class="book-title">VPN — install before departure</div><div class="book-desc">Google Maps, WhatsApp, Instagram, and most Western apps are blocked in China. Install a VPN (ExpressVPN, Astrill, or NordVPN) on all devices before leaving Australia. Test it on a VPN server. For maps, use Apple Maps (works in China) or download Amap (<ruby>高<rt>gāo</rt></ruby><ruby>德<rt>dé</rt></ruby><ruby>地<rt>dì</rt></ruby><ruby>图<rt>tú</rt></ruby>) — the best navigation app in China. For food: Dianping app (China's Yelp).</div></div></div>
-          <div class="book-item"><div class="book-priority p-prep">✓</div><div><div class="book-title">ubank card — no overseas ATM fees</div><div class="book-desc">Australia's best card for overseas spending. No foreign transaction fees, no ATM fees. Download the app, activate the card, and load your travel budget. China ATMs for foreign cards: Bank of China and ICBC branches in major cities accept most foreign cards. Withdraw in cities — ATM availability drops significantly outside urban areas.</div></div></div>
-          <div class="book-item"><div class="book-priority p-prep">✓</div><div><div class="book-title">Check visa — Australians now get 30-day visa-free entry to China</div><div class="book-desc">Australia received 30-day visa-free access to China in 2024 (extended through 2026 as of last update). Verify this is still in effect at smartraveller.gov.au before departure. Passport must be valid for at least 6 months beyond your departure date from China.</div></div></div>
+        <div class="prep-month">
+          <div class="prep-month-label"><div class="prep-month-name">Late April</div><div class="prep-month-sub">2–3 weeks out</div></div>
+          <div class="prep-month-body">
+            <div class="prep-task"><input type="checkbox" id="bc12"><label for="bc12"><strong>Buy China eSIM</strong> — install and activate before boarding<small>MobiMatter or Trip.com eSIM. 20–35GB recommended for 15 days. Activate before leaving Australia so you have data when you land.</small></label></div>
+            <div class="prep-task"><input type="checkbox" id="bc13"><label for="bc13"><strong>Book Shuyanfu Imperial Banquet</strong> — exactly 7 days before Fri 15 May = book on Fri 8 May<small>WeChat mini-program only. Opens exactly 7 days before the session. ¥100pp deposit via WeChat Pay. VIP/mid row recommended.</small></label></div>
+            <div class="prep-task"><input type="checkbox" id="bc14"><label for="bc14"><strong>Book Chengdu East → Shapingba train</strong> — Sat 16 May, 10:40 → 11:42<small>Book on Trip.com or 12306 around May 8 when tickets go on sale. Foreign cards accepted. This replaces the old all-trains-in-one checkbox.</small></label></div>
+            <div class="prep-task"><input type="checkbox" id="bc15"><label for="bc15"><strong>Book Chongqing East → Zhangjiajie West train</strong> — Wed 20 May, 8:16 → 10:42<small>Book on Trip.com or 12306. Alternative: 9:52 → 11:58 if timing changes.</small></label></div>
+            <div class="prep-task"><input type="checkbox" id="bc16"><label for="bc16"><strong>Book Zhangjiajie West → Chengdu East train</strong> — Sat 23 May, 9:55 → 14:20<small>Book on Trip.com or 12306. Save the ticket details offline after booking.</small></label></div>
+            <div class="prep-task"><input type="checkbox" id="bc17"><label for="bc17"><strong>Download Amap offline maps</strong> — Chengdu, Chongqing, Zhangjiajie<small>Essential backup if VPN drops. Download all three cities before departure.</small></label></div>
+            <div class="prep-task"><input type="checkbox" id="bc18"><label for="bc18"><strong>Print/save offline: hotel confirmations, train tickets, park passes</strong><small>China apps occasionally have payment or login issues — have a paper or offline backup of everything.</small></label></div>
+          </div>
+        </div>
+        <div class="prep-month">
+          <div class="prep-month-label"><div class="prep-month-name">May</div><div class="prep-month-sub">1 week out</div></div>
+          <div class="prep-month-body">
+            <div class="prep-task"><input type="checkbox" id="bc19"><label for="bc19"><strong>Book Giant Panda Base</strong> — Wed 13 May, morning slot, 7:30 AM<small>WeChat mini-program or Trip.com. ¥55pp. Book the earliest morning slot for active pandas.</small></label></div>
+            <div class="prep-task"><input type="checkbox" id="bc20"><label for="bc20"><strong>Book Dujiangyan HSR</strong> — Thu 14 May, Xipu → DJY ~8am train<small>Trip.com or 12306. ¥15pp each way. Book the night before at latest. Pay digitally — no cash at HSR gates.</small></label></div>
+            <div class="prep-task"><input type="checkbox" id="bc21"><label for="bc21"><strong>Book Tianmen Mountain Route B</strong><small>Reserve timed entry before Zhangjiajie. Keep passport details ready for booking.</small></label></div>
+            <div class="prep-task"><input type="checkbox" id="bc22"><label for="bc22"><strong>Book Bailong Elevator + Tianzishan Cable Car</strong><small>Add these for the Zhangjiajie National Forest Park route if not included in your park combo.</small></label></div>
+            <div class="prep-task"><input type="checkbox" id="bc23"><label for="bc23"><strong>Book Charming Xiangxi Show</strong><small>Book ahead for your Zhangjiajie evening if you want fixed seats.</small></label></div>
+            <div class="prep-task"><input type="checkbox" id="bc24"><label for="bc24"><strong>Confirm all bookings are accessible offline</strong><small>Screenshots or saved PDFs of every hotel, train, and attraction ticket. Carry physical passport for HSR and park entry.</small></label></div>
+          </div>
+        </div>
+        <div class="prep-month">
+          <div class="prep-month-label"><div class="prep-month-name">Day before</div><div class="prep-month-sub">10 May</div></div>
+          <div class="prep-month-body">
+            <div class="prep-task"><input type="checkbox" id="bc25"><label for="bc25"><strong>Check in online for Sichuan Airlines 3U3886</strong><small>Check-in opens 24 hrs before 8:20 PM departure. Confirm seat assignments.</small></label></div>
+            <div class="prep-task"><input type="checkbox" id="bc26"><label for="bc26"><strong>Charge all electronics fully overnight</strong><small>Phones, cameras, and power banks.</small></label></div>
+            <div class="prep-task"><input type="checkbox" id="bc27"><label for="bc27"><strong>Test VPN one more time</strong> on a Chinese server<small>Both phones. Troubleshoot now if it does not connect.</small></label></div>
+            <div class="prep-task"><input type="checkbox" id="bc28"><label for="bc28"><strong>Load WeChat Pay with ¥1,000–2,000 AUD equivalent</strong><small>Use in the first few days before you establish ATM access. Most transactions in China are mobile payment.</small></label></div>
+          </div>
         </div>
       </div>
     </div>
@@ -1248,7 +1263,9 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
           <div class="prep-month-label"><div class="prep-month-name">Now</div><div class="prep-month-sub">Immediately</div></div>
           <div class="prep-month-body">
             <div class="prep-task"><input type="checkbox" id="pt1" checked><label for="pt1"><strong>Hotels booked</strong> — Licheng Hotel (both Chengdu stays) · Sense Scene Hotel · Jinpu Ju Hotel<small>Keep screenshots or PDFs of every hotel confirmation available offline.</small></label></div>
-            <div class="prep-task"><input type="checkbox" id="pt2"><label for="pt2"><strong>Book all three internal trains</strong> — CDU→CQ (16 May), CQ→ZJJ (20 May), ZJJ→CDU (23 May)<small>Use Trip.com (English interface) or 12306. Foreign cards accepted on both. Trains sell out.</small></label></div>
+            <div class="prep-task"><input type="checkbox" id="pt2a"><label for="pt2a"><strong>Book Chengdu East → Shapingba train</strong> — Sat 16 May, 10:40 → 11:42<small>Use Trip.com (English interface) or 12306. Foreign cards accepted on both. Trains sell out.</small></label></div>
+            <div class="prep-task"><input type="checkbox" id="pt2b"><label for="pt2b"><strong>Book Chongqing East → Zhangjiajie West train</strong> — Wed 20 May, 8:16 → 10:42<small>Use Trip.com or 12306. Alternative: 9:52 → 11:58 if timing changes.</small></label></div>
+            <div class="prep-task"><input type="checkbox" id="pt2c"><label for="pt2c"><strong>Book Zhangjiajie West → Chengdu East train</strong> — Sat 23 May, 9:55 → 14:20<small>Use Trip.com or 12306. Save the ticket details offline after booking.</small></label></div>
             <div class="prep-task"><input type="checkbox" id="pt3"><label for="pt3"><strong>Confirm visa-free entry status for Australia → China</strong><small>Check smartraveller.gov.au — 30-day visa-free policy, verify it's still in effect. Passport must be valid 6 months beyond China departure date.</small></label></div>
           </div>
         </div>
@@ -1567,27 +1584,6 @@ document.addEventListener('DOMContentLoaded', function() {
 function saveCheck(id, val) { try { localStorage.setItem('chk_cn_' + id, val ? '1' : '0'); } catch(e) {} }
 function loadCheck(id) { try { return localStorage.getItem('chk_cn_' + id) === '1'; } catch(e) { return false; } }
 function hasSavedCheck(id) { try { return localStorage.getItem('chk_cn_' + id) !== null; } catch(e) { return false; } }
-function initBookingChecklist() {
-  document.querySelectorAll('#panel-book .book-item').forEach((item, idx) => {
-    if (item.querySelector('input[type=checkbox]')) return;
-    const cb = document.createElement('input');
-    cb.type = 'checkbox';
-    cb.className = 'book-check';
-    cb.id = item.dataset.checkId || 'book' + (idx + 1);
-    item.dataset.checkId = cb.id;
-
-    const priority = item.querySelector('.book-priority');
-    const priorityText = priority ? priority.textContent.trim() : '';
-    if (!hasSavedCheck(cb.id) && priorityText === '✓') cb.checked = true;
-
-    const title = item.querySelector('.book-title');
-    if (title) {
-      const label = title.textContent.trim().replace(/\s+/g, ' ');
-      cb.setAttribute('aria-label', 'Mark booked: ' + label);
-    }
-    item.insertBefore(cb, item.firstChild);
-  });
-}
 document.addEventListener('change', e => {
   if (e.target.type !== 'checkbox') return;
   const id = e.target.id;
@@ -1597,11 +1593,8 @@ document.addEventListener('change', e => {
   if (pi) pi.classList.toggle('checked', val);
   const pt = e.target.closest('.prep-task');
   if (pt) pt.classList.toggle('done', val);
-  const bi = e.target.closest('.book-item');
-  if (bi) bi.classList.toggle('done', val);
 });
 document.addEventListener('DOMContentLoaded', () => {
-  initBookingChecklist();
   document.querySelectorAll('input[type=checkbox]').forEach(cb => {
     if (!cb.id) return;
     const val = hasSavedCheck(cb.id) ? loadCheck(cb.id) : cb.checked;
@@ -1611,8 +1604,6 @@ document.addEventListener('DOMContentLoaded', () => {
       if (pi) pi.classList.add('checked');
       const pt = cb.closest('.prep-task');
       if (pt) pt.classList.add('done');
-      const bi = cb.closest('.book-item');
-      if (bi) bi.classList.add('done');
     }
   });
   renderTracker();
