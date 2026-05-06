@@ -78,7 +78,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
 .nav-tile-budget.active{background:rgba(200,146,42,.2);border-color:rgba(200,146,42,.4)}
 .nav-tile-book.active{background:rgba(192,32,42,.22);border-color:rgba(192,32,42,.5)}
 .nav-tile-tracker.active{background:rgba(29,112,112,.2);border-color:rgba(29,112,112,.45)}
-.nav-tile-etiquette.active{background:rgba(123,78,160,.18);border-color:rgba(123,78,160,.4)}
 .nav-tile-timeline.active{background:rgba(200,146,42,.2);border-color:rgba(200,146,42,.45)}
 .nav-tile-pack.active{background:rgba(46,122,50,.2);border-color:rgba(46,122,50,.4)}
 .nav-tile-metro.active{background:rgba(29,90,160,.2);border-color:rgba(29,90,160,.45)}
@@ -103,7 +102,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
 .sh-budget::before{background:var(--gold)}
 .sh-book::before{background:var(--red-bright)}
 .sh-tracker::before{background:var(--teal)}
-.sh-etiquette::before{background:var(--djy)}
 .sh-timeline::before{background:var(--gold)}
 .sh-pack::before{background:var(--zjj)}
 .section-eyebrow{font-size:10px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-light);margin-bottom:8px}
@@ -269,12 +267,16 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
 .book-list{margin-bottom:28px}
 .book-item{display:flex;gap:14px;padding:18px 0;border-bottom:1px solid var(--paper-mid)}
 .book-item:last-child{border-bottom:none}
+.book-check{width:15px;height:15px;margin-top:6px;flex-shrink:0;cursor:pointer;accent-color:var(--accent)}
 .book-priority{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:500;flex-shrink:0;margin-top:1px}
 .p-urgent{background:#fde8e0;color:var(--accent)}
 .p-soon{background:var(--gold-light);color:var(--gold)}
 .p-prep{background:var(--teal-light);color:var(--teal)}
 .book-title{font-size:14px;font-weight:500;color:var(--ink);margin-bottom:4px}
 .book-desc{font-size:12px;color:var(--ink-light);line-height:1.6}
+.book-item.done .book-title{text-decoration:line-through;color:var(--ink-faint)}
+.book-item.done .book-desc{color:var(--ink-faint)}
+.book-item.done .book-priority{opacity:.55}
 .priority-section-label{font-size:10px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;padding:22px 0 8px;border-bottom:1px solid var(--paper-mid);margin-bottom:0}
 .ps-urgent{color:var(--accent)}.ps-soon{color:var(--gold)}.ps-prep{color:var(--teal)}
 
@@ -296,29 +298,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
 .tracker-bar.over{background:var(--accent)}
 .tracker-pct-label{font-size:11px;color:var(--ink-light)}
 .tracker-clear-btn{font-size:11px;color:var(--accent);background:none;border:1px solid var(--accent);padding:5px 12px;border-radius:6px;cursor:pointer;margin-top:14px}
-
-/* ETIQUETTE */
-.etiq-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
-.etiq-card{border-radius:10px;padding:14px 16px;border:1px solid}
-.etiq-card.do{background:#f0faf6;border-color:#b8e0d0}
-.etiq-card.dont{background:#fdf2ee;border-color:#f0c8b0}
-.etiq-card.dining{background:#fdf6ed;border-color:#e8d8c0}
-.etiq-card.transport{background:#f0f6fd;border-color:#c8d4f0}
-.etiq-card-title{font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px}
-.etiq-card.do .etiq-card-title{color:var(--teal)}
-.etiq-card.dont .etiq-card-title{color:var(--accent)}
-.etiq-card.dining .etiq-card-title{color:var(--gold)}
-.etiq-card.transport .etiq-card-title{color:#2a5aaa}
-.etiq-item{font-size:12px;color:var(--ink-mid);line-height:1.55;padding:3px 0;display:flex;gap:8px}
-.etiq-item span.ei{flex-shrink:0;width:14px;text-align:center}
-.etiq-divider{border:none;border-top:1px solid var(--paper-mid);margin:22px 0}
-.etiq-phrases{background:var(--paper-warm);border-radius:10px;padding:14px 16px;margin-top:10px}
-.etiq-phrases-label{font-size:9px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
-.phrase-row{display:grid;grid-template-columns:160px 1fr 1fr;gap:8px;padding:5px 0;border-bottom:1px solid var(--paper-mid);font-size:12px}
-.phrase-row:last-child{border-bottom:none}
-.phrase-eng{color:var(--ink-light)}
-.phrase-local{color:var(--ink);font-weight:500;font-family:'Noto Serif SC',serif}
-.phrase-pron{color:var(--ink-light);font-style:italic}
 
 /* PRE-TRIP TIMELINE */
 .prep-month{display:flex;gap:0}
@@ -362,7 +341,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
   .mobile-tools-overlay{position:fixed;inset:0;background:rgba(0,0,0,.38);z-index:1190;opacity:0;pointer-events:none;transition:opacity .2s ease;display:block}.mobile-tools-overlay.open{opacity:1;pointer-events:auto}.mobile-tools-sheet{display:block;position:fixed;left:0;right:0;bottom:0;z-index:1200;background:var(--paper);border-radius:22px 22px 0 0;border-top:1px solid var(--paper-mid);box-shadow:0 -12px 40px rgba(0,0,0,.28);padding:12px 16px calc(18px + env(safe-area-inset-bottom));transform:translateY(110%);transition:transform .22s ease;max-height:78vh;overflow:auto}.mobile-tools-sheet.open{transform:translateY(0)}.mobile-sheet-handle{width:42px;height:4px;background:var(--paper-mid);border-radius:4px;margin:0 auto 12px}.mobile-sheet-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:12px}.mobile-sheet-title{font-family:'Cormorant Garamond',serif;font-size:30px;line-height:1;font-weight:300}.mobile-sheet-sub{font-size:12px;color:var(--ink-light);margin-top:4px}.mobile-sheet-close{border:1px solid var(--paper-mid);background:var(--paper-warm);border-radius:999px;width:34px;height:34px;font-size:18px;color:var(--ink-mid);cursor:pointer}.mobile-tools-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.mobile-tool-card{border:1px solid var(--paper-mid);background:#fff8ee;border-radius:14px;padding:13px 12px;text-align:left;cursor:pointer;font-family:'DM Sans',sans-serif;color:var(--ink);box-shadow:0 1px 0 rgba(0,0,0,.02)}.mobile-tool-card .icon{font-size:21px;margin-bottom:4px}.mobile-tool-card .name{font-size:13px;font-weight:700;line-height:1.2}.mobile-tool-card .sub{font-size:10px;color:var(--ink-light);line-height:1.35;margin-top:3px}
   .sidebar{display:none!important}.main{display:block;min-height:auto}.content{width:100%}.cover{padding:28px 18px 24px;margin-top:0}.cover::before{font-size:160px;right:-14px;top:-16px}.cover-eyebrow{font-size:9px;margin-bottom:10px}.cover-title{font-size:42px;margin-bottom:6px}.cover-subtitle{font-size:18px;margin-bottom:18px}.cover-zh{font-size:18px;margin-bottom:12px;letter-spacing:.18em}.cover-divider{margin:18px 0;width:36px}.cover-meta{display:grid;grid-template-columns:1fr 1fr;gap:13px 16px}.cover-meta-value{font-size:16px}.flights-banner{padding:0 16px}.flights-inner{grid-template-columns:1fr}.flight-col{border-right:0;border-bottom:1px solid #2a0a0a;margin-right:0;padding:15px 0}.flight-col:last-child{border-bottom:0}.flight-row{align-items:flex-start;font-size:12px}.flight-time{min-width:58px}.flight-via,.flight-num{margin-left:66px}.route-strip{position:sticky;top:78px;z-index:900;padding:0 10px;border-top:1px solid rgba(255,255,255,.08);box-shadow:0 3px 14px rgba(0,0,0,.14)}.route-city{padding:9px 10px;align-items:flex-start}.route-city span:first-child{font-size:12px}.route-city span:last-child{font-size:9px;white-space:nowrap}
   .section-header{padding:30px 18px 20px}.section-title{font-size:36px}.section-subtitle{font-size:12px}.section-tags{gap:6px}.tag{font-size:10px;padding:3px 8px}.overview-content,.days-container{padding:18px 14px 26px}.overview-grid{grid-template-columns:1fr;border-radius:14px;margin-bottom:18px}.ov-cell{padding:16px 16px}.ov-cell-value{font-size:24px}.mobile-quick-tools{display:block;background:var(--paper-warm);border:1px solid var(--paper-mid);border-radius:16px;padding:14px;margin:0 14px 18px}.mobile-quick-title{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-light);margin-bottom:10px}.mobile-quick-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}.mobile-quick-grid button{border:1px solid var(--paper-mid);background:var(--paper);border-radius:12px;padding:9px 6px;font-family:'DM Sans',sans-serif;font-size:11px;color:var(--ink-mid);cursor:pointer}
-  .day-block{border-radius:16px;margin-bottom:14px;background:#fff8ee;scroll-margin-top:102px}.day-header{padding:14px 14px;background:var(--paper-warm)}.day-number{font-size:24px;min-width:30px}.day-title-str{font-size:13px;line-height:1.35}.day-body{padding:0 14px 14px}.tl-item{gap:10px;margin-bottom:16px}.tl-time{min-width:48px;font-size:10px}.tl-item:not(:last-child)::before{left:31px}.tl-act-title{font-size:13px;line-height:1.35}.tl-act-desc{font-size:12px}.cost-badge,.nav-badge{display:inline-block;margin:5px 4px 0 0;line-height:1.4}.tip-box{font-size:12px;margin:12px 0;border-radius:0 10px 10px 0}.food-card{border-radius:14px}.day-map-wrap{margin:16px 0 4px;border-radius:14px}.day-map-canvas{height:310px}.tbl-scroll{margin:0 -14px;padding:0 14px 18px;overflow-x:auto;-webkit-overflow-scrolling:touch}.tbl-scroll::before{content:'Swipe sideways to view the full table';display:block;position:sticky;left:0;margin:0 0 10px;padding:9px 12px;background:var(--paper-warm);border:1px solid var(--paper-mid);border-radius:999px;font-size:11px;color:var(--ink-light);width:max-content}.iti-table{font-size:11px;min-width:1500px}.iti-cell{min-width:130px;max-width:150px}.tracker-grid,.etiq-grid,.pack-grid{grid-template-columns:1fr}.phrase-row{grid-template-columns:1fr;gap:2px;padding:8px 0}.prep-month{display:block}.prep-month-label{width:auto;text-align:left;padding:14px 0 6px}.prep-month-body{border-left:0;border-top:2px solid var(--paper-mid);padding:12px 0 18px}.budget-table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}.budget-table th,.budget-table td{padding:9px 10px;font-size:12px}img{max-width:100%;height:auto}
+  .day-block{border-radius:16px;margin-bottom:14px;background:#fff8ee;scroll-margin-top:102px}.day-header{padding:14px 14px;background:var(--paper-warm)}.day-number{font-size:24px;min-width:30px}.day-title-str{font-size:13px;line-height:1.35}.day-body{padding:0 14px 14px}.tl-item{gap:10px;margin-bottom:16px}.tl-time{min-width:48px;font-size:10px}.tl-item:not(:last-child)::before{left:31px}.tl-act-title{font-size:13px;line-height:1.35}.tl-act-desc{font-size:12px}.cost-badge,.nav-badge{display:inline-block;margin:5px 4px 0 0;line-height:1.4}.tip-box{font-size:12px;margin:12px 0;border-radius:0 10px 10px 0}.food-card{border-radius:14px}.day-map-wrap{margin:16px 0 4px;border-radius:14px}.day-map-canvas{height:310px}.tbl-scroll{margin:0 -14px;padding:0 14px 18px;overflow-x:auto;-webkit-overflow-scrolling:touch}.tbl-scroll::before{content:'Swipe sideways to view the full table';display:block;position:sticky;left:0;margin:0 0 10px;padding:9px 12px;background:var(--paper-warm);border:1px solid var(--paper-mid);border-radius:999px;font-size:11px;color:var(--ink-light);width:max-content}.iti-table{font-size:11px;min-width:1500px}.iti-cell{min-width:130px;max-width:150px}.tracker-grid,.pack-grid{grid-template-columns:1fr}.prep-month{display:block}.prep-month-label{width:auto;text-align:left;padding:14px 0 6px}.prep-month-body{border-left:0;border-top:2px solid var(--paper-mid);padding:12px 0 18px}.budget-table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}.budget-table th,.budget-table td{padding:9px 10px;font-size:12px}img{max-width:100%;height:auto}
 }
 @media (min-width: 769px){.mobile-only{display:none!important}}
 
@@ -373,7 +352,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
 
 <!-- MOBILE APP NAVIGATION -->
 <div class="mobile-topbar" role="banner"><div class="mobile-topbar-main"><div class="mobile-brand"><div class="mobile-brand-title">China — May 2026</div><div class="mobile-brand-sub">11–25 May 2026</div></div></div><div class="mobile-route-mini" aria-label="Route overview"><button class="mobile-route-chip" type="button" data-panel="chengdu" onclick="routeGo('chengdu')"><strong>Chengdu</strong> · 4n</button><button class="mobile-route-chip" type="button" data-panel="chengdu" data-day="day-dujiangyan" onclick="routeGo('chengdu','day-dujiangyan')"><strong>DJY</strong> · d</button><button class="mobile-route-chip" type="button" data-panel="chongqing" onclick="routeGo('chongqing')"><strong>CQ</strong> · 4n</button><button class="mobile-route-chip" type="button" data-panel="zhangjiajie" onclick="routeGo('zhangjiajie')"><strong>ZJJ</strong> · 3n</button><button class="mobile-route-chip" type="button" data-panel="chengdu2" onclick="routeGo('chengdu2')"><strong>Chengdu</strong> · 1n</button></div></div>
-<div class="mobile-tools-overlay" id="mobile-tools-overlay" onclick="closeToolsSheet()"></div><div class="mobile-tools-sheet" id="mobile-tools-sheet" role="dialog" aria-modal="true" aria-label="Planning tools"><div class="mobile-sheet-handle"></div><div class="mobile-sheet-head"><div><div class="mobile-sheet-title">Planning tools</div><div class="mobile-sheet-sub">Budget, bookings, spend, packing, etiquette and maps.</div></div><button class="mobile-sheet-close" type="button" onclick="closeToolsSheet()" aria-label="Close tools">×</button></div><div class="mobile-tools-grid"><button class="mobile-tool-card" type="button" onclick="mobileGo('budget')"><div class="icon">💴</div><div class="name">Budget</div><div class="sub">Cost breakdown</div></button><button class="mobile-tool-card" type="button" onclick="mobileGo('book')"><div class="icon">📋</div><div class="name">Bookings</div><div class="sub">What to book</div></button><button class="mobile-tool-card" type="button" onclick="mobileGo('tracker')"><div class="icon">💸</div><div class="name">Spend</div><div class="sub">Log actuals</div></button><button class="mobile-tool-card" type="button" onclick="mobileGo('etiquette')"><div class="icon">🏮</div><div class="name">Etiquette</div><div class="sub">Do's & don'ts</div></button><button class="mobile-tool-card" type="button" onclick="mobileGo('timeline')"><div class="icon">📅</div><div class="name">Timeline</div><div class="sub">Pre-trip tasks</div></button><button class="mobile-tool-card" type="button" onclick="mobileGo('pack')"><div class="icon">🎒</div><div class="name">Packing</div><div class="sub">Apps & gear</div></button><button class="mobile-tool-card" type="button" onclick="mobileGo('metro')"><div class="icon">🚇</div><div class="name">Maps & metro</div><div class="sub">Transit guides</div></button><button class="mobile-tool-card" type="button" onclick="mobileGo('table')"><div class="icon">🗓️</div><div class="name">Full table</div><div class="sub">15-day overview</div></button></div></div>
+<div class="mobile-tools-overlay" id="mobile-tools-overlay" onclick="closeToolsSheet()"></div><div class="mobile-tools-sheet" id="mobile-tools-sheet" role="dialog" aria-modal="true" aria-label="Planning tools"><div class="mobile-sheet-handle"></div><div class="mobile-sheet-head"><div><div class="mobile-sheet-title">Planning tools</div><div class="mobile-sheet-sub">Budget, bookings, spend, packing and maps.</div></div><button class="mobile-sheet-close" type="button" onclick="closeToolsSheet()" aria-label="Close tools">×</button></div><div class="mobile-tools-grid"><button class="mobile-tool-card" type="button" onclick="mobileGo('budget')"><div class="icon">💴</div><div class="name">Budget</div><div class="sub">Cost breakdown</div></button><button class="mobile-tool-card" type="button" onclick="mobileGo('book')"><div class="icon">📋</div><div class="name">Bookings</div><div class="sub">What to book</div></button><button class="mobile-tool-card" type="button" onclick="mobileGo('tracker')"><div class="icon">💸</div><div class="name">Spend</div><div class="sub">Log actuals</div></button><button class="mobile-tool-card" type="button" onclick="mobileGo('timeline')"><div class="icon">📅</div><div class="name">Timeline</div><div class="sub">Pre-trip tasks</div></button><button class="mobile-tool-card" type="button" onclick="mobileGo('pack')"><div class="icon">🎒</div><div class="name">Packing</div><div class="sub">Apps & gear</div></button><button class="mobile-tool-card" type="button" onclick="mobileGo('metro')"><div class="icon">🚇</div><div class="name">Maps & metro</div><div class="sub">Transit guides</div></button><button class="mobile-tool-card" type="button" onclick="mobileGo('table')"><div class="icon">🗓️</div><div class="name">Full table</div><div class="sub">15-day overview</div></button></div></div>
 <nav class="mobile-bottom-nav" aria-label="Primary mobile navigation"><button class="mobile-bottom-btn active" type="button" data-mobile-target="overview" onclick="mobileGo('overview')"><span class="ico">🏠</span><span>Overview</span></button><button class="mobile-bottom-btn" type="button" data-mobile-target="chengdu" onclick="mobileGo('chengdu')"><span class="ico">📅</span><span>Days</span></button><button class="mobile-bottom-btn" type="button" data-mobile-target="tools" onclick="openToolsSheet()"><span class="ico">⚡</span><span>Tools</span></button><button class="mobile-bottom-btn" type="button" data-mobile-target="metro" onclick="mobileGo('metro')"><span class="ico">🗺️</span><span>Map</span></button></nav>
 
 
@@ -464,10 +443,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
         <div class="nav-tile-icon">💸</div>
         <div class="nav-tile-text"><span class="nav-tile-name">Spend Tracker</span><span class="nav-tile-sub">Log spend vs budget</span></div>
       </div>
-      <div class="nav-tile nav-tile-etiquette" onclick="showPanel('etiquette',this)">
-        <div class="nav-tile-icon">🏮</div>
-        <div class="nav-tile-text"><span class="nav-tile-name">Etiquette Guide</span><span class="nav-tile-sub">China do's &amp; don'ts</span></div>
-      </div>
       <div class="nav-tile nav-tile-timeline" onclick="showPanel('timeline',this)">
         <div class="nav-tile-icon">📅</div>
         <div class="nav-tile-text"><span class="nav-tile-name">Pre-trip Timeline</span><span class="nav-tile-sub">Month-by-month checklist</span></div>
@@ -496,7 +471,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
         <div class="overview-grid">
           <div class="ov-cell"><div class="ov-cell-label">Total nights</div><div class="ov-cell-value">14</div><div class="ov-cell-sub">11–25 May 2026</div></div>
           <div class="ov-cell"><div class="ov-cell-label">Cities</div><div class="ov-cell-value">4</div><div class="ov-cell-sub">Chengdu · Chongqing · Zhangjiajie + Dujiangyan day trip</div></div>
-          <div class="ov-cell"><div class="ov-cell-label">Total estimate</div><div class="ov-cell-value">A$6,431.84</div><div class="ov-cell-sub">For both travellers, including flights, hotels, trains, food, tickets and flexible spend.</div></div>
+          <div class="ov-cell"><div class="ov-cell-label">Total estimate</div><div class="ov-cell-value">A$6,501.84</div><div class="ov-cell-sub">For both travellers, including flights, hotels, trains, food, tickets and flexible spend.</div></div>
           <div class="ov-cell"><div class="ov-cell-label">Trip style</div><div class="ov-cell-value">Food-first</div><div class="ov-cell-sub">Mid-range hotels, local-first dining, key attractions without tourist traps</div></div>
         </div>
         <div class="route-timeline" style="margin-bottom:36px">
@@ -1160,12 +1135,12 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
             <tr><td><div class="td-city">✈️ International flights</div><div class="td-sub">Sichuan Airlines 3U3886/3U3885 MEL↔TFU</div></td><td><strong>A$1,395</strong></td><td><span style="color:#2E7A32;font-weight:600">✓ Booked</span></td></tr>
             <tr><td><div class="td-city">🏨 Accommodation</div><div class="td-sub">Licheng (CDU 4n + return 1n) · Sense Scene (CQ 4n) · Jinpu Ju (ZJJ 3n)</div></td><td><strong>A$852.24</strong></td><td><span style="color:#2E7A32;font-weight:600">✓ Booked</span></td></tr>
             <tr><td><div class="td-city">🚆 Internal trains</div><div class="td-sub">CDU↔DJY (A$5) · CDU→CQ (A$68) · CQ→ZJJ (A$96) · ZJJ→CDU (A$170)</div></td><td><strong>A$339</strong></td><td><span style="color:#2E7A32;font-weight:600">✓ Actual cost</span></td></tr>
-            <tr><td><div class="td-city">🎫 Tickets &amp; Attractions</div><div class="td-sub">Panda Base · DJY · Shufeng Yayun · Shuyanfu banquet · 1949 Show · FuFu Spa · Tianmen Mtn · ZJJ Grand Canyon combo · Bailong+Tianzishan · Charming Xiangxi</div></td><td><strong>A$950.60</strong></td><td><span style="color:#2E7A32;font-weight:600">✓ Actual cost</span></td></tr>
+            <tr><td><div class="td-city">🎫 Tickets &amp; Attractions</div><div class="td-sub">Panda Base · DJY · Shuyanfu banquet · 1949 Show · FuFu Spa · Tianmen Mtn · ZJJ Grand Canyon combo · Bailong+Tianzishan · Charming Xiangxi</div></td><td><strong>A$1,020.60</strong></td><td><span style="color:#2E7A32;font-weight:600">✓ Actual cost</span></td></tr>
             <tr><td><div class="td-city">🍜 Food</div><div class="td-sub">A$75/day × 13 days (breakfasts, lunches, dinners)</div></td><td><strong>~A$975</strong></td><td>—</td></tr>
             <tr><td><div class="td-city">🛍️ Shopping</div></td><td><strong>A$1,000</strong></td><td>—</td></tr>
             <tr><td><div class="td-city">💳 Other spending</div><div class="td-sub">Entertainment (A$200) · Local transport/Didi (A$150) · Drinks (A$50) · eSIM (A$20) · Misc (A$500)</div></td><td><strong>A$920</strong></td><td>—</td></tr>
-            <tr class="tr-total"><td><strong>Total estimate</strong><div class="td-sub">For both · all inclusive · from Costs tab</div></td><td><strong>A$6,431.84</strong></td><td></td></tr>
-            <tr class="tr-total" style="background:rgba(192,32,42,.04)"><td><strong>Total actual / confirmed</strong><div class="td-sub">Rows marked Actual = Y in the Costs tab</div></td><td><strong>A$4,036.84</strong></td><td><span style="color:#2E7A32;font-weight:600">✓</span></td></tr>
+            <tr class="tr-total"><td><strong>Total estimate</strong><div class="td-sub">For both · all inclusive · from Costs tab</div></td><td><strong>A$6,501.84</strong></td><td></td></tr>
+            <tr class="tr-total" style="background:rgba(192,32,42,.04)"><td><strong>Total actual / confirmed</strong><div class="td-sub">Rows marked Actual = Y in the Costs tab</div></td><td><strong>A$4,106.84</strong></td><td><span style="color:#2E7A32;font-weight:600">✓</span></td></tr>
             <tr class="tr-total" style="background:rgba(46,122,50,.04)"><td><strong>Remaining estimate</strong><div class="td-sub">Unbooked / flexible spend remaining from Costs tab</div></td><td><strong>A$2,395</strong></td><td></td></tr>
           </tbody>
         </table>
@@ -1186,15 +1161,14 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
             <div style="font-size:12px;line-height:1.8;color:var(--ink-mid)">
               Panda Base — <strong>A$22.80</strong><br>
               Dujiangyan — <strong>A$33</strong><br>
-              Shuyanfu Banquet — <strong>A$200</strong><br>
-              Shufeng Yayun Sichuan Opera — <strong>A$60</strong><br>
+              Shuyanfu Banquet — <strong>A$330</strong><br>
               1949 Show — <strong>A$100</strong><br>
               FuFu Spa — <strong>A$140</strong><br>
               Tianmen Mountain — <strong>A$104</strong><br>
               ZJJ Grand Canyon combo — <strong>A$170</strong><br>
               Bailong + Tianzishan — <strong>A$56.80</strong><br>
               Charming Xiangxi Show — <strong>A$64</strong><br>
-              <span style="color:var(--ink-light)">Total (both): <strong>A$950.60</strong></span>
+              <span style="color:var(--ink-light)">Total (both): <strong>A$1,020.60</strong></span>
             </div>
           </div>
           <div style="background:var(--paper-warm);border:1px solid var(--paper-mid);border-radius:10px;padding:16px">
@@ -1250,7 +1224,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
       <div class="section-header sh-tracker">
         <div class="section-eyebrow">Planning</div>
         <div class="section-title">Spend <em>tracker</em></div>
-        <div class="section-subtitle">Log actual spend vs budget — AUD · total estimated A$6,431.84</div>
+        <div class="section-subtitle">Log actual spend vs budget — AUD · total estimated A$6,501.84</div>
       </div>
       <div class="days-container">
         <div id="trackerGrid" class="tracker-grid"></div>
@@ -1258,70 +1232,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
           <div class="tracker-summary-title">Trip summary</div>
           <div id="trackerSummaryBody"></div>
           <button class="tracker-clear-btn" onclick="clearTracker()">Reset all data</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- ═══ ETIQUETTE ═══ -->
-    <div class="panel" id="panel-etiquette">
-      <div class="section-header sh-etiquette">
-        <div class="section-eyebrow">Planning</div>
-        <div class="section-title">Etiquette <em>guide</em></div>
-        <div class="section-subtitle">China do's and don'ts — Sichuan and Chongqing region</div>
-      </div>
-      <div class="days-container">
-        <div class="etiq-grid">
-          <div class="etiq-card do">
-            <div class="etiq-card-title">✓ Do</div>
-            <div class="etiq-item"><span class="ei">✓</span><span>Use both hands when handing or receiving items (business cards, gifts, money) — shows respect</span></div>
-            <div class="etiq-item"><span class="ei">✓</span><span>Offer to pay for others, and expect them to fight back (this is expected theatre — persist gently)</span></div>
-            <div class="etiq-item"><span class="ei">✓</span><span>Learn a few Mandarin phrases — any effort is warmly received, even if your tones are wrong</span></div>
-            <div class="etiq-item"><span class="ei">✓</span><span>Accept tea or food when offered — refusing is considered impolite</span></div>
-            <div class="etiq-item"><span class="ei">✓</span><span>Photograph food enthusiastically — this is completely normal and expected in China</span></div>
-            <div class="etiq-item"><span class="ei">✓</span><span>Slurp noodles — it's not impolite, it shows enjoyment</span></div>
-            <div class="etiq-item"><span class="ei">✓</span><span>Use WeChat for everything — payment, translation, navigation, booking</span></div>
-          </div>
-          <div class="etiq-card dont">
-            <div class="etiq-card-title">✗ Don't</div>
-            <div class="etiq-item"><span class="ei">✗</span><span>Tip in restaurants — not expected or customary in mainland China</span></div>
-            <div class="etiq-item"><span class="ei">✗</span><span>Discuss Taiwan, Tibet, or Tiananmen in public with strangers</span></div>
-            <div class="etiq-item"><span class="ei">✗</span><span>Touch someone's head — considered very disrespectful</span></div>
-            <div class="etiq-item"><span class="ei">✗</span><span>Point at people or objects with one finger — use an open hand instead</span></div>
-            <div class="etiq-item"><span class="ei">✗</span><span>Eat at tourist-facing restaurants with English menus prominently displayed — quality drops sharply</span></div>
-            <div class="etiq-item"><span class="ei">✗</span><span>Wear shoes inside someone's home</span></div>
-            <div class="etiq-item"><span class="ei">✗</span><span>Expect Google Maps, WhatsApp, or Instagram to work — set up Apple Maps + Amap + VPN before arriving</span></div>
-          </div>
-          <div class="etiq-card dining">
-            <div class="etiq-card-title">🍜 Dining etiquette</div>
-            <div class="etiq-item"><span class="ei">·</span><span>Dishes are shared at the table — everyone eats from all dishes, not individual plates</span></div>
-            <div class="etiq-item"><span class="ei">·</span><span>Pour tea for others before yourself; never let a guest's cup run empty</span></div>
-            <div class="etiq-item"><span class="ei">·</span><span>Bones and shells go on the table or a side dish — not back into the communal dish</span></div>
-            <div class="etiq-item"><span class="ei">·</span><span>At hotpot: don't put cooked food back in the raw-ingredient area</span></div>
-            <div class="etiq-item"><span class="ei">·</span><span>Scan QR code to order at most modern restaurants — bring your phone</span></div>
-            <div class="etiq-item"><span class="ei">·</span><span>The loudest, most crowded restaurant is almost always the best one</span></div>
-          </div>
-          <div class="etiq-card transport">
-            <div class="etiq-card-title">🚇 Getting around</div>
-            <div class="etiq-item"><span class="ei">·</span><span>Didi is China's Uber — download and set up before arrival. Works with international cards.</span></div>
-            <div class="etiq-item"><span class="ei">·</span><span>Metro is always cheaper and often faster than Didi in cities — ¥3–10 per trip</span></div>
-            <div class="etiq-item"><span class="ei">·</span><span>High-speed rail requires passport for foreigners — carry at all times</span></div>
-            <div class="etiq-item"><span class="ei">·</span><span>Book HSR in advance — cannot pay cash at gates as a foreigner. Use Trip.com or 12306.</span></div>
-            <div class="etiq-item"><span class="ei">·</span><span>Amap (<ruby>高<rt>gāo</rt></ruby><ruby>德<rt>dé</rt></ruby><ruby>地<rt>dì</rt></ruby><ruby>图<rt>tú</rt></ruby>) is far better than Google Maps for navigation in China — download offline maps</span></div>
-          </div>
-        </div>
-        <hr class="etiq-divider">
-        <div class="etiq-phrases">
-          <div class="etiq-phrases-label">Useful Mandarin phrases — show to locals if needed</div>
-          <div class="phrase-row"><div class="phrase-eng">Thank you</div><div class="phrase-local"><ruby>谢<rt>xiè</rt></ruby><ruby>谢<rt>xiè</rt></ruby></div><div class="phrase-pron">Xièxiè</div></div>
-          <div class="phrase-row"><div class="phrase-eng">How much?</div><div class="phrase-local"><ruby>多<rt>duō</rt></ruby><ruby>少<rt>shǎo</rt></ruby><ruby>钱<rt>qián</rt></ruby>？</div><div class="phrase-pron">Duōshǎo qián?</div></div>
-          <div class="phrase-row"><div class="phrase-eng">Not spicy / less spicy</div><div class="phrase-local"><ruby>不<rt>bù</rt></ruby><ruby>辣<rt>là</rt></ruby> / <ruby>少<rt>shǎo</rt></ruby><ruby>辣<rt>là</rt></ruby></div><div class="phrase-pron">Bù là / Shǎo là</div></div>
-          <div class="phrase-row"><div class="phrase-eng">Medium spicy</div><div class="phrase-local"><ruby>中<rt>zhōng</rt></ruby><ruby>辣<rt>là</rt></ruby></div><div class="phrase-pron">Zhōng là</div></div>
-          <div class="phrase-row"><div class="phrase-eng">The bill, please</div><div class="phrase-local"><ruby>买<rt>mǎi</rt></ruby><ruby>单<rt>dān</rt></ruby></div><div class="phrase-pron">Mǎidān</div></div>
-          <div class="phrase-row"><div class="phrase-eng">Where is the toilet?</div><div class="phrase-local"><ruby>厕<rt>cè</rt></ruby><ruby>所<rt>suǒ</rt></ruby><ruby>在<rt>zài</rt></ruby><ruby>哪<rt>nǎ</rt></ruby><ruby>里<rt>lǐ</rt></ruby>？</div><div class="phrase-pron">Cèsuǒ zài nǎlǐ?</div></div>
-          <div class="phrase-row"><div class="phrase-eng">I don't eat [X]</div><div class="phrase-local"><ruby>我<rt>wǒ</rt></ruby><ruby>不<rt>bù</rt></ruby><ruby>吃<rt>chī</rt></ruby> [X]</div><div class="phrase-pron">Wǒ bù chī [X]</div></div>
-          <div class="phrase-row"><div class="phrase-eng">Take me to [address]</div><div class="phrase-local"><ruby>请<rt>qǐng</rt></ruby><ruby>带<rt>dài</rt></ruby><ruby>我<rt>wǒ</rt></ruby><ruby>去<rt>qù</rt></ruby> [<ruby>地<rt>dì</rt></ruby><ruby>址<rt>zhǐ</rt></ruby>]</div><div class="phrase-pron">Qǐng dài wǒ qù [address]</div></div>
-          <div class="phrase-row"><div class="phrase-eng">Delicious!</div><div class="phrase-local"><ruby>好<rt>hǎo</rt></ruby><ruby>吃<rt>chī</rt></ruby>！</div><div class="phrase-pron">Hǎo chī!</div></div>
-          <div class="phrase-row"><div class="phrase-eng">Cheers!</div><div class="phrase-local"><ruby>干<rt>gàn</rt></ruby><ruby>杯<rt>bēi</rt></ruby>！</div><div class="phrase-pron">Gānbēi!</div></div>
         </div>
       </div>
     </div>
@@ -1656,6 +1566,28 @@ document.addEventListener('DOMContentLoaded', function() {
 // Checkbox persistence
 function saveCheck(id, val) { try { localStorage.setItem('chk_cn_' + id, val ? '1' : '0'); } catch(e) {} }
 function loadCheck(id) { try { return localStorage.getItem('chk_cn_' + id) === '1'; } catch(e) { return false; } }
+function hasSavedCheck(id) { try { return localStorage.getItem('chk_cn_' + id) !== null; } catch(e) { return false; } }
+function initBookingChecklist() {
+  document.querySelectorAll('#panel-book .book-item').forEach((item, idx) => {
+    if (item.querySelector('input[type=checkbox]')) return;
+    const cb = document.createElement('input');
+    cb.type = 'checkbox';
+    cb.className = 'book-check';
+    cb.id = item.dataset.checkId || 'book' + (idx + 1);
+    item.dataset.checkId = cb.id;
+
+    const priority = item.querySelector('.book-priority');
+    const priorityText = priority ? priority.textContent.trim() : '';
+    if (!hasSavedCheck(cb.id) && priorityText === '✓') cb.checked = true;
+
+    const title = item.querySelector('.book-title');
+    if (title) {
+      const label = title.textContent.trim().replace(/\s+/g, ' ');
+      cb.setAttribute('aria-label', 'Mark booked: ' + label);
+    }
+    item.insertBefore(cb, item.firstChild);
+  });
+}
 document.addEventListener('change', e => {
   if (e.target.type !== 'checkbox') return;
   const id = e.target.id;
@@ -1665,17 +1597,22 @@ document.addEventListener('change', e => {
   if (pi) pi.classList.toggle('checked', val);
   const pt = e.target.closest('.prep-task');
   if (pt) pt.classList.toggle('done', val);
+  const bi = e.target.closest('.book-item');
+  if (bi) bi.classList.toggle('done', val);
 });
 document.addEventListener('DOMContentLoaded', () => {
+  initBookingChecklist();
   document.querySelectorAll('input[type=checkbox]').forEach(cb => {
     if (!cb.id) return;
-    const val = loadCheck(cb.id);
+    const val = hasSavedCheck(cb.id) ? loadCheck(cb.id) : cb.checked;
     if (val) {
       cb.checked = true;
       const pi = cb.closest('.pack-item');
       if (pi) pi.classList.add('checked');
       const pt = cb.closest('.prep-task');
       if (pt) pt.classList.add('done');
+      const bi = cb.closest('.book-item');
+      if (bi) bi.classList.add('done');
     }
   });
   renderTracker();
@@ -1686,7 +1623,7 @@ const TRACKER_CITIES = [
   { id: 'flights',  label: '✈️ International flights',           budget: 1395, note: 'Sichuan Airlines RTN · confirmed' },
   { id: 'accom',    label: '🏨 Accommodation (all hotels)',       budget: 852.24,  note: 'Licheng both Chengdu stays + Sense Scene + Jinpu Ju · booked' },
   { id: 'trains',   label: '🚆 Internal trains (all)',            budget: 339,  note: 'CDU↔DJY + CDU→CQ + CQ→ZJJ + ZJJ→CDU' },
-  { id: 'tickets',  label: '🎫 Tickets & attractions',           budget: 950.6,  note: 'Pandas + DJY + Shufeng + Shuyanfu + 1949 + Spa + ZJJ parks' },
+  { id: 'tickets',  label: '🎫 Tickets & attractions',           budget: 1020.6,  note: 'Pandas + DJY + Shuyanfu + 1949 + Spa + ZJJ parks' },
   { id: 'food',     label: '🍜 Food (all meals)',                 budget: 975,  note: 'A$75/day × 13 days' },
   { id: 'shopping', label: '🛍️ Shopping',                        budget: 1000, note: 'Personal budget' },
   { id: 'local',    label: '🚕 Local transport (metro/Didi)',     budget: 150,  note: 'Within cities' },
@@ -1729,7 +1666,7 @@ function updateTrackerSummary() {
   if (!body) return;
   let totalBudget = 0, totalSpent = 0;
   TRACKER_CITIES.forEach(c => { totalBudget += c.budget; totalSpent += tGet(c.id); });
-  // Total should be A$6,431.84 from the Costs tab.
+  // Total should be A$6,501.84 from the Costs tab.
   const pct = totalBudget > 0 ? Math.min(Math.round(totalSpent / totalBudget * 100), 100) : 0;
   const remaining = totalBudget - totalSpent;
   const over = totalSpent > totalBudget;
