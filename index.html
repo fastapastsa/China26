@@ -78,7 +78,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
 .nav-tile-budget.active{background:rgba(200,146,42,.2);border-color:rgba(200,146,42,.4)}
 .nav-tile-book.active{background:rgba(192,32,42,.22);border-color:rgba(192,32,42,.5)}
 .nav-tile-tracker.active{background:rgba(29,112,112,.2);border-color:rgba(29,112,112,.45)}
-.nav-tile-timeline.active{background:rgba(200,146,42,.2);border-color:rgba(200,146,42,.45)}
 .nav-tile-pack.active{background:rgba(46,122,50,.2);border-color:rgba(46,122,50,.4)}
 .nav-tile-metro.active{background:rgba(29,90,160,.2);border-color:rgba(29,90,160,.45)}
 .nav-tile-icon{font-size:16px;flex-shrink:0}
@@ -102,7 +101,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
 .sh-budget::before{background:var(--gold)}
 .sh-book::before{background:var(--red-bright)}
 .sh-tracker::before{background:var(--teal)}
-.sh-timeline::before{background:var(--gold)}
 .sh-pack::before{background:var(--zjj)}
 .section-eyebrow{font-size:10px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-light);margin-bottom:8px}
 .section-title{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:300;line-height:1.05;margin-bottom:4px}
@@ -335,7 +333,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
 
 <!-- MOBILE APP NAVIGATION -->
 <div class="mobile-topbar" role="banner"><div class="mobile-topbar-main"><div class="mobile-brand"><div class="mobile-brand-title">China — May 2026</div><div class="mobile-brand-sub">11–25 May 2026</div></div></div><div class="mobile-route-mini" aria-label="Route overview"><button class="mobile-route-chip" type="button" data-panel="chengdu" onclick="routeGo('chengdu')"><strong>Chengdu</strong> · 4n</button><button class="mobile-route-chip" type="button" data-panel="chengdu" data-day="day-dujiangyan" onclick="routeGo('chengdu','day-dujiangyan')"><strong>DJY</strong> · d</button><button class="mobile-route-chip" type="button" data-panel="chongqing" onclick="routeGo('chongqing')"><strong>CQ</strong> · 4n</button><button class="mobile-route-chip" type="button" data-panel="zhangjiajie" onclick="routeGo('zhangjiajie')"><strong>ZJJ</strong> · 3n</button><button class="mobile-route-chip" type="button" data-panel="chengdu2" onclick="routeGo('chengdu2')"><strong>Chengdu</strong> · 1n</button></div></div>
-<div class="mobile-tools-overlay" id="mobile-tools-overlay" onclick="closeToolsSheet()"></div><div class="mobile-tools-sheet" id="mobile-tools-sheet" role="dialog" aria-modal="true" aria-label="Planning tools"><div class="mobile-sheet-handle"></div><div class="mobile-sheet-head"><div><div class="mobile-sheet-title">Planning tools</div><div class="mobile-sheet-sub">Budget, bookings, spend, packing and maps.</div></div><button class="mobile-sheet-close" type="button" onclick="closeToolsSheet()" aria-label="Close tools">×</button></div><div class="mobile-tools-grid"><button class="mobile-tool-card" type="button" onclick="mobileGo('budget')"><div class="icon">💴</div><div class="name">Budget</div><div class="sub">Cost breakdown</div></button><button class="mobile-tool-card" type="button" onclick="mobileGo('book')"><div class="icon">📋</div><div class="name">Bookings</div><div class="sub">What to book</div></button><button class="mobile-tool-card" type="button" onclick="mobileGo('tracker')"><div class="icon">💸</div><div class="name">Spend</div><div class="sub">Log actuals</div></button><button class="mobile-tool-card" type="button" onclick="mobileGo('timeline')"><div class="icon">📅</div><div class="name">Timeline</div><div class="sub">Pre-trip tasks</div></button><button class="mobile-tool-card" type="button" onclick="mobileGo('pack')"><div class="icon">🎒</div><div class="name">Packing</div><div class="sub">Apps & gear</div></button><button class="mobile-tool-card" type="button" onclick="mobileGo('metro')"><div class="icon">🚇</div><div class="name">Maps & metro</div><div class="sub">Transit guides</div></button><button class="mobile-tool-card" type="button" onclick="mobileGo('table')"><div class="icon">🗓️</div><div class="name">Full table</div><div class="sub">15-day overview</div></button></div></div>
+<div class="mobile-tools-overlay" id="mobile-tools-overlay" onclick="closeToolsSheet()"></div><div class="mobile-tools-sheet" id="mobile-tools-sheet" role="dialog" aria-modal="true" aria-label="Planning tools"><div class="mobile-sheet-handle"></div><div class="mobile-sheet-head"><div><div class="mobile-sheet-title">Planning tools</div><div class="mobile-sheet-sub">Budget, bookings, spend, packing and maps.</div></div><button class="mobile-sheet-close" type="button" onclick="closeToolsSheet()" aria-label="Close tools">×</button></div><div class="mobile-tools-grid"><button class="mobile-tool-card" type="button" onclick="mobileGo('budget')"><div class="icon">💴</div><div class="name">Budget</div><div class="sub">Cost breakdown</div></button><button class="mobile-tool-card" type="button" onclick="mobileGo('book')"><div class="icon">📋</div><div class="name">Bookings</div><div class="sub">What to book</div></button><button class="mobile-tool-card" type="button" onclick="mobileGo('tracker')"><div class="icon">💸</div><div class="name">Spend</div><div class="sub">Log actuals</div></button><button class="mobile-tool-card" type="button" onclick="mobileGo('pack')"><div class="icon">🎒</div><div class="name">Packing</div><div class="sub">Apps & gear</div></button><button class="mobile-tool-card" type="button" onclick="mobileGo('metro')"><div class="icon">🚇</div><div class="name">Maps & metro</div><div class="sub">Transit guides</div></button><button class="mobile-tool-card" type="button" onclick="mobileGo('table')"><div class="icon">🗓️</div><div class="name">Full table</div><div class="sub">15-day overview</div></button></div></div>
 <nav class="mobile-bottom-nav" aria-label="Primary mobile navigation"><button class="mobile-bottom-btn active" type="button" data-mobile-target="overview" onclick="mobileGo('overview')"><span class="ico">🏠</span><span>Overview</span></button><button class="mobile-bottom-btn" type="button" data-mobile-target="chengdu" onclick="mobileGo('chengdu')"><span class="ico">📅</span><span>Days</span></button><button class="mobile-bottom-btn" type="button" data-mobile-target="tools" onclick="openToolsSheet()"><span class="ico">⚡</span><span>Tools</span></button><button class="mobile-bottom-btn" type="button" data-mobile-target="metro" onclick="mobileGo('metro')"><span class="ico">🗺️</span><span>Map</span></button></nav>
 
 
@@ -425,10 +423,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
       <div class="nav-tile nav-tile-tracker" onclick="showPanel('tracker',this)">
         <div class="nav-tile-icon">💸</div>
         <div class="nav-tile-text"><span class="nav-tile-name">Spend Tracker</span><span class="nav-tile-sub">Log spend vs budget</span></div>
-      </div>
-      <div class="nav-tile nav-tile-timeline" onclick="showPanel('timeline',this)">
-        <div class="nav-tile-icon">📅</div>
-        <div class="nav-tile-text"><span class="nav-tile-name">Pre-trip Timeline</span><span class="nav-tile-sub">Month-by-month checklist</span></div>
       </div>
       <div class="nav-tile nav-tile-pack" onclick="showPanel('pack',this)">
         <div class="nav-tile-icon">🎒</div>
@@ -1247,64 +1241,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
           <div class="tracker-summary-title">Trip summary</div>
           <div id="trackerSummaryBody"></div>
           <button class="tracker-clear-btn" onclick="clearTracker()">Reset all data</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- ═══ PRE-TRIP TIMELINE ═══ -->
-    <div class="panel" id="panel-timeline">
-      <div class="section-header sh-timeline">
-        <div class="section-eyebrow">Planning</div>
-        <div class="section-title">Pre-trip <em>timeline</em></div>
-        <div class="section-subtitle">Month-by-month checklist before departure 11 May 2026</div>
-      </div>
-      <div class="days-container">
-        <div class="prep-month">
-          <div class="prep-month-label"><div class="prep-month-name">Now</div><div class="prep-month-sub">Immediately</div></div>
-          <div class="prep-month-body">
-            <div class="prep-task"><input type="checkbox" id="pt1" checked><label for="pt1"><strong>Hotels booked</strong> — Licheng Hotel (both Chengdu stays) · Sense Scene Hotel · Jinpu Ju Hotel<small>Keep screenshots or PDFs of every hotel confirmation available offline.</small></label></div>
-            <div class="prep-task"><input type="checkbox" id="pt2a"><label for="pt2a"><strong>Book Chengdu East → Shapingba train</strong> — Sat 16 May, 10:40 → 11:42<small>Use Trip.com (English interface) or 12306. Foreign cards accepted on both. Trains sell out.</small></label></div>
-            <div class="prep-task"><input type="checkbox" id="pt2b"><label for="pt2b"><strong>Book Chongqing East → Zhangjiajie West train</strong> — Wed 20 May, 8:16 → 10:42<small>Use Trip.com or 12306. Alternative: 9:52 → 11:58 if timing changes.</small></label></div>
-            <div class="prep-task"><input type="checkbox" id="pt2c"><label for="pt2c"><strong>Book Zhangjiajie West → Chengdu East train</strong> — Sat 23 May, 9:55 → 14:20<small>Use Trip.com or 12306. Save the ticket details offline after booking.</small></label></div>
-            <div class="prep-task"><input type="checkbox" id="pt3"><label for="pt3"><strong>Confirm visa-free entry status for Australia → China</strong><small>Check smartraveller.gov.au — 30-day visa-free policy, verify it's still in effect. Passport must be valid 6 months beyond China departure date.</small></label></div>
-          </div>
-        </div>
-        <div class="prep-month">
-          <div class="prep-month-label"><div class="prep-month-name">April</div><div class="prep-month-sub">4–6 weeks out</div></div>
-          <div class="prep-month-body">
-            <div class="prep-task"><input type="checkbox" id="pt4"><label for="pt4"><strong>Book Shufeng Yayun Sichuan Opera</strong> — Tue 12 May, 8pm show<small>Via Trip.com or directly at shufengyayun.com. Liyuan House ¥150–180pp, VIP ¥280–320pp.</small></label></div>
-            <div class="prep-task"><input type="checkbox" id="pt5"><label for="pt5"><strong>Book Zhangjiajie Forest Park timed entry pass</strong> — Thu 21 May (Day 1)<small>Klook or Trip.com. Passport number required. 4-day combo pass ~¥376pp. East Gate entry.</small></label></div>
-            <div class="prep-task"><input type="checkbox" id="pt6"><label for="pt6"><strong>Install VPN on both phones and all devices</strong><small>ExpressVPN, Astrill, or NordVPN. Test on a Chinese server. Cannot download or activate once inside China. This is essential — Google, WhatsApp, Instagram are blocked.</small></label></div>
-            <div class="prep-task"><input type="checkbox" id="pt7"><label for="pt7"><strong>Set up WeChat Pay and/or Alipay with international card</strong><small>WeChat Pay now accepts international Visa/Mastercard. Link in the WeChat app → Me → Pay → Add a card. Alipay International also accepts foreign cards. Test with a small transaction.</small></label></div>
-            <div class="prep-task"><input type="checkbox" id="pt8"><label for="pt8"><strong>Download Didi, Amap (<ruby>高<rt>gāo</rt></ruby><ruby>德<rt>dé</rt></ruby><ruby>地<rt>dì</rt></ruby><ruby>图<rt>tú</rt></ruby>), Dianping (<ruby>大<rt>dà</rt></ruby><ruby>众<rt>zhòng</rt></ruby><ruby>点<rt>diǎn</rt></ruby><ruby>评<rt>píng</rt></ruby>)</strong><small>Didi = ride-hailing. Amap = navigation (better than Google Maps in China). Dianping = restaurant reviews (China's Yelp). Download now — availability may be restricted in the App Store from inside China.</small></label></div>
-            <div class="prep-task"><input type="checkbox" id="pt9"><label for="pt9"><strong>Get ubank card — no ATM fees overseas</strong><small>Australia's best card for travel. Apply online, takes 5–7 business days. Load with travel budget.</small></label></div>
-          </div>
-        </div>
-        <div class="prep-month">
-          <div class="prep-month-label"><div class="prep-month-name">Late April</div><div class="prep-month-sub">2–3 weeks out</div></div>
-          <div class="prep-month-body">
-            <div class="prep-task"><input type="checkbox" id="pt10"><label for="pt10"><strong>Buy China eSIM</strong> — install and activate before boarding<small>MobiMatter or Trip.com eSIM. 20–35GB recommended for 15 days. Activate on the eSIM before leaving Australia so you have data the moment you land in Chengdu.</small></label></div>
-            <div class="prep-task"><input type="checkbox" id="pt11"><label for="pt11"><strong>Book Shuyanfu Imperial Banquet</strong> — exactly 7 days before Fri 15 May = book on Fri 8 May<small>WeChat mini-program only (search <ruby>蜀<rt>shǔ</rt></ruby><ruby>宴<rt>yàn</rt></ruby><ruby>赋<rt>fù</rt></ruby>). Opens for booking exactly 7 days before the session. ¥100pp deposit via WeChat Pay. VIP/mid row recommended.</small></label></div>
-            <div class="prep-task"><input type="checkbox" id="pt12"><label for="pt12"><strong>Download Amap offline maps</strong> — Chengdu, Chongqing, Zhangjiajie<small>Essential backup if VPN drops. Amap works with offline maps. Download all three cities before departure.</small></label></div>
-            <div class="prep-task"><input type="checkbox" id="pt13"><label for="pt13"><strong>Print/save offline: hotel confirmations, train tickets, park passes</strong><small>China apps occasionally have payment or login issues — have a paper or offline backup of everything.</small></label></div>
-          </div>
-        </div>
-        <div class="prep-month">
-          <div class="prep-month-label"><div class="prep-month-name">May</div><div class="prep-month-sub">1 week out</div></div>
-          <div class="prep-month-body">
-            <div class="prep-task"><input type="checkbox" id="pt14"><label for="pt14"><strong>Book Giant Panda Base</strong> — for Wed 13 May (morning slot, 7:30 AM)<small>WeChat mini-program or Trip.com. ¥55pp. Can book up to a few days in advance. Book the 7:30 AM slot for active pandas.</small></label></div>
-            <div class="prep-task"><input type="checkbox" id="pt15"><label for="pt15"><strong>Book Dujiangyan HSR</strong> — Thu 14 May, Xipu → DJY ~8am train<small>Trip.com or 12306. ¥15pp. Book night before at latest. Pay digitally — no cash at HSR gates.</small></label></div>
-            <div class="prep-task"><input type="checkbox" id="pt16"><label for="pt16"><strong>Confirm all bookings are accessible offline</strong><small>Screenshots or saved PDFs of every hotel, train, and attraction ticket. Carry physical passport — needed for HSR and park entry.</small></label></div>
-          </div>
-        </div>
-        <div class="prep-month">
-          <div class="prep-month-label"><div class="prep-month-name">Day before</div><div class="prep-month-sub">10 May</div></div>
-          <div class="prep-month-body">
-            <div class="prep-task"><input type="checkbox" id="pt17"><label for="pt17"><strong>Check in online for Sichuan Airlines 3U3886</strong><small>Check-in opens 24 hrs before 8:20 PM departure. Confirm seat assignments. Economy class.</small></label></div>
-            <div class="prep-task"><input type="checkbox" id="pt18"><label for="pt18"><strong>Charge all electronics fully overnight</strong><small>Phones, cameras, power banks. China uses Type A/C plugs (same as Australia Type I — check your adapter).</small></label></div>
-            <div class="prep-task"><input type="checkbox" id="pt19"><label for="pt19"><strong>Test VPN one more time</strong> on a Chinese server<small>Both phones. If it doesn't connect on a Chinese server, you may have issues in-country. Troubleshoot now.</small></label></div>
-            <div class="prep-task"><input type="checkbox" id="pt20"><label for="pt20"><strong>Load WeChat Pay with ¥1,000–2,000 AUD equivalent</strong><small>Use in the first few days before you establish ATM access. Most transactions in China are mobile payment.</small></label></div>
-          </div>
         </div>
       </div>
     </div>
